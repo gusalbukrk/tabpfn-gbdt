@@ -1,0 +1,75 @@
+[W&B] Child process started for job: mic_embed-only_catboost in group session-5
+Loading archive 'archives/mic.npz' and initializing pipeline for target: CATBOOST...
+Execution Mode: EMBED-ONLY
+Session Output Target: outputs/5/
+Task Type: MULTICLASS
+TabPFN Baselines Loaded - Primary: 0.4552 | Secondary: 0.8882
+PCA reduced text embeddings to 30 components.
+Final training matrix shape assembled for EMBED-ONLY: (1359, 30)
+
+Running 3-Trial Optuna Study for CATBOOST (EMBED-ONLY)...
+A new study created in RDB with name: 20260623_145451_mic_embed-only_catboost
+Trial 0 finished with value: 0.5120873466978634 and parameters: {}. Best is trial 0 with value: 0.5120873466978634.
+Trial 1 finished with value: 0.5508667339245988 and parameters: {'learning_rate': 0.015355286838886862, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9852142919229748, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8733991780504303, 'l2_leaf_reg': 0.00018747059221802545, 'leaf_estimation_iterations': 12, 'one_hot_max_size': 36, 'model_size_reg': 0.6803900745073703, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 0 with value: 0.5120873466978634.
+Trial 2 finished with value: 0.5274927500627521 and parameters: {'learning_rate': 0.09138013915892866, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9497327922401265, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8956363364439306, 'l2_leaf_reg': 0.02922905212920092, 'leaf_estimation_iterations': 2, 'one_hot_max_size': 16, 'model_size_reg': 0.5243180891902851, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 0 with value: 0.5120873466978634.
+Optuna Search Completed in: 40.72 seconds
+
+Training final model on optimized parameter setup...
+
+[CATBOOST FINALIZED METRICS]
+Optimal Trees:         100
+Log_Loss:             0.4949 (Delta to TabPFN: +0.0397)
+Accuracy:             0.8794 (Delta to TabPFN: -0.0088)
+Final Train Time:      2.60 seconds (1.9165s per 1K)
+Final Infer Time:      0.01 seconds (0.0387s per 1K)
+
+--- CATBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+pca_embed_0 | 21.73 | 21.73%
+pca_embed_1 | 8.61 | 8.61%
+pca_embed_4 | 4.72 | 4.72%
+pca_embed_14 | 4.57 | 4.57%
+pca_embed_29 | 4.10 | 4.10%
+pca_embed_21 | 3.72 | 3.72%
+pca_embed_6 | 3.51 | 3.51%
+pca_embed_17 | 3.21 | 3.21%
+pca_embed_3 | 3.04 | 3.04%
+pca_embed_15 | 2.97 | 2.97%
+pca_embed_8 | 2.92 | 2.92%
+pca_embed_18 | 2.92 | 2.92%
+pca_embed_5 | 2.89 | 2.89%
+pca_embed_26 | 2.88 | 2.88%
+pca_embed_9 | 2.84 | 2.84%
+pca_embed_12 | 2.66 | 2.66%
+pca_embed_25 | 2.58 | 2.58%
+pca_embed_20 | 2.54 | 2.54%
+pca_embed_7 | 2.31 | 2.31%
+pca_embed_27 | 2.07 | 2.07%
+pca_embed_2 | 1.81 | 1.81%
+pca_embed_16 | 1.77 | 1.77%
+pca_embed_22 | 1.73 | 1.73%
+pca_embed_19 | 1.55 | 1.55%
+pca_embed_28 | 1.52 | 1.52%
+pca_embed_13 | 1.39 | 1.39%
+pca_embed_23 | 1.31 | 1.31%
+pca_embed_24 | 1.12 | 1.12%
+pca_embed_11 | 0.80 | 0.80%
+pca_embed_10 | 0.23 | 0.23%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 100.00%
+Raw Feature Share                            | 0.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (30/30)
+Active Raw Tabular Feature Density           | 0.00% (0/0)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 43.73% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 60.19% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 48.33 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/5/'
+[W&B] Artifacts and localized metrics logged successfully for mic_embed-only_catboost

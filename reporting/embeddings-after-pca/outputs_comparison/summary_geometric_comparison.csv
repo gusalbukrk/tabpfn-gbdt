@@ -1,0 +1,5 @@
+task_type,before_pca_silhouette,after_pca_silhouette,silhouette_delta,before_pca_knn_purity,after_pca_knn_purity,knn_purity_loss
+binary,0.0579,0.0593,-0.0013,0.8543,0.8528,0.0015
+multiclass,0.1133,0.1196,-0.0063,0.9038,0.9039,-0.0001
+regression,0.1155,0.125,-0.0095,0.7498,0.7508,-0.001
+all_combined,0.0813,0.0855,-0.0042,0.8354,0.8348,0.0006

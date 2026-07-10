@@ -1,0 +1,190 @@
+[W&B] Child process started for job: naticusdroid_combined_catboost in group session-training-4
+Loading archive 'archives/naticusdroid.npz' and initializing pipeline for target: CATBOOST...
+Execution Mode: COMBINED
+Session Output Target: outputs/training-4/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.0105 | Secondary: 0.9460
+PCA reduced text embeddings to 36 components.
+Final training matrix shape assembled for COMBINED: (5992, 122)
+
+Running 26-Trial Optuna Study for CATBOOST (COMBINED)...
+A new study created in RDB with name: 20260624_234702_naticusdroid_combined_catboost
+Trial 0 finished with value: 0.01710622188850508 and parameters: {}. Best is trial 0 with value: 0.01710622188850508.
+Trial 1 finished with value: 0.01650476348565677 and parameters: {'learning_rate': 0.015355286838886862, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9852142919229748, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8733991780504303, 'l2_leaf_reg': 0.00018747059221802545, 'leaf_estimation_iterations': 12, 'one_hot_max_size': 36, 'model_size_reg': 0.6803900745073703, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 1 with value: 0.01650476348565677.
+Trial 2 finished with value: 0.017064883602360137 and parameters: {'learning_rate': 0.09138013915892866, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9497327922401265, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8956363364439306, 'l2_leaf_reg': 0.02922905212920092, 'leaf_estimation_iterations': 2, 'one_hot_max_size': 16, 'model_size_reg': 0.5243180891902851, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 1 with value: 0.01650476348565677.
+Trial 3 finished with value: 0.015882852686084914 and parameters: {'learning_rate': 0.011996621453406362, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8099085529881075, 'grow_policy': 'Depthwise', 'depth': 4, 'colsample_bylevel': 0.9271351657620417, 'l2_leaf_reg': 0.06077686426194464, 'leaf_estimation_iterations': 1, 'one_hot_max_size': 36, 'model_size_reg': 0.15869086642715013, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 3 with value: 0.015882852686084914.
+Trial 4 finished with value: 0.016502322772615097 and parameters: {'learning_rate': 0.08580222514877409, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9896896099223678, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.9526349539768235, 'l2_leaf_reg': 0.011702088154220882, 'leaf_estimation_iterations': 1, 'one_hot_max_size': 27, 'model_size_reg': 0.10975998502129433, 'max_ctr_complexity': 5, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 3 with value: 0.015882852686084914.
+Trial 5 finished with value: 0.015156325860800512 and parameters: {'learning_rate': 0.010855517271883068, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8987566853061946, 'grow_policy': 'Depthwise', 'depth': 6, 'colsample_bylevel': 0.877728168328829, 'l2_leaf_reg': 3.597899951374983, 'leaf_estimation_iterations': 9, 'one_hot_max_size': 86, 'model_size_reg': 1.128232550122133, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 6 finished with value: 0.019100558022802416 and parameters: {'learning_rate': 0.07913270952323785, 'bootstrap_type': 'Bernoulli', 'subsample': 0.7265477506155759, 'grow_policy': 'SymmetricTree', 'depth': 5, 'colsample_bylevel': 0.9083015934534223, 'l2_leaf_reg': 0.001883913511943895, 'leaf_estimation_iterations': 11, 'one_hot_max_size': 19, 'model_size_reg': 0.21399549030176218, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 7 finished with value: 0.01696600708956264 and parameters: {'learning_rate': 0.007626348515257587, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9406590942262119, 'grow_policy': 'Depthwise', 'depth': 7, 'colsample_bylevel': 0.8798073522301258, 'l2_leaf_reg': 0.00010615690854925657, 'leaf_estimation_iterations': 10, 'one_hot_max_size': 47, 'model_size_reg': 0.7200770311577639, 'max_ctr_complexity': 5, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 8 finished with value: 0.015804195191546966 and parameters: {'learning_rate': 0.006241720498669827, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8075397185632818, 'grow_policy': 'Depthwise', 'depth': 7, 'colsample_bylevel': 0.8996347037278973, 'l2_leaf_reg': 0.00019891099118865958, 'leaf_estimation_iterations': 2, 'one_hot_max_size': 17, 'model_size_reg': 0.7212460519889856, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 9 finished with value: 0.016193748424865206 and parameters: {'learning_rate': 0.07132805718188966, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8416644775485848, 'grow_policy': 'Depthwise', 'depth': 7, 'colsample_bylevel': 0.9341915796354244, 'l2_leaf_reg': 0.4195190175255899, 'leaf_estimation_iterations': 3, 'one_hot_max_size': 29, 'model_size_reg': 0.318293122389662, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 10 finished with value: 0.015901239634733333 and parameters: {'learning_rate': 0.03273941684536397, 'bootstrap_type': 'Bernoulli', 'subsample': 0.701799154886745, 'grow_policy': 'Depthwise', 'depth': 8, 'colsample_bylevel': 0.9942561717820161, 'l2_leaf_reg': 1.841152012664479, 'leaf_estimation_iterations': 5, 'one_hot_max_size': 92, 'model_size_reg': 1.3327052390755632, 'max_ctr_complexity': 3, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 11 finished with value: 0.015594979189729852 and parameters: {'learning_rate': 0.005160968868344048, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8633100588308208, 'grow_policy': 'Depthwise', 'depth': 6, 'colsample_bylevel': 0.8590619822699883, 'l2_leaf_reg': 2.4898729835966105, 'leaf_estimation_iterations': 5, 'one_hot_max_size': 8, 'model_size_reg': 1.2655561354454108, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 12 finished with value: 0.015344217858763276 and parameters: {'learning_rate': 0.01145480320111291, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8975510374983446, 'grow_policy': 'Depthwise', 'depth': 6, 'colsample_bylevel': 0.8526158134655745, 'l2_leaf_reg': 4.6743187547226155, 'leaf_estimation_iterations': 20, 'one_hot_max_size': 8, 'model_size_reg': 1.4558824855576116, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 13 finished with value: 0.015420691533621134 and parameters: {'learning_rate': 0.01737224212903817, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8965645912639489, 'grow_policy': 'Depthwise', 'depth': 6, 'colsample_bylevel': 0.857206299528177, 'l2_leaf_reg': 4.943211009535105, 'leaf_estimation_iterations': 20, 'one_hot_max_size': 92, 'model_size_reg': 1.4799268375150822, 'max_ctr_complexity': 3, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 14 finished with value: 0.015479953468207297 and parameters: {'learning_rate': 0.02569949415207643, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9087610926183899, 'grow_policy': 'Depthwise', 'depth': 6, 'colsample_bylevel': 0.8570555563184518, 'l2_leaf_reg': 0.3654853999924955, 'leaf_estimation_iterations': 20, 'one_hot_max_size': 8, 'model_size_reg': 0.9510554511345759, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 15 finished with value: 0.015371809004467885 and parameters: {'learning_rate': 0.00967687010226328, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8869936359065725, 'grow_policy': 'Depthwise', 'depth': 5, 'colsample_bylevel': 0.8837415591490135, 'l2_leaf_reg': 0.4868084800294328, 'leaf_estimation_iterations': 7, 'one_hot_max_size': 60, 'model_size_reg': 0.45873983522616135, 'max_ctr_complexity': 3, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 16 finished with value: 0.01565394375436502 and parameters: {'learning_rate': 0.02410918366520784, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9308290799602404, 'grow_policy': 'Depthwise', 'depth': 5, 'colsample_bylevel': 0.8504135985215343, 'l2_leaf_reg': 0.7181551468761166, 'leaf_estimation_iterations': 14, 'one_hot_max_size': 11, 'model_size_reg': 0.9997328172183743, 'max_ctr_complexity': 5, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 17 finished with value: 0.01526807693350718 and parameters: {'learning_rate': 0.009409147767169336, 'bootstrap_type': 'Bernoulli', 'subsample': 0.7761483214216222, 'grow_policy': 'Depthwise', 'depth': 6, 'colsample_bylevel': 0.8756505047204114, 'l2_leaf_reg': 0.1377259619066906, 'leaf_estimation_iterations': 7, 'one_hot_max_size': 64, 'model_size_reg': 0.9870816504920583, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 18 finished with value: 0.015881384445903146 and parameters: {'learning_rate': 0.008181917406826071, 'bootstrap_type': 'Bernoulli', 'subsample': 0.7788896249427775, 'grow_policy': 'Depthwise', 'depth': 8, 'colsample_bylevel': 0.9181839992546234, 'l2_leaf_reg': 0.08359028558760412, 'leaf_estimation_iterations': 6, 'one_hot_max_size': 66, 'model_size_reg': 0.9568689432529551, 'max_ctr_complexity': 3, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 19 finished with value: 0.015616705069934733 and parameters: {'learning_rate': 0.016635042026525042, 'bootstrap_type': 'Bernoulli', 'subsample': 0.7406182726500408, 'grow_policy': 'SymmetricTree', 'depth': 7, 'colsample_bylevel': 0.9494218999859105, 'l2_leaf_reg': 0.003146023031464706, 'leaf_estimation_iterations': 3, 'one_hot_max_size': 72, 'model_size_reg': 0.3940604626254888, 'max_ctr_complexity': 5, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 20 finished with value: 0.016595588905157554 and parameters: {'learning_rate': 0.04479359316524599, 'bootstrap_type': 'Bernoulli', 'subsample': 0.7725095162118735, 'grow_policy': 'Depthwise', 'depth': 5, 'colsample_bylevel': 0.8746501002780309, 'l2_leaf_reg': 0.12072985067359301, 'leaf_estimation_iterations': 8, 'one_hot_max_size': 53, 'model_size_reg': 0.5953836377154457, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 21 finished with value: 0.01519154077708218 and parameters: {'learning_rate': 0.011324014599797089, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8525975655263747, 'grow_policy': 'Depthwise', 'depth': 6, 'colsample_bylevel': 0.8896160563263689, 'l2_leaf_reg': 4.864977143985637, 'leaf_estimation_iterations': 15, 'one_hot_max_size': 97, 'model_size_reg': 1.0683971118198847, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 22 finished with value: 0.015436353452037643 and parameters: {'learning_rate': 0.012129737025575139, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8402144347680315, 'grow_policy': 'Depthwise', 'depth': 6, 'colsample_bylevel': 0.8926731287432613, 'l2_leaf_reg': 1.1967369316305523, 'leaf_estimation_iterations': 4, 'one_hot_max_size': 100, 'model_size_reg': 0.9790158528855434, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 23 finished with value: 0.015553026105505241 and parameters: {'learning_rate': 0.0076402053509260414, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8611049057112228, 'grow_policy': 'Depthwise', 'depth': 6, 'colsample_bylevel': 0.9078514669685739, 'l2_leaf_reg': 0.30142766930735804, 'leaf_estimation_iterations': 8, 'one_hot_max_size': 72, 'model_size_reg': 1.1047072157065887, 'max_ctr_complexity': 3, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 24 finished with value: 0.015963968100622172 and parameters: {'learning_rate': 0.020936186328751282, 'bootstrap_type': 'Bernoulli', 'subsample': 0.7968748906130911, 'grow_policy': 'Depthwise', 'depth': 7, 'colsample_bylevel': 0.8726365357857246, 'l2_leaf_reg': 1.4950933443072718, 'leaf_estimation_iterations': 15, 'one_hot_max_size': 79, 'model_size_reg': 0.7960510394850684, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Trial 25 finished with value: 0.01539283678039216 and parameters: {'learning_rate': 0.00974875612489529, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8298787187507303, 'grow_policy': 'Depthwise', 'depth': 5, 'colsample_bylevel': 0.885635858189315, 'l2_leaf_reg': 0.1851376855817876, 'leaf_estimation_iterations': 9, 'one_hot_max_size': 50, 'model_size_reg': 0.8204809522494629, 'max_ctr_complexity': 5, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.015156325860800512.
+Optuna Search Completed in: 698.78 seconds
+
+Training final model on optimized parameter setup...
+
+[CATBOOST FINALIZED METRICS]
+Optimal Trees:         996
+1-AUROC:             0.0159 (Delta to TabPFN: +0.0053)
+Accuracy:             0.9340 (Delta to TabPFN: -0.0120)
+Final Train Time:      5.53 seconds (0.9223s per 1K)
+Final Infer Time:      0.02 seconds (0.0137s per 1K)
+
+--- CATBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+android.permission.READ_PHONE_STATE | 27.67 | 27.67%
+com.google.android.c2dm.permission.RECEIVE | 20.44 | 20.44%
+com.android.launcher.permission.INSTALL_SHORTCUT | 7.63 | 7.63%
+pca_embed_8 | 4.50 | 4.50%
+pca_embed_0 | 3.13 | 3.13%
+pca_embed_4 | 2.41 | 2.41%
+pca_embed_1 | 2.12 | 2.12%
+android.permission.READ_EXTERNAL_STORAGE | 2.02 | 2.02%
+pca_embed_6 | 1.75 | 1.75%
+pca_embed_3 | 1.64 | 1.64%
+pca_embed_2 | 1.58 | 1.58%
+pca_embed_11 | 1.39 | 1.39%
+pca_embed_9 | 1.39 | 1.39%
+pca_embed_5 | 1.12 | 1.12%
+com.android.vending.BILLING | 1.10 | 1.10%
+pca_embed_7 | 1.07 | 1.07%
+pca_embed_22 | 0.81 | 0.81%
+pca_embed_13 | 0.64 | 0.64%
+pca_embed_16 | 0.63 | 0.63%
+android.permission.CAMERA | 0.62 | 0.62%
+android.permission.RECEIVE_BOOT_COMPLETED | 0.59 | 0.59%
+android.permission.GET_TASKS | 0.57 | 0.57%
+pca_embed_24 | 0.56 | 0.56%
+pca_embed_17 | 0.53 | 0.53%
+android.permission.ACCESS_COARSE_LOCATION | 0.52 | 0.52%
+pca_embed_29 | 0.50 | 0.50%
+pca_embed_33 | 0.49 | 0.49%
+pca_embed_21 | 0.49 | 0.49%
+pca_embed_14 | 0.48 | 0.48%
+pca_embed_18 | 0.48 | 0.48%
+pca_embed_12 | 0.45 | 0.45%
+android.permission.SYSTEM_ALERT_WINDOW | 0.45 | 0.45%
+pca_embed_15 | 0.43 | 0.43%
+pca_embed_35 | 0.43 | 0.43%
+pca_embed_26 | 0.42 | 0.42%
+pca_embed_31 | 0.42 | 0.42%
+pca_embed_32 | 0.42 | 0.42%
+android.permission.MOUNT_UNMOUNT_FILESYSTEMS | 0.41 | 0.41%
+pca_embed_25 | 0.39 | 0.39%
+pca_embed_27 | 0.39 | 0.39%
+pca_embed_10 | 0.39 | 0.39%
+pca_embed_19 | 0.36 | 0.36%
+pca_embed_34 | 0.35 | 0.35%
+pca_embed_23 | 0.35 | 0.35%
+android.permission.REQUEST_INSTALL_PACKAGES | 0.31 | 0.31%
+com.google.android.providers.gsf.permission.READ_GSERVICES | 0.28 | 0.28%
+android.permission.SEND_SMS | 0.28 | 0.28%
+pca_embed_28 | 0.27 | 0.27%
+pca_embed_30 | 0.27 | 0.27%
+android.permission.BLUETOOTH | 0.26 | 0.26%
+google.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE | 0.26 | 0.26%
+com.htc.launcher.permission.UPDATE_SHORTCUT | 0.26 | 0.26%
+pca_embed_20 | 0.25 | 0.25%
+android.permission.ACCESS_FINE_LOCATION | 0.24 | 0.24%
+android.permission.WAKE_LOCK | 0.19 | 0.19%
+com.sec.android.provider.badge.permission.WRITE | 0.15 | 0.15%
+com.sonyericsson.home.permission.BROADCAST_BADGE | 0.13 | 0.13%
+com.sec.android.provider.badge.permission.READ | 0.13 | 0.13%
+android.permission.GET_ACCOUNTS | 0.12 | 0.12%
+com.majeur.launcher.permission.UPDATE_BADGE | 0.11 | 0.11%
+android.permission.USE_FINGERPRINT | 0.11 | 0.11%
+com.anddoes.launcher.permission.UPDATE_COUNT | 0.10 | 0.10%
+android.permission.RECEIVE_SMS | 0.08 | 0.08%
+android.permission.WRITE_EXTERNAL_STORAGE | 0.08 | 0.08%
+android.permission.DISABLE_KEYGUARD | 0.08 | 0.08%
+android.permission.ACCESS_WIFI_STATE | 0.08 | 0.08%
+android.permission.RESTART_PACKAGES | 0.07 | 0.07%
+android.permission.MODIFY_AUDIO_SETTINGS | 0.06 | 0.06%
+android.permission.BLUETOOTH_ADMIN | 0.06 | 0.06%
+android.permission.MANAGE_ACCOUNTS | 0.06 | 0.06%
+android.permission.FLASHLIGHT | 0.06 | 0.06%
+android.permission.SET_WALLPAPER | 0.06 | 0.06%
+android.permission.VIBRATE | 0.05 | 0.05%
+android.permission.ACCESS_LOCATION_EXTRA_COMMANDS | 0.05 | 0.05%
+android.permission.USE_CREDENTIALS | 0.05 | 0.05%
+android.permission.ACCESS_NETWORK_STATE | 0.05 | 0.05%
+com.huawei.android.launcher.permission.CHANGE_BADGE | 0.05 | 0.05%
+android.permission.RECORD_AUDIO | 0.04 | 0.04%
+android.permission.WRITE_SETTINGS | 0.04 | 0.04%
+com.htc.launcher.permission.READ_SETTINGS | 0.04 | 0.04%
+android.permission.CALL_PHONE | 0.04 | 0.04%
+com.oppo.launcher.permission.READ_SETTINGS | 0.04 | 0.04%
+com.android.launcher.permission.UNINSTALL_SHORTCUT | 0.04 | 0.04%
+android.permission.READ_CONTACTS | 0.03 | 0.03%
+android.permission.CHANGE_WIFI_STATE | 0.03 | 0.03%
+com.android.launcher.permission.READ_SETTINGS | 0.03 | 0.03%
+com.sonymobile.home.permission.PROVIDER_INSERT_BADGE | 0.03 | 0.03%
+com.huawei.android.launcher.permission.WRITE_SETTINGS | 0.03 | 0.03%
+android.permission.CHANGE_NETWORK_STATE | 0.03 | 0.03%
+android.permission.READ_LOGS | 0.03 | 0.03%
+com.huawei.android.launcher.permission.READ_SETTINGS | 0.03 | 0.03%
+android.permission.NFC | 0.03 | 0.03%
+android.permission.READ_SMS | 0.02 | 0.02%
+android.permission.INTERNET | 0.02 | 0.02%
+com.oppo.launcher.permission.WRITE_SETTINGS | 0.02 | 0.02%
+samsung.providers.context.WRITE_USE_APP_FEATURE_SURVEY | 0.02 | 0.02%
+android.permission.DOWNLOAD_WITHOUT_NOTIFICATION | 0.02 | 0.02%
+com.android.alarm.permission.SET_ALARM | 0.02 | 0.02%
+android.permission.AUTHENTICATE_ACCOUNTS | 0.02 | 0.02%
+android.permission.BROADCAST_STICKY | 0.02 | 0.02%
+com.android.vending.CHECK_LICENSE | 0.01 | 0.01%
+android.permission.READ_APP_BADGE | 0.01 | 0.01%
+android.permission.CHANGE_CONFIGURATION | 0.01 | 0.01%
+android.permission.KILL_BACKGROUND_PROCESSES | 0.01 | 0.01%
+android.permission.ACCESS_MOCK_LOCATION | 0.01 | 0.01%
+com.google.android.gms.permission.ACTIVITY_RECOGNITION | 0.01 | 0.01%
+android.permission.RECEIVE_USER_PRESENT | 0.01 | 0.01%
+me.everything.badger.permission.BADGE_COUNT_WRITE | 0.01 | 0.01%
+android.permission.WRITE_CONTACTS | 0.01 | 0.01%
+me.everything.badger.permission.BADGE_COUNT_READ | 0.01 | 0.01%
+android.permission.READ_SYNC_SETTINGS | 0.01 | 0.01%
+android.permission.WRITE_CALENDAR | 0.01 | 0.01%
+android.permission.FOREGROUND_SERVICE | 0.01 | 0.01%
+android.permission.SET_WALLPAPER_HINTS | 0.01 | 0.01%
+android.permission.WRITE_SYNC_SETTINGS | 0.01 | 0.01%
+android.permission.CLEAR_APP_CACHE | 0.01 | 0.01%
+android.permission.READ_PROFILE | 0.01 | 0.01%
+android.permission.READ_CALENDAR | 0.01 | 0.01%
+com.sec.android.iap.permission.BILLING | 0.00 | 0.00%
+android.permission.android.permission.READ_PHONE_STATE | 0.00 | 0.00%
+com.amazon.device.messaging.permission.RECEIVE | 0.00 | 0.00%
+android.permission.PROCESS_INCOMING_CALLS | 0.00 | 0.00%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 33.29%
+Raw Feature Share                            | 66.71%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (36/36)
+Active Raw Tabular Feature Density           | 100.00% (86/86)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 63.37% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 73.30% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 705.98 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/training-4/'
+[W&B] Artifacts and localized metrics logged successfully for naticusdroid_combined_catboost

@@ -1,0 +1,154 @@
+[W&B] Child process started for job: naticusdroid_raw-only_lightgbm in group session-training-4
+Loading archive 'archives/naticusdroid.npz' and initializing pipeline for target: LIGHTGBM...
+Execution Mode: RAW-ONLY
+Session Output Target: outputs/training-4/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.0105 | Secondary: 0.9460
+PCA reduced text embeddings to 36 components.
+Final training matrix shape assembled for RAW-ONLY: (5992, 86)
+
+Running 26-Trial Optuna Study for LIGHTGBM (RAW-ONLY)...
+A new study created in RDB with name: 20260624_232515_naticusdroid_raw-only_lightgbm
+Trial 0 finished with value: 0.01483421425150544 and parameters: {}. Best is trial 0 with value: 0.01483421425150544.
+Trial 1 finished with value: 0.014951934306660641 and parameters: {'learning_rate': 0.015355286838886862, 'feature_fraction': 0.9704285838459497, 'bagging_fraction': 0.9195981825434215, 'bagging_freq': 1, 'num_leaves': 28, 'min_data_in_leaf': 1, 'extra_trees': False, 'min_data_per_group': 57, 'cat_l2': 0.18327672955935934, 'cat_smooth': 3.4702669886504163, 'max_cat_to_onehot': 8, 'lambda_l1': 0.9699128611767781, 'lambda_l2': 1.6649020373367633}. Best is trial 0 with value: 0.01483421425150544.
+Trial 2 finished with value: 0.018139397468856067 and parameters: {'learning_rate': 0.009445600138094694, 'feature_fraction': 0.5090949803242604, 'bagging_fraction': 0.7550213529560301, 'bagging_freq': 1, 'num_leaves': 7, 'min_data_in_leaf': 6, 'extra_trees': False, 'min_data_per_group': 20, 'cat_l2': 0.01153297626310632, 'cat_smooth': 0.028888383623653185, 'max_cat_to_onehot': 19, 'lambda_l1': 0.4561243772186142, 'lambda_l2': 1.5703734051898879}. Best is trial 0 with value: 0.01483421425150544.
+Trial 3 finished with value: 0.041352442573435066 and parameters: {'learning_rate': 0.009093929525644107, 'feature_fraction': 0.708540663048167, 'bagging_fraction': 0.8777243706586128, 'bagging_freq': 1, 'num_leaves': 2, 'min_data_in_leaf': 10, 'extra_trees': False, 'min_data_per_group': 81, 'cat_l2': 1.6278053965878447, 'cat_smooth': 11.015056790269638, 'max_cat_to_onehot': 17, 'lambda_l1': 0.09776234679498323, 'lambda_l2': 1.3684976297216627}. Best is trial 0 with value: 0.01483421425150544.
+Trial 4 finished with value: 0.0236814867812305 and parameters: {'learning_rate': 0.01869052934095898, 'feature_fraction': 0.47322294090686734, 'bagging_fraction': 0.848553073033381, 'bagging_freq': 1, 'num_leaves': 2, 'min_data_in_leaf': 42, 'extra_trees': True, 'min_data_per_group': 6, 'cat_l2': 0.11277639166461569, 'cat_smooth': 0.5414413211338525, 'max_cat_to_onehot': 12, 'lambda_l1': 0.9695876693017821, 'lambda_l2': 1.550288133439893}. Best is trial 0 with value: 0.01483421425150544.
+Trial 5 finished with value: 0.014920311888874327 and parameters: {'learning_rate': 0.08342309693146736, 'feature_fraction': 0.9368964102565893, 'bagging_fraction': 0.8793699936433255, 'bagging_freq': 1, 'num_leaves': 137, 'min_data_in_leaf': 1, 'extra_trees': False, 'min_data_per_group': 6, 'cat_l2': 0.0513253156994884, 'cat_smooth': 0.022737628102536857, 'max_cat_to_onehot': 64, 'lambda_l1': 0.3568176513609199, 'lambda_l2': 0.5619409259237927}. Best is trial 0 with value: 0.01483421425150544.
+Trial 6 finished with value: 0.022194574843107162 and parameters: {'learning_rate': 0.025411709798607296, 'feature_fraction': 0.4845545349848576, 'bagging_fraction': 0.9406590942262119, 'bagging_freq': 1, 'num_leaves': 2, 'min_data_in_leaf': 61, 'extra_trees': False, 'min_data_per_group': 2, 'cat_l2': 0.6619871537619337, 'cat_smooth': 3.4220529032706923, 'max_cat_to_onehot': 50, 'lambda_l1': 0.7712932196512772, 'lambda_l2': 0.1481818990030073}. Best is trial 0 with value: 0.01483421425150544.
+Trial 7 finished with value: 0.014116655316948279 and parameters: {'learning_rate': 0.014633380642745364, 'feature_fraction': 0.4695214357150779, 'bagging_fraction': 0.958931027762678, 'bagging_freq': 1, 'num_leaves': 32, 'min_data_in_leaf': 2, 'extra_trees': True, 'min_data_per_group': 6, 'cat_l2': 0.3957756313952873, 'cat_smooth': 1.5409457762881555, 'max_cat_to_onehot': 75, 'lambda_l1': 0.4722677036694331, 'lambda_l2': 0.23927653245200955}. Best is trial 7 with value: 0.014116655316948279.
+Trial 8 finished with value: 0.014688439160266853 and parameters: {'learning_rate': 0.042356773126632795, 'feature_fraction': 0.8564710291701385, 'bagging_fraction': 0.8683831592708489, 'bagging_freq': 1, 'num_leaves': 65, 'min_data_in_leaf': 6, 'extra_trees': False, 'min_data_per_group': 2, 'cat_l2': 0.009543550367992308, 'cat_smooth': 0.0014359718569878096, 'max_cat_to_onehot': 39, 'lambda_l1': 0.314424545478219, 'lambda_l2': 1.017190525260289}. Best is trial 7 with value: 0.014116655316948279.
+Trial 9 finished with value: 0.01427160797853022 and parameters: {'learning_rate': 0.07581256838789621, 'feature_fraction': 0.549575337489325, 'bagging_fraction': 0.8231148769106889, 'bagging_freq': 1, 'num_leaves': 61, 'min_data_in_leaf': 2, 'extra_trees': True, 'min_data_per_group': 3, 'cat_l2': 1.3124992669799407, 'cat_smooth': 10.979988817809668, 'max_cat_to_onehot': 39, 'lambda_l1': 0.871473444128699, 'lambda_l2': 1.607363786590539}. Best is trial 7 with value: 0.014116655316948279.
+Trial 10 finished with value: 0.017628602632803303 and parameters: {'learning_rate': 0.005556572437269131, 'feature_fraction': 0.6839963928728011, 'bagging_fraction': 0.9908611332363597, 'bagging_freq': 1, 'num_leaves': 12, 'min_data_in_leaf': 19, 'extra_trees': True, 'min_data_per_group': 23, 'cat_l2': 0.03512175732792625, 'cat_smooth': 55.54162315706866, 'max_cat_to_onehot': 99, 'lambda_l1': 0.5905156421247704, 'lambda_l2': 0.02569074131920096}. Best is trial 7 with value: 0.014116655316948279.
+Trial 11 finished with value: 0.01432438482158016 and parameters: {'learning_rate': 0.08435621740171995, 'feature_fraction': 0.6109555747170158, 'bagging_fraction': 0.7494110184930092, 'bagging_freq': 1, 'num_leaves': 42, 'min_data_in_leaf': 2, 'extra_trees': True, 'min_data_per_group': 5, 'cat_l2': 0.6646745230859595, 'cat_smooth': 0.5200105656740905, 'max_cat_to_onehot': 30, 'lambda_l1': 0.7561101271802751, 'lambda_l2': 0.9437374915354393}. Best is trial 7 with value: 0.014116655316948279.
+Trial 12 finished with value: 0.013748678864972774 and parameters: {'learning_rate': 0.040851082831757854, 'feature_fraction': 0.4201515309606833, 'bagging_fraction': 0.8009689084570539, 'bagging_freq': 1, 'num_leaves': 197, 'min_data_in_leaf': 2, 'extra_trees': True, 'min_data_per_group': 3, 'cat_l2': 1.8004250998971125, 'cat_smooth': 39.53243359730517, 'max_cat_to_onehot': 89, 'lambda_l1': 0.11026153196286886, 'lambda_l2': 1.9941853776707827}. Best is trial 12 with value: 0.013748678864972774.
+Trial 13 finished with value: 0.013789874789411738 and parameters: {'learning_rate': 0.040881208467459594, 'feature_fraction': 0.40438945639312734, 'bagging_fraction': 0.7129798875811922, 'bagging_freq': 1, 'num_leaves': 197, 'min_data_in_leaf': 3, 'extra_trees': True, 'min_data_per_group': 12, 'cat_l2': 0.32681233142944804, 'cat_smooth': 41.53107785752208, 'max_cat_to_onehot': 98, 'lambda_l1': 0.055644365891237335, 'lambda_l2': 1.938542777112231}. Best is trial 12 with value: 0.013748678864972774.
+Trial 14 finished with value: 0.013952412431186723 and parameters: {'learning_rate': 0.04360998022338296, 'feature_fraction': 0.404896076045997, 'bagging_fraction': 0.7143423885720633, 'bagging_freq': 1, 'num_leaves': 184, 'min_data_in_leaf': 4, 'extra_trees': True, 'min_data_per_group': 16, 'cat_l2': 0.25803508336289566, 'cat_smooth': 88.67708188765911, 'max_cat_to_onehot': 97, 'lambda_l1': 0.0035073638119928197, 'lambda_l2': 1.966124320976382}. Best is trial 12 with value: 0.013748678864972774.
+Trial 15 finished with value: 0.013647784884302405 and parameters: {'learning_rate': 0.043475314240865814, 'feature_fraction': 0.41633141583471817, 'bagging_fraction': 0.794037454742461, 'bagging_freq': 1, 'num_leaves': 114, 'min_data_in_leaf': 1, 'extra_trees': True, 'min_data_per_group': 12, 'cat_l2': 0.8020834807234489, 'cat_smooth': 28.52505776323348, 'max_cat_to_onehot': 67, 'lambda_l1': 0.13926119860179692, 'lambda_l2': 1.9972370079084656}. Best is trial 15 with value: 0.013647784884302405.
+Trial 16 finished with value: 0.014043219563025566 and parameters: {'learning_rate': 0.029923132986606548, 'feature_fraction': 0.5994694515601107, 'bagging_fraction': 0.8003126062483137, 'bagging_freq': 1, 'num_leaves': 85, 'min_data_in_leaf': 1, 'extra_trees': True, 'min_data_per_group': 32, 'cat_l2': 1.7537201543191527, 'cat_smooth': 18.79708823546205, 'max_cat_to_onehot': 62, 'lambda_l1': 0.17113961080980866, 'lambda_l2': 1.9338884977202357}. Best is trial 15 with value: 0.013647784884302405.
+Trial 17 finished with value: 0.01366925521244533 and parameters: {'learning_rate': 0.05969880084631463, 'feature_fraction': 0.41876087297193615, 'bagging_fraction': 0.7899598928577914, 'bagging_freq': 1, 'num_leaves': 108, 'min_data_in_leaf': 1, 'extra_trees': True, 'min_data_per_group': 10, 'cat_l2': 0.9662127269137437, 'cat_smooth': 95.74738509612254, 'max_cat_to_onehot': 48, 'lambda_l1': 0.19784551431948422, 'lambda_l2': 1.2410689633353003}. Best is trial 15 with value: 0.013647784884302405.
+Trial 18 finished with value: 0.014198005688850657 and parameters: {'learning_rate': 0.058289550056135446, 'feature_fraction': 0.5667760749077873, 'bagging_fraction': 0.7797526395882411, 'bagging_freq': 1, 'num_leaves': 106, 'min_data_in_leaf': 1, 'extra_trees': True, 'min_data_per_group': 11, 'cat_l2': 0.7285623980321697, 'cat_smooth': 89.56683652058133, 'max_cat_to_onehot': 28, 'lambda_l1': 0.23880814924589833, 'lambda_l2': 1.1257053841972637}. Best is trial 15 with value: 0.013647784884302405.
+Trial 19 finished with value: 0.014504436340939675 and parameters: {'learning_rate': 0.05873848541772845, 'feature_fraction': 0.6823785534509406, 'bagging_fraction': 0.7486205588420941, 'bagging_freq': 1, 'num_leaves': 17, 'min_data_in_leaf': 1, 'extra_trees': True, 'min_data_per_group': 38, 'cat_l2': 0.11462833474437768, 'cat_smooth': 6.688010926012826, 'max_cat_to_onehot': 50, 'lambda_l1': 0.23942807966091906, 'lambda_l2': 0.6340034479274692}. Best is trial 15 with value: 0.013647784884302405.
+Trial 20 finished with value: 0.014228492202170373 and parameters: {'learning_rate': 0.09978856848177636, 'feature_fraction': 0.531671500321944, 'bagging_fraction': 0.8258093695175588, 'bagging_freq': 1, 'num_leaves': 51, 'min_data_in_leaf': 1, 'extra_trees': True, 'min_data_per_group': 10, 'cat_l2': 0.9126110292522337, 'cat_smooth': 0.88985016254517, 'max_cat_to_onehot': 30, 'lambda_l1': 0.434852086000726, 'lambda_l2': 1.284571019889842}. Best is trial 15 with value: 0.013647784884302405.
+Trial 21 finished with value: 0.01374269440009479 and parameters: {'learning_rate': 0.027406092152577874, 'feature_fraction': 0.40814128185297144, 'bagging_fraction': 0.7817184734080248, 'bagging_freq': 1, 'num_leaves': 111, 'min_data_in_leaf': 2, 'extra_trees': True, 'min_data_per_group': 4, 'cat_l2': 0.4736277478143765, 'cat_smooth': 17.997482038303033, 'max_cat_to_onehot': 66, 'lambda_l1': 0.1280457278914161, 'lambda_l2': 1.7354541215477894}. Best is trial 15 with value: 0.013647784884302405.
+Trial 22 finished with value: 0.013774987452346288 and parameters: {'learning_rate': 0.027062296772810728, 'feature_fraction': 0.45175428187881084, 'bagging_fraction': 0.7834713837403142, 'bagging_freq': 1, 'num_leaves': 105, 'min_data_in_leaf': 1, 'extra_trees': True, 'min_data_per_group': 9, 'cat_l2': 0.44928429477122267, 'cat_smooth': 22.97629380967166, 'max_cat_to_onehot': 52, 'lambda_l1': 0.18904500880660868, 'lambda_l2': 1.7371782004761518}. Best is trial 15 with value: 0.013647784884302405.
+Trial 23 finished with value: 0.01385152703483361 and parameters: {'learning_rate': 0.060602519852266695, 'feature_fraction': 0.4002040808212851, 'bagging_fraction': 0.7683004597271641, 'bagging_freq': 1, 'num_leaves': 83, 'min_data_in_leaf': 2, 'extra_trees': True, 'min_data_per_group': 4, 'cat_l2': 0.9903693903307248, 'cat_smooth': 5.840102277922061, 'max_cat_to_onehot': 70, 'lambda_l1': 0.3111877349097599, 'lambda_l2': 1.3730094248239788}. Best is trial 15 with value: 0.013647784884302405.
+Trial 24 finished with value: 0.013845467027962854 and parameters: {'learning_rate': 0.022336158217737746, 'feature_fraction': 0.45487861189480266, 'bagging_fraction': 0.822693905860286, 'bagging_freq': 1, 'num_leaves': 134, 'min_data_in_leaf': 4, 'extra_trees': True, 'min_data_per_group': 16, 'cat_l2': 0.20079316672711592, 'cat_smooth': 18.5312841731631, 'max_cat_to_onehot': 41, 'lambda_l1': 0.14818439321203988, 'lambda_l2': 1.7931352144986137}. Best is trial 15 with value: 0.013647784884302405.
+Trial 25 finished with value: 0.01406879570884878 and parameters: {'learning_rate': 0.03149846157407989, 'feature_fraction': 0.5234068386179899, 'bagging_fraction': 0.7385321899818731, 'bagging_freq': 1, 'num_leaves': 36, 'min_data_in_leaf': 1, 'extra_trees': True, 'min_data_per_group': 8, 'cat_l2': 0.4926646224169077, 'cat_smooth': 1.7423584571764426, 'max_cat_to_onehot': 57, 'lambda_l1': 0.05333152636231152, 'lambda_l2': 0.8123648736994291}. Best is trial 15 with value: 0.013647784884302405.
+Optuna Search Completed in: 179.11 seconds
+
+Training final model on optimized parameter setup...
+
+[LIGHTGBM FINALIZED METRICS]
+Optimal Trees:         589
+1-AUROC:             0.0129 (Delta to TabPFN: +0.0024)
+Accuracy:             0.9400 (Delta to TabPFN: -0.0060)
+Final Train Time:      1.15 seconds (0.1916s per 1K)
+Final Infer Time:      0.03 seconds (0.0170s per 1K)
+
+--- LIGHTGBM Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+android.permission.READ_PHONE_STATE | 15637.74 | 24.20%
+com.google.android.c2dm.permission.RECEIVE | 10501.08 | 16.25%
+com.android.launcher.permission.INSTALL_SHORTCUT | 5100.37 | 7.89%
+android.permission.READ_EXTERNAL_STORAGE | 3295.58 | 5.10%
+android.permission.RECEIVE_BOOT_COMPLETED | 2296.20 | 3.55%
+com.android.vending.BILLING | 2261.00 | 3.50%
+android.permission.SYSTEM_ALERT_WINDOW | 1978.63 | 3.06%
+android.permission.ACCESS_COARSE_LOCATION | 1426.50 | 2.21%
+android.permission.GET_TASKS | 1345.46 | 2.08%
+com.google.android.providers.gsf.permission.READ_GSERVICES | 1287.99 | 1.99%
+android.permission.CAMERA | 1286.89 | 1.99%
+android.permission.WAKE_LOCK | 1164.55 | 1.80%
+android.permission.ACCESS_FINE_LOCATION | 879.53 | 1.36%
+android.permission.MOUNT_UNMOUNT_FILESYSTEMS | 737.60 | 1.14%
+google.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE | 733.72 | 1.14%
+android.permission.BLUETOOTH | 727.75 | 1.13%
+com.sonyericsson.home.permission.BROADCAST_BADGE | 701.48 | 1.09%
+android.permission.REQUEST_INSTALL_PACKAGES | 668.78 | 1.04%
+android.permission.GET_ACCOUNTS | 632.87 | 0.98%
+android.permission.ACCESS_WIFI_STATE | 610.26 | 0.94%
+android.permission.SEND_SMS | 582.88 | 0.90%
+android.permission.USE_CREDENTIALS | 480.55 | 0.74%
+android.permission.ACCESS_NETWORK_STATE | 395.80 | 0.61%
+android.permission.USE_FINGERPRINT | 377.54 | 0.58%
+android.permission.MANAGE_ACCOUNTS | 375.75 | 0.58%
+android.permission.WRITE_EXTERNAL_STORAGE | 367.79 | 0.57%
+android.permission.CALL_PHONE | 358.62 | 0.56%
+android.permission.RESTART_PACKAGES | 356.61 | 0.55%
+android.permission.NFC | 330.09 | 0.51%
+com.sec.android.provider.badge.permission.WRITE | 325.34 | 0.50%
+android.permission.RECORD_AUDIO | 320.63 | 0.50%
+android.permission.ACCESS_LOCATION_EXTRA_COMMANDS | 307.95 | 0.48%
+android.permission.VIBRATE | 306.54 | 0.47%
+android.permission.MODIFY_AUDIO_SETTINGS | 304.06 | 0.47%
+com.sec.android.provider.badge.permission.READ | 298.26 | 0.46%
+android.permission.SET_WALLPAPER | 284.94 | 0.44%
+android.permission.BLUETOOTH_ADMIN | 284.17 | 0.44%
+com.android.launcher.permission.UNINSTALL_SHORTCUT | 270.65 | 0.42%
+android.permission.RECEIVE_SMS | 236.68 | 0.37%
+android.permission.FLASHLIGHT | 234.41 | 0.36%
+android.permission.CHANGE_NETWORK_STATE | 224.40 | 0.35%
+com.google.android.gms.permission.ACTIVITY_RECOGNITION | 223.60 | 0.35%
+android.permission.DISABLE_KEYGUARD | 214.88 | 0.33%
+android.permission.CHANGE_WIFI_STATE | 200.23 | 0.31%
+android.permission.WRITE_SETTINGS | 197.31 | 0.31%
+android.permission.READ_LOGS | 175.91 | 0.27%
+samsung.providers.context.WRITE_USE_APP_FEATURE_SURVEY | 163.06 | 0.25%
+com.majeur.launcher.permission.UPDATE_BADGE | 159.45 | 0.25%
+android.permission.READ_CONTACTS | 154.66 | 0.24%
+android.permission.android.permission.READ_PHONE_STATE | 154.50 | 0.24%
+android.permission.FOREGROUND_SERVICE | 151.60 | 0.23%
+android.permission.SET_WALLPAPER_HINTS | 149.07 | 0.23%
+android.permission.READ_SMS | 143.95 | 0.22%
+android.permission.ACCESS_MOCK_LOCATION | 141.78 | 0.22%
+android.permission.INTERNET | 141.40 | 0.22%
+com.anddoes.launcher.permission.UPDATE_COUNT | 139.58 | 0.22%
+com.android.vending.CHECK_LICENSE | 133.51 | 0.21%
+com.android.launcher.permission.READ_SETTINGS | 128.14 | 0.20%
+com.android.alarm.permission.SET_ALARM | 122.01 | 0.19%
+android.permission.WRITE_CALENDAR | 119.60 | 0.19%
+android.permission.DOWNLOAD_WITHOUT_NOTIFICATION | 118.77 | 0.18%
+android.permission.BROADCAST_STICKY | 118.53 | 0.18%
+android.permission.READ_PROFILE | 105.12 | 0.16%
+android.permission.WRITE_CONTACTS | 103.62 | 0.16%
+android.permission.RECEIVE_USER_PRESENT | 98.18 | 0.15%
+android.permission.CLEAR_APP_CACHE | 94.87 | 0.15%
+android.permission.KILL_BACKGROUND_PROCESSES | 92.27 | 0.14%
+android.permission.CHANGE_CONFIGURATION | 74.87 | 0.12%
+android.permission.WRITE_SYNC_SETTINGS | 70.70 | 0.11%
+android.permission.AUTHENTICATE_ACCOUNTS | 66.07 | 0.10%
+android.permission.READ_CALENDAR | 64.86 | 0.10%
+com.sec.android.iap.permission.BILLING | 59.96 | 0.09%
+com.amazon.device.messaging.permission.RECEIVE | 47.39 | 0.07%
+com.htc.launcher.permission.READ_SETTINGS | 39.66 | 0.06%
+com.htc.launcher.permission.UPDATE_SHORTCUT | 39.65 | 0.06%
+android.permission.READ_SYNC_SETTINGS | 35.91 | 0.06%
+com.huawei.android.launcher.permission.CHANGE_BADGE | 23.14 | 0.04%
+com.huawei.android.launcher.permission.WRITE_SETTINGS | 14.58 | 0.02%
+com.oppo.launcher.permission.READ_SETTINGS | 13.67 | 0.02%
+com.huawei.android.launcher.permission.READ_SETTINGS | 6.85 | 0.01%
+android.permission.PROCESS_INCOMING_CALLS | 4.12 | 0.01%
+com.oppo.launcher.permission.WRITE_SETTINGS | 2.08 | 0.00%
+android.permission.READ_APP_BADGE | 1.09 | 0.00%
+com.sonymobile.home.permission.PROVIDER_INSERT_BADGE | 0.89 | 0.00%
+me.everything.badger.permission.BADGE_COUNT_WRITE | 0.86 | 0.00%
+me.everything.badger.permission.BADGE_COUNT_READ | 0.00 | 0.00%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 0.00%
+Raw Feature Share                            | 100.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 0.00% (0/0)
+Active Raw Tabular Feature Density           | 98.84% (85/86)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 57.01% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 69.85% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 181.85 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/training-4/'
+[W&B] Artifacts and localized metrics logged successfully for naticusdroid_raw-only_lightgbm

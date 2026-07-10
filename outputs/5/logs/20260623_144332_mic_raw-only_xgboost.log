@@ -1,0 +1,156 @@
+[W&B] Child process started for job: mic_raw-only_xgboost in group session-5
+Loading archive 'archives/mic.npz' and initializing pipeline for target: XGBOOST...
+Execution Mode: RAW-ONLY
+Session Output Target: outputs/5/
+Task Type: MULTICLASS
+TabPFN Baselines Loaded - Primary: 0.4552 | Secondary: 0.8882
+PCA reduced text embeddings to 30 components.
+Final training matrix shape assembled for RAW-ONLY: (1359, 111)
+
+Running 3-Trial Optuna Study for XGBOOST (RAW-ONLY)...
+A new study created in RDB with name: 20260623_144332_mic_raw-only_xgboost
+Trial 0 finished with value: 0.4801403465396811 and parameters: {}. Best is trial 0 with value: 0.4801403465396811.
+Trial 1 finished with value: 0.45551489744786566 and parameters: {'learning_rate': 0.015355286838886862, 'max_depth': 10, 'min_child_weight': 0.5100627805979911, 'subsample': 0.8394633936788146, 'colsample_bylevel': 0.6624074561769746, 'colsample_bynode': 0.662397808134481, 'reg_alpha': 0.29051225247978046, 'reg_lambda': 4.330894111260099, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 8, 'max_leaves': 884}. Best is trial 1 with value: 0.45551489744786566.
+Trial 2 finished with value: 0.4472591575007444 and parameters: {'learning_rate': 0.060534484680010825, 'max_depth': 4, 'min_child_weight': 0.004705059281907645, 'subsample': 0.6733618039413735, 'colsample_bylevel': 0.7216968971838151, 'colsample_bynode': 0.8099025726528951, 'reg_alpha': 2.1597818987087147, 'reg_lambda': 1.4562165780761898, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 16, 'max_leaves': 45}. Best is trial 2 with value: 0.4472591575007444.
+Optuna Search Completed in: 75.21 seconds
+
+Training final model on optimized parameter setup...
+
+[XGBOOST FINALIZED METRICS]
+Optimal Trees:         178
+Log_Loss:             0.4447 (Delta to TabPFN: -0.0105)
+Accuracy:             0.8882 (Delta to TabPFN: +0.0000)
+Final Train Time:      1.13 seconds (0.8298s per 1K)
+Final Infer Time:      0.01 seconds (0.0170s per 1K)
+
+--- XGBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+R_AB_3_n | 942.29 | 10.89%
+NA_R_3_n | 940.55 | 10.87%
+ZSN_A | 555.30 | 6.41%
+L_BLOOD | 485.40 | 5.61%
+NOT_NA_3_n | 395.64 | 4.57%
+AGE | 378.82 | 4.38%
+S_AD_ORIT | 369.78 | 4.27%
+NA_R_2_n | 311.24 | 3.60%
+ROE | 239.32 | 2.76%
+K_BLOOD | 230.53 | 2.66%
+D_AD_ORIT | 207.97 | 2.40%
+NA_BLOOD | 201.51 | 2.33%
+ALT_BLOOD | 198.76 | 2.30%
+AST_BLOOD | 168.69 | 1.95%
+ant_im | 153.67 | 1.78%
+S_AD_KBRIG | 141.21 | 1.63%
+IBS_POST | 136.06 | 1.57%
+lat_im | 133.61 | 1.54%
+TIME_B_S | 130.46 | 1.51%
+inf_im | 116.58 | 1.35%
+NITR_S | 104.05 | 1.20%
+STENOK_AN | 101.71 | 1.17%
+DLIT_AG | 98.41 | 1.14%
+FK_STENOK | 84.98 | 0.98%
+INF_ANAM | 79.30 | 0.92%
+NOT_NA_KB | 77.40 | 0.89%
+D_AD_KBRIG | 76.78 | 0.89%
+R_AB_2_n | 73.94 | 0.85%
+NOT_NA_2_n | 70.34 | 0.81%
+NA_KB | 69.04 | 0.80%
+zab_leg_02 | 64.75 | 0.75%
+R_AB_1_n | 64.36 | 0.74%
+IM_PG_P | 59.38 | 0.69%
+NA_R_1_n | 59.34 | 0.69%
+ritm_ecg_p_01 | 58.89 | 0.68%
+GEPAR_S_n | 58.69 | 0.68%
+nr_04 | 58.37 | 0.67%
+GB | 57.38 | 0.66%
+SEX | 41.57 | 0.48%
+LID_KB | 37.90 | 0.44%
+ritm_ecg_p_07 | 37.33 | 0.43%
+NOT_NA_1_n | 36.74 | 0.42%
+LID_S_n | 36.69 | 0.42%
+post_im | 33.48 | 0.39%
+n_p_ecg_p_12 | 30.51 | 0.35%
+endocr_01 | 30.46 | 0.35%
+ritm_ecg_p_02 | 29.07 | 0.34%
+K_SH_POST | 28.92 | 0.33%
+ASP_S_n | 28.80 | 0.33%
+GIPO_K | 28.07 | 0.32%
+nr_03 | 27.82 | 0.32%
+n_r_ecg_p_01 | 27.52 | 0.32%
+zab_leg_03 | 26.71 | 0.31%
+n_r_ecg_p_03 | 26.23 | 0.30%
+np_01 | 25.57 | 0.30%
+n_r_ecg_p_05 | 24.66 | 0.28%
+endocr_02 | 20.82 | 0.24%
+n_p_ecg_p_07 | 20.04 | 0.23%
+TRENT_S_n | 19.07 | 0.22%
+MP_TP_POST | 19.00 | 0.22%
+np_08 | 17.77 | 0.21%
+n_r_ecg_p_06 | 16.23 | 0.19%
+SIM_GIPERT | 15.36 | 0.18%
+B_BLOK_S_n | 14.67 | 0.17%
+n_r_ecg_p_04 | 13.98 | 0.16%
+O_L_POST | 13.50 | 0.16%
+ANT_CA_S_n | 13.20 | 0.15%
+zab_leg_01 | 13.04 | 0.15%
+TIKL_S_n | 12.73 | 0.15%
+n_p_ecg_p_08 | 11.98 | 0.14%
+np_10 | 11.73 | 0.14%
+FIB_G_POST | 9.82 | 0.11%
+GIPER_NA | 8.97 | 0.10%
+np_05 | 8.30 | 0.10%
+n_p_ecg_p_10 | 8.06 | 0.09%
+n_p_ecg_p_11 | 7.86 | 0.09%
+fibr_ter_02 | 6.67 | 0.08%
+nr_02 | 6.32 | 0.07%
+SVT_POST | 6.28 | 0.07%
+n_p_ecg_p_03 | 5.67 | 0.07%
+n_r_ecg_p_08 | 4.73 | 0.05%
+ritm_ecg_p_08 | 4.63 | 0.05%
+fibr_ter_06 | 4.04 | 0.05%
+n_p_ecg_p_09 | 3.89 | 0.04%
+np_04 | 3.75 | 0.04%
+fibr_ter_01 | 3.30 | 0.04%
+n_p_ecg_p_06 | 3.17 | 0.04%
+ritm_ecg_p_04 | 2.65 | 0.03%
+endocr_03 | 2.64 | 0.03%
+n_r_ecg_p_02 | 2.53 | 0.03%
+fibr_ter_03 | 2.30 | 0.03%
+nr_11 | 2.22 | 0.03%
+fibr_ter_08 | 0.98 | 0.01%
+nr_01 | 0.88 | 0.01%
+n_p_ecg_p_01 | 0.64 | 0.01%
+n_p_ecg_p_04 | 0.40 | 0.00%
+zab_leg_04 | 0.17 | 0.00%
+IBS_NASL | 0.00 | 0.00%
+nr_07 | 0.00 | 0.00%
+nr_08 | 0.00 | 0.00%
+np_07 | 0.00 | 0.00%
+np_09 | 0.00 | 0.00%
+zab_leg_06 | 0.00 | 0.00%
+GT_POST | 0.00 | 0.00%
+ritm_ecg_p_06 | 0.00 | 0.00%
+n_r_ecg_p_09 | 0.00 | 0.00%
+n_r_ecg_p_10 | 0.00 | 0.00%
+n_p_ecg_p_05 | 0.00 | 0.00%
+fibr_ter_05 | 0.00 | 0.00%
+fibr_ter_07 | 0.00 | 0.00%
+KFK_BLOOD | 0.00 | 0.00%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 0.00%
+Raw Feature Share                            | 100.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 0.00% (0/0)
+Active Raw Tabular Feature Density           | 87.39% (97/111)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 38.34% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 56.01% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 81.16 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/5/'
+[W&B] Artifacts and localized metrics logged successfully for mic_raw-only_xgboost

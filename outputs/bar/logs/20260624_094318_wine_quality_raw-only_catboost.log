@@ -1,0 +1,57 @@
+[W&B] Child process started for job: wine_quality_raw-only_catboost in group session-bar
+Loading archive 'archives/wine_quality.npz' and initializing pipeline for target: CATBOOST...
+Execution Mode: RAW-ONLY
+Session Output Target: outputs/bar/
+Task Type: REGRESSION
+TabPFN Baselines Loaded - Primary: 0.5665 | Secondary: 0.5710
+PCA reduced text embeddings to 25 components.
+Final training matrix shape assembled for RAW-ONLY: (5197, 12)
+
+Running 3-Trial Optuna Study for CATBOOST (RAW-ONLY)...
+A new study created in RDB with name: 20260624_094318_wine_quality_raw-only_catboost
+Trial 0 finished with value: 0.7870678924244308 and parameters: {}. Best is trial 0 with value: 0.7870678924244308.
+Trial 1 finished with value: 0.6748324900863746 and parameters: {'learning_rate': 0.015355286838886862, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9852142919229748, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8733991780504303, 'l2_leaf_reg': 0.00018747059221802545, 'leaf_estimation_iterations': 12, 'one_hot_max_size': 36, 'model_size_reg': 0.6803900745073703, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 1 with value: 0.6748324900863746.
+Trial 2 finished with value: 0.6507323709833329 and parameters: {'learning_rate': 0.09138013915892866, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9497327922401265, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8956363364439306, 'l2_leaf_reg': 0.02922905212920092, 'leaf_estimation_iterations': 2, 'one_hot_max_size': 16, 'model_size_reg': 0.5243180891902851, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 2 with value: 0.6507323709833329.
+Optuna Search Completed in: 26.67 seconds
+
+Training final model on optimized parameter setup...
+
+[CATBOOST FINALIZED METRICS]
+Optimal Trees:         1000
+RMSE:             0.6283 (Delta to TabPFN: +0.0618)
+R2_Score:             0.4723 (Delta to TabPFN: -0.0987)
+Final Train Time:      1.71 seconds (0.3296s per 1K)
+Final Infer Time:      0.00 seconds (0.0034s per 1K)
+
+--- CATBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+alcohol | 19.18 | 19.18%
+volatile_acidity | 12.40 | 12.40%
+free_sulfur_dioxide | 9.64 | 9.64%
+density | 9.36 | 9.36%
+total_sulfur_dioxide | 8.52 | 8.52%
+residual_sugar | 8.48 | 8.48%
+sulphates | 7.48 | 7.48%
+pH | 6.54 | 6.54%
+chlorides | 6.16 | 6.16%
+citric_acid | 5.95 | 5.95%
+fixed_acidity | 5.86 | 5.86%
+wine_color | 0.41 | 0.41%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 0.00%
+Raw Feature Share                            | 100.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 0.00% (0/0)
+Active Raw Tabular Feature Density           | 100.00% (12/12)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 59.11% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 93.73% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 31.77 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/bar/'
+[W&B] Artifacts and localized metrics logged successfully for wine_quality_raw-only_catboost

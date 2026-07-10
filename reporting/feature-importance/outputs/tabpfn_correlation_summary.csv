@@ -1,0 +1,10 @@
+Analytical Scenario,Count (N),Correlation (Spearman),P-Value
+1. Overall (All Runs),153,0.341,0.000016
+2. Framework: CatBoost,51,0.407,0.003011
+3. Framework: LightGBM,51,0.360,0.009387
+4. Framework: XGBoost,51,0.362,0.009011
+5. Scale: Small (<= 10K),90,0.480,0.000002
+6. Scale: Medium (> 10K),63,0.217,0.088049
+7. Task: Binary,90,0.156,0.143286
+8. Task: Multiclass,24,0.677,0.000284
+9. Task: Regression,39,0.441,0.004899

@@ -1,0 +1,9 @@
+Data Dimension,Minimum,Maximum,Median,Mean ± SD
+Samples,748,150000,6497,20363.25 ± 32068.30
+Features,4,1776,17,117.55 ± 353.57
+Classes,-,-,-,-
+Categorical (%),0%,0%,0%,0.00 ± 0.00
+Sparsity (%),0%,0%,0%,0.00 ± 0.00
+Imbalance Ratio,-,-,-,-
+Target Skewness,-,-,-,-
+Coefficient of Variation,-,-,-,-

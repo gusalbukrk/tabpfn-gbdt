@@ -1,0 +1,57 @@
+[W&B] Child process started for job: wine_quality_raw-only_lightgbm in group session-bar
+Loading archive 'archives/wine_quality.npz' and initializing pipeline for target: LIGHTGBM...
+Execution Mode: RAW-ONLY
+Session Output Target: outputs/bar/
+Task Type: REGRESSION
+TabPFN Baselines Loaded - Primary: 0.5665 | Secondary: 0.5710
+PCA reduced text embeddings to 25 components.
+Final training matrix shape assembled for RAW-ONLY: (5197, 12)
+
+Running 3-Trial Optuna Study for LIGHTGBM (RAW-ONLY)...
+A new study created in RDB with name: 20260624_093543_wine_quality_raw-only_lightgbm
+Trial 0 finished with value: 0.6333112552032534 and parameters: {}. Best is trial 0 with value: 0.6333112552032534.
+Trial 1 finished with value: 0.6334257381480994 and parameters: {'learning_rate': 0.015355286838886862, 'feature_fraction': 0.9704285838459497, 'bagging_fraction': 0.9195981825434215, 'bagging_freq': 1, 'num_leaves': 28, 'min_data_in_leaf': 1, 'extra_trees': False, 'min_data_per_group': 57, 'cat_l2': 0.18327672955935934, 'cat_smooth': 3.4702669886504163, 'max_cat_to_onehot': 8, 'lambda_l1': 0.9699128611767781, 'lambda_l2': 1.6649020373367633}. Best is trial 0 with value: 0.6333112552032534.
+Trial 2 finished with value: 0.6769341506764279 and parameters: {'learning_rate': 0.009445600138094694, 'feature_fraction': 0.5090949803242604, 'bagging_fraction': 0.7550213529560301, 'bagging_freq': 1, 'num_leaves': 7, 'min_data_in_leaf': 6, 'extra_trees': False, 'min_data_per_group': 20, 'cat_l2': 0.01153297626310632, 'cat_smooth': 0.028888383623653185, 'max_cat_to_onehot': 19, 'lambda_l1': 0.4561243772186142, 'lambda_l2': 1.5703734051898879}. Best is trial 0 with value: 0.6333112552032534.
+Optuna Search Completed in: 23.22 seconds
+
+Training final model on optimized parameter setup...
+
+[LIGHTGBM FINALIZED METRICS]
+Optimal Trees:         532
+RMSE:             0.6063 (Delta to TabPFN: +0.0398)
+R2_Score:             0.5086 (Delta to TabPFN: -0.0624)
+Final Train Time:      0.55 seconds (0.1049s per 1K)
+Final Infer Time:      0.02 seconds (0.0137s per 1K)
+
+--- LIGHTGBM Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+alcohol | 5028.59 | 25.21%
+volatile_acidity | 2663.37 | 13.35%
+free_sulfur_dioxide | 1806.07 | 9.06%
+residual_sugar | 1524.36 | 7.64%
+sulphates | 1466.19 | 7.35%
+total_sulfur_dioxide | 1453.64 | 7.29%
+density | 1328.19 | 6.66%
+pH | 1245.20 | 6.24%
+citric_acid | 1222.01 | 6.13%
+chlorides | 1197.70 | 6.01%
+fixed_acidity | 997.61 | 5.00%
+wine_color | 11.86 | 0.06%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 0.00%
+Raw Feature Share                            | 100.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 0.00% (0/0)
+Active Raw Tabular Feature Density           | 100.00% (12/12)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 62.62% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 94.94% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 27.56 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/bar/'
+[W&B] Artifacts and localized metrics logged successfully for wine_quality_raw-only_lightgbm

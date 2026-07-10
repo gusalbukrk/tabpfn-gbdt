@@ -1,0 +1,23 @@
+\begin{table}[ht]
+\centering
+\caption{Pairwise win rate matrix across all evaluated configurations.}
+\label{tab:win-rate}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lcccccccccc}
+\toprule
+  & $\text{TabPFN}_{\text{baseline}}$ & $\text{LGBM}_{\text{raw+embed}}$ & $\text{CatB}_{\text{raw+embed}}$ & $\text{XGB}_{\text{raw+embed}}$ & $\text{LGBM}_{\text{baseline}}$ & $\text{CatB}_{\text{baseline}}$ & $\text{CatB}_{\text{embed-only}}$ & $\text{LGBM}_{\text{embed-only}}$ & $\text{XGB}_{\text{embed-only}}$ & $\text{XGB}_{\text{baseline}}$ \\
+\midrule
+$\text{TabPFN}_{\text{baseline}}$ & \multicolumn{1}{c}{-} & 64.71\% & 72.55\% & 68.63\% & 84.31\% & 84.31\% & 84.31\% & 80.39\% & 80.39\% & 88.24\% \\
+$\text{LGBM}_{\text{raw+embed}}$ & 35.29\% & \multicolumn{1}{c}{-} & 62.75\% & 72.55\% & 70.59\% & 68.63\% & 72.55\% & 86.27\% & 86.27\% & 78.43\% \\
+$\text{CatB}_{\text{raw+embed}}$ & 27.45\% & 37.25\% & \multicolumn{1}{c}{-} & 60.78\% & 64.71\% & 66.67\% & 70.59\% & 78.43\% & 76.47\% & 68.63\% \\
+$\text{XGB}_{\text{raw+embed}}$ & 31.37\% & 27.45\% & 39.22\% & \multicolumn{1}{c}{-} & 60.78\% & 54.90\% & 60.78\% & 62.75\% & 64.71\% & 68.63\% \\
+$\text{LGBM}_{\text{baseline}}$ & 15.69\% & 29.41\% & 35.29\% & 39.22\% & \multicolumn{1}{c}{-} & 54.90\% & 49.02\% & 52.94\% & 56.86\% & 66.67\% \\
+$\text{CatB}_{\text{baseline}}$ & 15.69\% & 31.37\% & 33.33\% & 45.10\% & 45.10\% & \multicolumn{1}{c}{-} & 52.94\% & 50.98\% & 54.90\% & 64.71\% \\
+$\text{CatB}_{\text{embed-only}}$ & 15.69\% & 27.45\% & 29.41\% & 39.22\% & 50.98\% & 47.06\% & \multicolumn{1}{c}{-} & 54.90\% & 62.75\% & 58.82\% \\
+$\text{LGBM}_{\text{embed-only}}$ & 19.61\% & 13.73\% & 21.57\% & 37.25\% & 47.06\% & 49.02\% & 45.10\% & \multicolumn{1}{c}{-} & 52.94\% & 60.78\% \\
+$\text{XGB}_{\text{embed-only}}$ & 19.61\% & 13.73\% & 23.53\% & 35.29\% & 43.14\% & 45.10\% & 37.25\% & 47.06\% & \multicolumn{1}{c}{-} & 58.82\% \\
+$\text{XGB}_{\text{baseline}}$ & 11.76\% & 21.57\% & 31.37\% & 31.37\% & 33.33\% & 35.29\% & 41.18\% & 39.22\% & 41.18\% & \multicolumn{1}{c}{-} \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

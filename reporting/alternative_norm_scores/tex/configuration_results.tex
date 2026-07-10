@@ -1,0 +1,38 @@
+\begin{table}[ht]
+\centering
+\caption{Configuration-level performance breakdown stratified by task type and dataset scale. Suffixes highlight the top three performing configurations in each column.}
+\label{tab:results-1}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccccc}
+\toprule
+Configuration & Overall & Classification & Regression & Binary & Multiclass & Small & Medium \\
+\midrule
+\multicolumn{8}{l}{\textbf{Average Rank ($\downarrow$)}} \\
+\midrule
+$\text{TabPFN}_{\text{baseline}}$ & 2.92 [1st] & 2.76 [1st] & 3.38 [2nd] & 2.37 [1st] & 4.25 [3rd] & 2.77 [1st] & 3.14 [1st] \\
+$\text{LGBM}_{\text{raw+embed}}$ & 3.67 [2nd] & 3.42 [2nd] & 4.38 [3rd] & 3.60 [2nd] & 2.75 [1st] & 4.00 [2nd] & 3.19 [2nd] \\
+$\text{CatBoost}_{\text{raw+embed}}$ & 4.49 [3rd] & 4.89 [3rd] & 3.31 [1st] & 4.93 [3rd] & 4.75 & 4.97 [3rd] & 3.81 [3rd] \\
+$\text{XGBoost}_{\text{raw+embed}}$ & 5.29 & 5.42 & 4.92 & 5.27 & 6.00 & 5.63 & 4.81 \\
+$\text{LGBM}_{\text{baseline}}$ & 6.00 & 5.11 & 8.62 & 5.47 & 3.75 [2nd] & 5.67 & 6.48 \\
+$\text{CatBoost}_{\text{baseline}}$ & 6.06 & 5.45 & 7.85 & 5.57 & 5.00 & 5.83 & 6.38 \\
+$\text{CatBoost}_{\text{embed-only}}$ & 6.14 & 7.08 & 3.38 [2nd] & 7.20 & 6.62 & 5.83 & 6.57 \\
+$\text{LGBM}_{\text{embed-only}}$ & 6.53 & 6.92 & 5.38 & 6.97 & 6.75 & 6.67 & 6.33 \\
+$\text{XGBoost}_{\text{embed-only}}$ & 6.76 & 7.34 & 5.08 & 7.37 & 7.25 & 6.83 & 6.67 \\
+$\text{XGBoost}_{\text{baseline}}$ & 7.14 & 6.61 & 8.69 & 6.27 & 7.88 & 6.80 & 7.62 \\
+\midrule
+\multicolumn{8}{l}{\textbf{Normalized Score ($\uparrow$)}} \\
+\midrule
+$\text{TabPFN}_{\text{baseline}}$ & 0.878 [1st] & 0.863 [1st] & 0.924 [1st] & 0.885 [1st] & 0.779 [2nd] & 0.882 [1st] & 0.874 [1st] \\
+$\text{LGBM}_{\text{raw+embed}}$ & 0.771 [2nd] & 0.768 [2nd] & 0.779 & 0.749 [2nd] & 0.838 [1st] & 0.741 [2nd] & 0.810 [2nd] \\
+$\text{CatBoost}_{\text{raw+embed}}$ & 0.724 [3rd] & 0.678 [3rd] & 0.859 [2nd] & 0.678 [3rd] & 0.679 & 0.674 [3rd] & 0.790 [3rd] \\
+$\text{XGBoost}_{\text{raw+embed}}$ & 0.632 & 0.586 & 0.765 & 0.587 & 0.582 & 0.620 & 0.646 \\
+$\text{LGBM}_{\text{baseline}}$ & 0.520 & 0.619 & 0.231 & 0.590 & 0.729 [3rd] & 0.559 & 0.469 \\
+$\text{CatBoost}_{\text{embed-only}}$ & 0.506 & 0.408 & 0.794 [3rd] & 0.369 & 0.552 & 0.520 & 0.488 \\
+$\text{LGBM}_{\text{embed-only}}$ & 0.499 & 0.416 & 0.743 & 0.372 & 0.580 & 0.475 & 0.531 \\
+$\text{CatBoost}_{\text{baseline}}$ & 0.479 & 0.542 & 0.295 & 0.535 & 0.570 & 0.486 & 0.470 \\
+$\text{XGBoost}_{\text{embed-only}}$ & 0.468 & 0.382 & 0.720 & 0.341 & 0.537 & 0.451 & 0.491 \\
+$\text{XGBoost}_{\text{baseline}}$ & 0.328 & 0.390 & 0.145 & 0.437 & 0.217 & 0.387 & 0.250 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

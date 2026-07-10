@@ -1,0 +1,156 @@
+[W&B] Child process started for job: mic_raw-only_lightgbm in group session-5
+Loading archive 'archives/mic.npz' and initializing pipeline for target: LIGHTGBM...
+Execution Mode: RAW-ONLY
+Session Output Target: outputs/5/
+Task Type: MULTICLASS
+TabPFN Baselines Loaded - Primary: 0.4552 | Secondary: 0.8882
+PCA reduced text embeddings to 30 components.
+Final training matrix shape assembled for RAW-ONLY: (1359, 111)
+
+Running 3-Trial Optuna Study for LIGHTGBM (RAW-ONLY)...
+A new study created in RDB with name: 20260623_143910_mic_raw-only_lightgbm
+Trial 0 finished with value: 0.5052441853452987 and parameters: {}. Best is trial 0 with value: 0.5052441853452987.
+Trial 1 finished with value: 0.46736942490855726 and parameters: {'learning_rate': 0.015355286838886862, 'feature_fraction': 0.9704285838459497, 'bagging_fraction': 0.9195981825434215, 'bagging_freq': 1, 'num_leaves': 28, 'min_data_in_leaf': 1, 'extra_trees': False, 'min_data_per_group': 57, 'cat_l2': 0.18327672955935934, 'cat_smooth': 3.4702669886504163, 'max_cat_to_onehot': 8, 'lambda_l1': 0.9699128611767781, 'lambda_l2': 1.6649020373367633}. Best is trial 1 with value: 0.46736942490855726.
+Trial 2 finished with value: 0.45678142806173616 and parameters: {'learning_rate': 0.009445600138094694, 'feature_fraction': 0.5090949803242604, 'bagging_fraction': 0.7550213529560301, 'bagging_freq': 1, 'num_leaves': 7, 'min_data_in_leaf': 6, 'extra_trees': False, 'min_data_per_group': 20, 'cat_l2': 0.01153297626310632, 'cat_smooth': 0.028888383623653185, 'max_cat_to_onehot': 19, 'lambda_l1': 0.4561243772186142, 'lambda_l2': 1.5703734051898879}. Best is trial 2 with value: 0.45678142806173616.
+Optuna Search Completed in: 46.02 seconds
+
+Training final model on optimized parameter setup...
+
+[LIGHTGBM FINALIZED METRICS]
+Optimal Trees:         433
+Log_Loss:             0.4417 (Delta to TabPFN: -0.0135)
+Accuracy:             0.8912 (Delta to TabPFN: +0.0029)
+Final Train Time:      1.80 seconds (1.3249s per 1K)
+Final Infer Time:      0.04 seconds (0.1220s per 1K)
+
+--- LIGHTGBM Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+R_AB_3_n | 6884.68 | 10.41%
+NA_R_3_n | 5035.79 | 7.61%
+NOT_NA_3_n | 4654.52 | 7.04%
+L_BLOOD | 3971.48 | 6.00%
+ZSN_A | 3817.66 | 5.77%
+AGE | 3126.20 | 4.73%
+S_AD_ORIT | 3059.37 | 4.62%
+K_BLOOD | 2134.18 | 3.23%
+D_AD_ORIT | 1836.36 | 2.78%
+ALT_BLOOD | 1834.61 | 2.77%
+ROE | 1764.76 | 2.67%
+NA_BLOOD | 1615.55 | 2.44%
+ant_im | 1557.62 | 2.35%
+NA_R_2_n | 1358.09 | 2.05%
+AST_BLOOD | 1218.92 | 1.84%
+TIME_B_S | 1184.60 | 1.79%
+R_AB_2_n | 1179.84 | 1.78%
+IBS_POST | 1090.41 | 1.65%
+NITR_S | 955.42 | 1.44%
+S_AD_KBRIG | 953.46 | 1.44%
+inf_im | 910.90 | 1.38%
+lat_im | 890.87 | 1.35%
+STENOK_AN | 875.05 | 1.32%
+NOT_NA_KB | 860.57 | 1.30%
+DLIT_AG | 776.24 | 1.17%
+INF_ANAM | 767.16 | 1.16%
+ritm_ecg_p_01 | 663.10 | 1.00%
+FK_STENOK | 659.49 | 1.00%
+NA_KB | 631.97 | 0.96%
+D_AD_KBRIG | 613.64 | 0.93%
+NOT_NA_2_n | 601.45 | 0.91%
+zab_leg_02 | 510.64 | 0.77%
+GEPAR_S_n | 484.91 | 0.73%
+LID_KB | 459.87 | 0.70%
+SEX | 441.01 | 0.67%
+R_AB_1_n | 408.01 | 0.62%
+NA_R_1_n | 375.92 | 0.57%
+K_SH_POST | 370.31 | 0.56%
+GB | 362.46 | 0.55%
+IM_PG_P | 360.12 | 0.54%
+ritm_ecg_p_02 | 341.32 | 0.52%
+endocr_01 | 338.11 | 0.51%
+GIPO_K | 304.51 | 0.46%
+LID_S_n | 290.59 | 0.44%
+ASP_S_n | 290.54 | 0.44%
+n_p_ecg_p_12 | 282.58 | 0.43%
+NOT_NA_1_n | 275.59 | 0.42%
+ritm_ecg_p_07 | 246.76 | 0.37%
+n_r_ecg_p_03 | 231.15 | 0.35%
+post_im | 221.83 | 0.34%
+n_r_ecg_p_01 | 216.69 | 0.33%
+TRENT_S_n | 190.71 | 0.29%
+nr_04 | 189.56 | 0.29%
+n_r_ecg_p_05 | 140.38 | 0.21%
+zab_leg_03 | 131.35 | 0.20%
+endocr_02 | 118.79 | 0.18%
+MP_TP_POST | 111.92 | 0.17%
+B_BLOK_S_n | 98.09 | 0.15%
+GIPER_NA | 95.94 | 0.15%
+ANT_CA_S_n | 91.24 | 0.14%
+n_p_ecg_p_07 | 82.91 | 0.13%
+O_L_POST | 70.20 | 0.11%
+SIM_GIPERT | 68.03 | 0.10%
+nr_03 | 58.05 | 0.09%
+TIKL_S_n | 45.30 | 0.07%
+n_p_ecg_p_10 | 44.76 | 0.07%
+ritm_ecg_p_08 | 41.61 | 0.06%
+n_r_ecg_p_04 | 38.06 | 0.06%
+zab_leg_01 | 36.31 | 0.05%
+n_r_ecg_p_06 | 26.90 | 0.04%
+n_p_ecg_p_11 | 25.21 | 0.04%
+ritm_ecg_p_04 | 22.79 | 0.03%
+n_p_ecg_p_03 | 22.05 | 0.03%
+np_08 | 18.82 | 0.03%
+ritm_ecg_p_06 | 15.42 | 0.02%
+nr_02 | 8.45 | 0.01%
+fibr_ter_06 | 8.11 | 0.01%
+np_01 | 7.13 | 0.01%
+fibr_ter_08 | 5.44 | 0.01%
+endocr_03 | 4.87 | 0.01%
+n_p_ecg_p_06 | 4.56 | 0.01%
+n_p_ecg_p_08 | 4.47 | 0.01%
+n_r_ecg_p_08 | 3.94 | 0.01%
+np_05 | 3.50 | 0.01%
+nr_11 | 3.28 | 0.00%
+zab_leg_04 | 2.92 | 0.00%
+n_p_ecg_p_01 | 2.29 | 0.00%
+FIB_G_POST | 2.20 | 0.00%
+fibr_ter_02 | 2.05 | 0.00%
+fibr_ter_03 | 1.54 | 0.00%
+SVT_POST | 1.49 | 0.00%
+zab_leg_06 | 1.48 | 0.00%
+np_09 | 1.43 | 0.00%
+fibr_ter_07 | 1.11 | 0.00%
+nr_01 | 1.02 | 0.00%
+n_r_ecg_p_02 | 1.01 | 0.00%
+np_07 | 0.66 | 0.00%
+np_10 | 0.38 | 0.00%
+IBS_NASL | 0.00 | 0.00%
+nr_07 | 0.00 | 0.00%
+nr_08 | 0.00 | 0.00%
+np_04 | 0.00 | 0.00%
+GT_POST | 0.00 | 0.00%
+n_r_ecg_p_09 | 0.00 | 0.00%
+n_r_ecg_p_10 | 0.00 | 0.00%
+n_p_ecg_p_04 | 0.00 | 0.00%
+n_p_ecg_p_05 | 0.00 | 0.00%
+n_p_ecg_p_09 | 0.00 | 0.00%
+fibr_ter_01 | 0.00 | 0.00%
+fibr_ter_05 | 0.00 | 0.00%
+KFK_BLOOD | 0.00 | 0.00%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 0.00%
+Raw Feature Share                            | 100.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 0.00% (0/0)
+Active Raw Tabular Feature Density           | 88.29% (98/111)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 36.83% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 54.95% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 52.81 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/5/'
+[W&B] Artifacts and localized metrics logged successfully for mic_raw-only_lightgbm

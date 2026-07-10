@@ -1,0 +1,85 @@
+[W&B] Child process started for job: diabetes_combined_lightgbm in group session-foo
+Loading archive 'archives/diabetes.npz' and initializing pipeline for target: LIGHTGBM...
+Execution Mode: COMBINED
+Session Output Target: outputs/foo/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.1320 | Secondary: 0.7597
+PCA reduced text embeddings to 32 components.
+Final training matrix shape assembled for COMBINED: (614, 40)
+
+Running 3-Trial Optuna Study for LIGHTGBM (COMBINED)...
+A new study created in RDB with name: 20260624_092218_diabetes_combined_lightgbm
+Trial 0 finished with value: 0.20007834757834764 and parameters: {}. Best is trial 0 with value: 0.20007834757834764.
+Trial 1 finished with value: 0.19143162393162394 and parameters: {'learning_rate': 0.015355286838886862, 'feature_fraction': 0.9704285838459497, 'bagging_fraction': 0.9195981825434215, 'bagging_freq': 1, 'num_leaves': 28, 'min_data_in_leaf': 1, 'extra_trees': False, 'min_data_per_group': 57, 'cat_l2': 0.18327672955935934, 'cat_smooth': 3.4702669886504163, 'max_cat_to_onehot': 8, 'lambda_l1': 0.9699128611767781, 'lambda_l2': 1.6649020373367633}. Best is trial 1 with value: 0.19143162393162394.
+Trial 2 finished with value: 0.18714031339031334 and parameters: {'learning_rate': 0.009445600138094694, 'feature_fraction': 0.5090949803242604, 'bagging_fraction': 0.7550213529560301, 'bagging_freq': 1, 'num_leaves': 7, 'min_data_in_leaf': 6, 'extra_trees': False, 'min_data_per_group': 20, 'cat_l2': 0.01153297626310632, 'cat_smooth': 0.028888383623653185, 'max_cat_to_onehot': 19, 'lambda_l1': 0.4561243772186142, 'lambda_l2': 1.5703734051898879}. Best is trial 2 with value: 0.18714031339031334.
+Optuna Search Completed in: 12.13 seconds
+
+Training final model on optimized parameter setup...
+
+[LIGHTGBM FINALIZED METRICS]
+Optimal Trees:         299
+1-AUROC:             0.1441 (Delta to TabPFN: +0.0120)
+Accuracy:             0.7792 (Delta to TabPFN: +0.0195)
+Final Train Time:      0.19 seconds (0.3134s per 1K)
+Final Infer Time:      0.00 seconds (0.0073s per 1K)
+
+--- LIGHTGBM Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+Glucose | 4315.14 | 28.02%
+BMI | 1441.03 | 9.36%
+Age | 1106.14 | 7.18%
+pca_embed_1 | 862.11 | 5.60%
+pca_embed_8 | 778.99 | 5.06%
+pca_embed_0 | 511.28 | 3.32%
+DiabetesPedigreeFunction | 505.32 | 3.28%
+pca_embed_3 | 424.04 | 2.75%
+pca_embed_5 | 345.71 | 2.24%
+pca_embed_6 | 320.32 | 2.08%
+pca_embed_20 | 290.74 | 1.89%
+pca_embed_18 | 282.84 | 1.84%
+pca_embed_10 | 266.10 | 1.73%
+pca_embed_24 | 265.95 | 1.73%
+pca_embed_2 | 235.78 | 1.53%
+pca_embed_9 | 226.85 | 1.47%
+pca_embed_11 | 223.15 | 1.45%
+pca_embed_7 | 198.56 | 1.29%
+pca_embed_22 | 182.37 | 1.18%
+Insulin | 181.22 | 1.18%
+pca_embed_26 | 176.85 | 1.15%
+pca_embed_17 | 173.00 | 1.12%
+pca_embed_21 | 167.97 | 1.09%
+pca_embed_14 | 167.87 | 1.09%
+Pregnancies | 167.09 | 1.08%
+pca_embed_19 | 163.84 | 1.06%
+pca_embed_4 | 152.85 | 0.99%
+pca_embed_16 | 151.67 | 0.98%
+pca_embed_30 | 146.71 | 0.95%
+pca_embed_27 | 132.22 | 0.86%
+pca_embed_23 | 120.47 | 0.78%
+pca_embed_28 | 115.10 | 0.75%
+pca_embed_29 | 102.95 | 0.67%
+pca_embed_12 | 100.91 | 0.66%
+pca_embed_15 | 94.40 | 0.61%
+pca_embed_25 | 74.59 | 0.48%
+BloodPressure | 70.50 | 0.46%
+pca_embed_13 | 67.29 | 0.44%
+SkinThickness | 54.83 | 0.36%
+pca_embed_31 | 36.74 | 0.24%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 49.09%
+Raw Feature Share                            | 50.91%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (32/32)
+Active Raw Tabular Feature Density           | 100.00% (8/8)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 55.21% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 68.89% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 19.66 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/foo/'
+[W&B] Artifacts and localized metrics logged successfully for diabetes_combined_lightgbm

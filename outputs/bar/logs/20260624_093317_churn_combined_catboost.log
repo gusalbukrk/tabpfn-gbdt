@@ -1,0 +1,84 @@
+[W&B] Child process started for job: churn_combined_catboost in group session-bar
+Loading archive 'archives/churn.npz' and initializing pipeline for target: CATBOOST...
+Execution Mode: COMBINED
+Session Output Target: outputs/bar/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.0860 | Secondary: 0.9730
+PCA reduced text embeddings to 20 components.
+Final training matrix shape assembled for COMBINED: (4000, 39)
+
+Running 3-Trial Optuna Study for CATBOOST (COMBINED)...
+A new study created in RDB with name: 20260624_093317_churn_combined_catboost
+Trial 0 finished with value: 0.06192653017906857 and parameters: {}. Best is trial 0 with value: 0.06192653017906857.
+Trial 1 finished with value: 0.06449010782862741 and parameters: {'learning_rate': 0.015355286838886862, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9852142919229748, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8733991780504303, 'l2_leaf_reg': 0.00018747059221802545, 'leaf_estimation_iterations': 12, 'one_hot_max_size': 36, 'model_size_reg': 0.6803900745073703, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 0 with value: 0.06192653017906857.
+Trial 2 finished with value: 0.0634937886657505 and parameters: {'learning_rate': 0.09138013915892866, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9497327922401265, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8956363364439306, 'l2_leaf_reg': 0.02922905212920092, 'leaf_estimation_iterations': 2, 'one_hot_max_size': 16, 'model_size_reg': 0.5243180891902851, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 0 with value: 0.06192653017906857.
+Optuna Search Completed in: 21.82 seconds
+
+Training final model on optimized parameter setup...
+
+[CATBOOST FINALIZED METRICS]
+Optimal Trees:         100
+1-AUROC:             0.0744 (Delta to TabPFN: -0.0116)
+Accuracy:             0.9740 (Delta to TabPFN: +0.0010)
+Final Train Time:      1.10 seconds (0.2748s per 1K)
+Final Infer Time:      0.01 seconds (0.0073s per 1K)
+
+--- CATBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+pca_embed_0 | 29.38 | 29.38%
+pca_embed_1 | 8.46 | 8.46%
+pca_embed_3 | 7.60 | 7.60%
+pca_embed_5 | 6.06 | 6.06%
+pca_embed_2 | 5.29 | 5.29%
+pca_embed_18 | 3.95 | 3.95%
+pca_embed_7 | 2.74 | 2.74%
+pca_embed_4 | 2.70 | 2.70%
+pca_embed_8 | 2.59 | 2.59%
+pca_embed_12 | 2.50 | 2.50%
+pca_embed_14 | 2.04 | 2.04%
+pca_embed_10 | 1.88 | 1.88%
+total_night_calls | 1.77 | 1.77%
+pca_embed_16 | 1.65 | 1.65%
+pca_embed_11 | 1.57 | 1.57%
+pca_embed_17 | 1.57 | 1.57%
+total_day_minutes | 1.53 | 1.53%
+total_day_charge | 1.37 | 1.37%
+pca_embed_6 | 1.34 | 1.34%
+pca_embed_19 | 1.18 | 1.18%
+number_vmail_messages | 1.18 | 1.18%
+account_length | 1.15 | 1.15%
+total_eve_minutes | 1.13 | 1.13%
+total_eve_calls | 1.12 | 1.12%
+total_night_minutes | 1.01 | 1.01%
+total_intl_minutes | 0.96 | 0.96%
+number_customer_service_calls | 0.86 | 0.86%
+pca_embed_9 | 0.82 | 0.82%
+total_intl_charge | 0.68 | 0.68%
+total_eve_charge | 0.60 | 0.60%
+pca_embed_15 | 0.59 | 0.59%
+total_day_calls | 0.51 | 0.51%
+area_code | 0.49 | 0.49%
+voice_mail_plan | 0.43 | 0.43%
+pca_embed_13 | 0.43 | 0.43%
+total_night_charge | 0.41 | 0.41%
+total_intl_calls | 0.41 | 0.41%
+international_plan | 0.02 | 0.02%
+state | 0.02 | 0.02%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 84.34%
+Raw Feature Share                            | 15.66%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (20/20)
+Active Raw Tabular Feature Density           | 100.00% (19/19)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 56.79% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 71.27% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 26.78 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/bar/'
+[W&B] Artifacts and localized metrics logged successfully for churn_combined_catboost

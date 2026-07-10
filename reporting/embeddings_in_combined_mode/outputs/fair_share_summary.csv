@@ -1,0 +1,5 @@
+Algorithm,Gap (Median),Gap (Mean ± SD),Multiplier (Median),Multiplier (Mean ± SD)
+Overall,-0.39%,+2.71 ± 22.97,0.99x,2.12 ± 4.54
+CatBoost,+5.57%,+6.40 ± 20.29,1.08x,2.00 ± 3.63
+LightGBM,-3.76%,-1.95 ± 26.85,0.93x,2.13 ± 5.47
+XGBoost,+1.52%,+3.68 ± 24.99,1.04x,2.23 ± 4.79

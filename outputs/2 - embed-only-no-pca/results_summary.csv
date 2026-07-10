@@ -1,0 +1,7 @@
+dataset,algorithm,mode,primary_metric,primary_value,primary_delta,secondary_metric,secondary_value,secondary_delta,macro_embedding_share,total_duration_secs
+churn,catboost,embed-only-no-pca,ROC_AUC,0.929168833956687,0.015,Accuracy,0.971,-0.003,100.0,1901.57
+churn,lightgbm,embed-only-no-pca,ROC_AUC,0.9226215540088673,0.0084,Accuracy,0.973,-0.001,100.0,220.34
+mic,catboost,embed-only-no-pca,Log_Loss,0.4475395606437184,-0.0066,Accuracy,0.888235294117647,-0.0029,100.0,5295.11
+mic,lightgbm,embed-only-no-pca,Log_Loss,0.44719571173430045,-0.0069,Accuracy,0.8911764705882353,0.0,100.0,339.35
+wine_quality,catboost,embed-only-no-pca,RMSE,0.5683176902408208,0.0017,MSE,0.3229849970406616,0.0019,100.0,7810.8
+wine_quality,lightgbm,embed-only-no-pca,RMSE,0.5667290073366457,0.0001,MSE,0.32118176775677976,0.0001,100.0,403.23

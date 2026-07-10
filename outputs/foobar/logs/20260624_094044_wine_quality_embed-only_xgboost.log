@@ -1,0 +1,70 @@
+[W&B] Child process started for job: wine_quality_embed-only_xgboost in group session-bar
+Loading archive 'archives/wine_quality.npz' and initializing pipeline for target: XGBOOST...
+Execution Mode: EMBED-ONLY
+Session Output Target: outputs/bar/
+Task Type: REGRESSION
+TabPFN Baselines Loaded - Primary: 0.5665 | Secondary: 0.5710
+PCA reduced text embeddings to 25 components.
+Final training matrix shape assembled for EMBED-ONLY: (5197, 25)
+
+Running 3-Trial Optuna Study for XGBOOST (EMBED-ONLY)...
+A new study created in RDB with name: 20260624_094044_wine_quality_embed-only_xgboost
+Trial 0 finished with value: 0.6050807051258037 and parameters: {}. Best is trial 0 with value: 0.6050807051258037.
+Trial 1 finished with value: 0.5963869058024855 and parameters: {'learning_rate': 0.015355286838886862, 'max_depth': 10, 'min_child_weight': 0.5100627805979911, 'subsample': 0.8394633936788146, 'colsample_bylevel': 0.6624074561769746, 'colsample_bynode': 0.662397808134481, 'reg_alpha': 0.29051225247978046, 'reg_lambda': 4.330894111260099, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 8, 'max_leaves': 884}. Best is trial 1 with value: 0.5963869058024855.
+Trial 2 finished with value: 0.5883955147740894 and parameters: {'learning_rate': 0.060534484680010825, 'max_depth': 4, 'min_child_weight': 0.004705059281907645, 'subsample': 0.6733618039413735, 'colsample_bylevel': 0.7216968971838151, 'colsample_bynode': 0.8099025726528951, 'reg_alpha': 2.1597818987087147, 'reg_lambda': 1.4562165780761898, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 16, 'max_leaves': 45}. Best is trial 2 with value: 0.5883955147740894.
+Optuna Search Completed in: 90.96 seconds
+
+Training final model on optimized parameter setup...
+
+[XGBOOST FINALIZED METRICS]
+Optimal Trees:         75
+RMSE:             0.5659 (Delta to TabPFN: -0.0006)
+R2_Score:             0.5719 (Delta to TabPFN: +0.0009)
+Final Train Time:      0.15 seconds (0.0282s per 1K)
+Final Infer Time:      0.00 seconds (0.0013s per 1K)
+
+--- XGBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+pca_embed_1 | 8060.10 | 56.18%
+pca_embed_2 | 2400.45 | 16.73%
+pca_embed_0 | 1239.38 | 8.64%
+pca_embed_3 | 486.46 | 3.39%
+pca_embed_4 | 441.43 | 3.08%
+pca_embed_5 | 339.19 | 2.36%
+pca_embed_7 | 210.78 | 1.47%
+pca_embed_6 | 121.70 | 0.85%
+pca_embed_11 | 98.33 | 0.69%
+pca_embed_23 | 94.75 | 0.66%
+pca_embed_9 | 93.38 | 0.65%
+pca_embed_8 | 90.37 | 0.63%
+pca_embed_19 | 76.81 | 0.54%
+pca_embed_12 | 71.52 | 0.50%
+pca_embed_16 | 68.39 | 0.48%
+pca_embed_24 | 66.51 | 0.46%
+pca_embed_18 | 53.74 | 0.37%
+pca_embed_20 | 49.93 | 0.35%
+pca_embed_13 | 49.14 | 0.34%
+pca_embed_15 | 47.15 | 0.33%
+pca_embed_22 | 46.49 | 0.32%
+pca_embed_14 | 45.11 | 0.31%
+pca_embed_17 | 37.37 | 0.26%
+pca_embed_21 | 31.74 | 0.22%
+pca_embed_10 | 26.82 | 0.19%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 100.00%
+Raw Feature Share                            | 0.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (25/25)
+Active Raw Tabular Feature Density           | 0.00% (0/0)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 88.02% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 94.04% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 94.95 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/bar/'
+[W&B] Artifacts and localized metrics logged successfully for wine_quality_embed-only_xgboost

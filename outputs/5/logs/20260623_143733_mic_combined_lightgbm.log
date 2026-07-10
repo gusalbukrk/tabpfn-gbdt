@@ -1,0 +1,186 @@
+[W&B] Child process started for job: mic_combined_lightgbm in group session-5
+Loading archive 'archives/mic.npz' and initializing pipeline for target: LIGHTGBM...
+Execution Mode: COMBINED
+Session Output Target: outputs/5/
+Task Type: MULTICLASS
+TabPFN Baselines Loaded - Primary: 0.4552 | Secondary: 0.8882
+PCA reduced text embeddings to 30 components.
+Final training matrix shape assembled for COMBINED: (1359, 141)
+
+Running 3-Trial Optuna Study for LIGHTGBM (COMBINED)...
+A new study created in RDB with name: 20260623_143733_mic_combined_lightgbm
+Trial 0 finished with value: 0.4967387764071368 and parameters: {}. Best is trial 0 with value: 0.4967387764071368.
+Trial 1 finished with value: 0.477444510463957 and parameters: {'learning_rate': 0.015355286838886862, 'feature_fraction': 0.9704285838459497, 'bagging_fraction': 0.9195981825434215, 'bagging_freq': 1, 'num_leaves': 28, 'min_data_in_leaf': 1, 'extra_trees': False, 'min_data_per_group': 57, 'cat_l2': 0.18327672955935934, 'cat_smooth': 3.4702669886504163, 'max_cat_to_onehot': 8, 'lambda_l1': 0.9699128611767781, 'lambda_l2': 1.6649020373367633}. Best is trial 1 with value: 0.477444510463957.
+Trial 2 finished with value: 0.46346844440650115 and parameters: {'learning_rate': 0.009445600138094694, 'feature_fraction': 0.5090949803242604, 'bagging_fraction': 0.7550213529560301, 'bagging_freq': 1, 'num_leaves': 7, 'min_data_in_leaf': 6, 'extra_trees': False, 'min_data_per_group': 20, 'cat_l2': 0.01153297626310632, 'cat_smooth': 0.028888383623653185, 'max_cat_to_onehot': 19, 'lambda_l1': 0.4561243772186142, 'lambda_l2': 1.5703734051898879}. Best is trial 2 with value: 0.46346844440650115.
+Optuna Search Completed in: 81.41 seconds
+
+Training final model on optimized parameter setup...
+
+[LIGHTGBM FINALIZED METRICS]
+Optimal Trees:         339
+Log_Loss:             0.4499 (Delta to TabPFN: -0.0053)
+Accuracy:             0.8882 (Delta to TabPFN: +0.0000)
+Final Train Time:      2.96 seconds (2.1762s per 1K)
+Final Infer Time:      0.05 seconds (0.1379s per 1K)
+
+--- LIGHTGBM Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+pca_embed_0 | 16727.57 | 24.37%
+NOT_NA_3_n | 3349.72 | 4.88%
+R_AB_3_n | 3153.79 | 4.60%
+NA_R_3_n | 2018.40 | 2.94%
+L_BLOOD | 1682.44 | 2.45%
+pca_embed_5 | 1430.27 | 2.08%
+AGE | 1391.27 | 2.03%
+pca_embed_1 | 1354.81 | 1.97%
+S_AD_ORIT | 1316.89 | 1.92%
+ZSN_A | 1271.58 | 1.85%
+pca_embed_4 | 1152.45 | 1.68%
+ALT_BLOOD | 1124.73 | 1.64%
+pca_embed_2 | 1096.93 | 1.60%
+pca_embed_20 | 1076.24 | 1.57%
+pca_embed_29 | 1050.39 | 1.53%
+K_BLOOD | 1034.53 | 1.51%
+pca_embed_18 | 1032.46 | 1.50%
+pca_embed_6 | 996.34 | 1.45%
+pca_embed_14 | 980.84 | 1.43%
+pca_embed_7 | 970.79 | 1.41%
+pca_embed_21 | 910.84 | 1.33%
+pca_embed_13 | 887.69 | 1.29%
+NA_BLOOD | 874.96 | 1.27%
+pca_embed_15 | 852.75 | 1.24%
+D_AD_ORIT | 848.94 | 1.24%
+pca_embed_27 | 841.01 | 1.23%
+pca_embed_16 | 839.10 | 1.22%
+pca_embed_3 | 818.17 | 1.19%
+pca_embed_9 | 798.03 | 1.16%
+pca_embed_22 | 727.96 | 1.06%
+NA_R_2_n | 716.57 | 1.04%
+pca_embed_8 | 707.84 | 1.03%
+ROE | 700.57 | 1.02%
+pca_embed_24 | 626.17 | 0.91%
+pca_embed_25 | 621.42 | 0.91%
+pca_embed_12 | 617.95 | 0.90%
+pca_embed_17 | 601.75 | 0.88%
+AST_BLOOD | 593.01 | 0.86%
+pca_embed_11 | 565.58 | 0.82%
+pca_embed_10 | 562.10 | 0.82%
+pca_embed_19 | 528.83 | 0.77%
+pca_embed_26 | 497.90 | 0.73%
+NOT_NA_KB | 486.80 | 0.71%
+INF_ANAM | 476.73 | 0.69%
+pca_embed_28 | 444.41 | 0.65%
+NA_KB | 436.36 | 0.64%
+pca_embed_23 | 419.04 | 0.61%
+ant_im | 395.46 | 0.58%
+S_AD_KBRIG | 383.46 | 0.56%
+TIME_B_S | 333.11 | 0.49%
+NITR_S | 287.68 | 0.42%
+DLIT_AG | 280.24 | 0.41%
+R_AB_2_n | 279.04 | 0.41%
+D_AD_KBRIG | 274.84 | 0.40%
+STENOK_AN | 262.04 | 0.38%
+IBS_POST | 256.07 | 0.37%
+inf_im | 251.89 | 0.37%
+K_SH_POST | 242.33 | 0.35%
+GEPAR_S_n | 224.40 | 0.33%
+LID_KB | 222.85 | 0.32%
+R_AB_1_n | 190.57 | 0.28%
+FK_STENOK | 181.34 | 0.26%
+GIPO_K | 165.06 | 0.24%
+lat_im | 145.63 | 0.21%
+SEX | 133.56 | 0.19%
+n_r_ecg_p_01 | 129.40 | 0.19%
+ritm_ecg_p_01 | 129.17 | 0.19%
+zab_leg_02 | 114.41 | 0.17%
+ritm_ecg_p_02 | 114.33 | 0.17%
+TRENT_S_n | 101.84 | 0.15%
+GB | 96.08 | 0.14%
+NA_R_1_n | 92.38 | 0.13%
+NOT_NA_2_n | 91.83 | 0.13%
+NOT_NA_1_n | 89.88 | 0.13%
+LID_S_n | 78.44 | 0.11%
+ASP_S_n | 77.57 | 0.11%
+IM_PG_P | 76.81 | 0.11%
+ritm_ecg_p_07 | 75.44 | 0.11%
+endocr_01 | 73.23 | 0.11%
+n_p_ecg_p_12 | 64.92 | 0.09%
+MP_TP_POST | 53.27 | 0.08%
+nr_04 | 49.72 | 0.07%
+post_im | 49.14 | 0.07%
+n_r_ecg_p_03 | 43.65 | 0.06%
+n_r_ecg_p_05 | 42.49 | 0.06%
+ANT_CA_S_n | 36.19 | 0.05%
+n_p_ecg_p_07 | 26.57 | 0.04%
+SIM_GIPERT | 26.17 | 0.04%
+GIPER_NA | 23.91 | 0.03%
+O_L_POST | 23.45 | 0.03%
+B_BLOK_S_n | 21.99 | 0.03%
+n_r_ecg_p_04 | 14.91 | 0.02%
+endocr_02 | 11.45 | 0.02%
+nr_02 | 10.85 | 0.02%
+zab_leg_03 | 8.88 | 0.01%
+n_p_ecg_p_10 | 8.88 | 0.01%
+ritm_ecg_p_08 | 8.79 | 0.01%
+zab_leg_01 | 8.60 | 0.01%
+TIKL_S_n | 6.10 | 0.01%
+nr_03 | 5.25 | 0.01%
+n_p_ecg_p_03 | 3.92 | 0.01%
+n_p_ecg_p_11 | 3.26 | 0.00%
+n_p_ecg_p_08 | 2.95 | 0.00%
+n_r_ecg_p_06 | 2.92 | 0.00%
+fibr_ter_06 | 2.86 | 0.00%
+ritm_ecg_p_04 | 2.41 | 0.00%
+np_08 | 1.55 | 0.00%
+np_01 | 1.13 | 0.00%
+zab_leg_04 | 0.83 | 0.00%
+fibr_ter_02 | 0.74 | 0.00%
+IBS_NASL | 0.00 | 0.00%
+nr_11 | 0.00 | 0.00%
+nr_01 | 0.00 | 0.00%
+nr_07 | 0.00 | 0.00%
+nr_08 | 0.00 | 0.00%
+np_04 | 0.00 | 0.00%
+np_05 | 0.00 | 0.00%
+np_07 | 0.00 | 0.00%
+np_09 | 0.00 | 0.00%
+np_10 | 0.00 | 0.00%
+endocr_03 | 0.00 | 0.00%
+zab_leg_06 | 0.00 | 0.00%
+SVT_POST | 0.00 | 0.00%
+GT_POST | 0.00 | 0.00%
+FIB_G_POST | 0.00 | 0.00%
+ritm_ecg_p_06 | 0.00 | 0.00%
+n_r_ecg_p_02 | 0.00 | 0.00%
+n_r_ecg_p_08 | 0.00 | 0.00%
+n_r_ecg_p_09 | 0.00 | 0.00%
+n_r_ecg_p_10 | 0.00 | 0.00%
+n_p_ecg_p_01 | 0.00 | 0.00%
+n_p_ecg_p_04 | 0.00 | 0.00%
+n_p_ecg_p_05 | 0.00 | 0.00%
+n_p_ecg_p_06 | 0.00 | 0.00%
+n_p_ecg_p_09 | 0.00 | 0.00%
+fibr_ter_01 | 0.00 | 0.00%
+fibr_ter_03 | 0.00 | 0.00%
+fibr_ter_05 | 0.00 | 0.00%
+fibr_ter_07 | 0.00 | 0.00%
+fibr_ter_08 | 0.00 | 0.00%
+KFK_BLOOD | 0.00 | 0.00%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 59.36%
+Raw Feature Share                            | 40.64%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (30/30)
+Active Raw Tabular Feature Density           | 72.07% (80/111)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 39.24% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 49.10% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 89.20 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/5/'
+[W&B] Artifacts and localized metrics logged successfully for mic_combined_lightgbm

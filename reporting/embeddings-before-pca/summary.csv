@@ -1,0 +1,5 @@
+task_type,silhouette_score_mean,silhouette_score_median,silhouette_score_std,silhouette_score_min,silhouette_score_max,knn_purity_mean,knn_purity_median,knn_purity_std,knn_purity_min,knn_purity_max
+binary,0.0579,0.0327,0.0771,-0.0116,0.3108,0.8543,0.8737,0.1015,0.6583,0.9931
+multiclass,0.1133,0.0921,0.0996,-0.0197,0.2885,0.9038,0.9244,0.0864,0.7434,0.9972
+regression,0.1155,0.1062,0.0686,-0.0312,0.211,0.7498,0.7585,0.1463,0.4173,0.9371
+all_combined,0.0813,0.0508,0.0822,-0.0312,0.3108,0.8354,0.8672,0.1226,0.4173,0.9972

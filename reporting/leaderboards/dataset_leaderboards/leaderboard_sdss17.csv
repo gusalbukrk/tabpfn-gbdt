@@ -1,0 +1,11 @@
+Strategy,Rank,Improvability %,Norm Score
+combined_lightgbm,1.00,0.0%,1.000
+combined_xgboost,2.00,1.0%,0.745
+baseline_tabpfn,3.00,1.8%,0.556
+combined_catboost,4.00,3.2%,0.188
+embed-only_lightgbm,5.00,3.3%,0.158
+embed-only_xgboost,6.00,4.5%,0.000
+embed-only_catboost,7.00,6.3%,0.000
+baseline_lightgbm,8.00,16.9%,0.000
+baseline_catboost,9.00,17.3%,0.000
+baseline_xgboost,10.00,19.4%,0.000

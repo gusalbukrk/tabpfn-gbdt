@@ -1,0 +1,26 @@
+\begin{table}[ht]
+\centering
+\caption{Paradigm-level performance breakdown stratified by task type and dataset scale. Suffixes highlight the top performing paradigms in each column.}
+\label{tab:paradigm-results}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccccc}
+\toprule
+Architecture Paradigm & Overall & Classification & Regression & Binary & Multiclass & Small & Medium \\
+\midrule
+\multicolumn{8}{l}{\textbf{Average Rank ($\downarrow$)}} \\
+\midrule
+$\text{Hybrid}_{\text{raw+embed}}$ & 2.43 [1st] & 2.50 [1st] & 2.23 [1st] & 2.60 [2nd] & 2.12 [1st] & 2.64 [1st] & 2.23 [1st] \\
+$\text{TabPFN}_{\text{baseline}}$ & 2.92 [2nd] & 2.76 [2nd] & 3.38 [3rd] & 2.37 [1st] & 4.25 [3rd] & 2.88 [2nd] & 2.96 [2nd] \\
+$\text{GBDT}_{\text{baseline}}$ & 4.39 [3rd] & 3.53 [3rd] & 6.92 & 3.70 [3rd] & 2.88 [2nd] & 3.88 [3rd] & 4.88 \\
+$\text{Hybrid}_{\text{embed-only}}$ & 4.73 & 5.55 & 2.31 [2nd] & 5.57 & 5.50 & 4.60 & 4.85 [3rd] \\
+\midrule
+\multicolumn{8}{l}{\textbf{Normalized Score ($\uparrow$)}} \\
+\midrule
+$\text{TabPFN}_{\text{baseline}}$ & 0.878 [1st] & 0.863 [1st] & 0.924 [1st] & 0.885 [1st] & 0.779 [2nd] & 0.882 [1st] & 0.874 [2nd] \\
+$\text{Hybrid}_{\text{raw+embed}}$ & 0.855 [2nd] & 0.846 [2nd] & 0.880 [2nd] & 0.844 [2nd] & 0.853 [1st] & 0.821 [2nd] & 0.900 [1st] \\
+$\text{GBDT}_{\text{baseline}}$ & 0.626 [3rd] & 0.712 [3rd] & 0.375 & 0.699 [3rd] & 0.762 [3rd] & 0.659 [3rd] & 0.584 [3rd] \\
+$\text{Hybrid}_{\text{embed-only}}$ & 0.598 & 0.518 & 0.831 [3rd] & 0.485 & 0.643 & 0.609 & 0.583 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

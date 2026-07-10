@@ -1,0 +1,25 @@
+Dataset Characteristic,Subset,Strategy,1st Place (Best Score),2nd Place,3rd Place,4th Place (Worst Score)
+Global Baseline,All (51),tabpfn_baseline,25 datasets,6 datasets,14 datasets,6 datasets
+Global Baseline,All (51),combined,13 datasets,21 datasets,16 datasets,1 datasets
+Global Baseline,All (51),raw-only,9 datasets,11 datasets,13 datasets,18 datasets
+Global Baseline,All (51),embed-only,4 datasets,13 datasets,8 datasets,26 datasets
+Task Type,Binary (30),tabpfn_baseline,18 datasets,2 datasets,7 datasets,3 datasets
+Task Type,Binary (30),combined,6 datasets,14 datasets,9 datasets,1 datasets
+Task Type,Binary (30),raw-only,5 datasets,9 datasets,10 datasets,6 datasets
+Task Type,Binary (30),embed-only,1 datasets,5 datasets,4 datasets,20 datasets
+Task Type,Multiclass (8),raw-only,4 datasets,1 datasets,2 datasets,1 datasets
+Task Type,Multiclass (8),combined,3 datasets,3 datasets,2 datasets,0 datasets
+Task Type,Multiclass (8),tabpfn_baseline,1 datasets,3 datasets,2 datasets,2 datasets
+Task Type,Multiclass (8),embed-only,0 datasets,1 datasets,2 datasets,5 datasets
+Task Type,Regression (13),tabpfn_baseline,6 datasets,1 datasets,5 datasets,1 datasets
+Task Type,Regression (13),combined,4 datasets,4 datasets,5 datasets,0 datasets
+Task Type,Regression (13),embed-only,3 datasets,7 datasets,2 datasets,1 datasets
+Task Type,Regression (13),raw-only,0 datasets,1 datasets,1 datasets,11 datasets
+Dataset Size,Small (29),tabpfn_baseline,14 datasets,4 datasets,7 datasets,4 datasets
+Dataset Size,Small (29),raw-only,7 datasets,7 datasets,4 datasets,11 datasets
+Dataset Size,Small (29),combined,5 datasets,11 datasets,13 datasets,0 datasets
+Dataset Size,Small (29),embed-only,3 datasets,7 datasets,5 datasets,14 datasets
+Dataset Size,Medium (22),tabpfn_baseline,11 datasets,2 datasets,7 datasets,2 datasets
+Dataset Size,Medium (22),combined,8 datasets,10 datasets,3 datasets,1 datasets
+Dataset Size,Medium (22),raw-only,2 datasets,4 datasets,9 datasets,7 datasets
+Dataset Size,Medium (22),embed-only,1 datasets,6 datasets,3 datasets,12 datasets

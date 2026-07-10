@@ -1,0 +1,91 @@
+[W&B] Child process started for job: heloc_raw-only_xgboost in group session-training-3
+Loading archive 'archives/heloc.npz' and initializing pipeline for target: XGBOOST...
+Execution Mode: RAW-ONLY
+Session Output Target: outputs/training-3/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.1908 | Secondary: 0.7357
+PCA reduced text embeddings to 21 components.
+Final training matrix shape assembled for RAW-ONLY: (8367, 23)
+
+Running 26-Trial Optuna Study for XGBOOST (RAW-ONLY)...
+A new study created in RDB with name: 20260625_013021_heloc_raw-only_xgboost
+Trial 0 finished with value: 0.2122006351446718 and parameters: {}. Best is trial 0 with value: 0.2122006351446718.
+Trial 1 finished with value: 0.20323951045132238 and parameters: {'learning_rate': 0.015355286838886862, 'max_depth': 10, 'min_child_weight': 0.5100627805979911, 'subsample': 0.8394633936788146, 'colsample_bylevel': 0.6624074561769746, 'colsample_bynode': 0.662397808134481, 'reg_alpha': 0.29051225247978046, 'reg_lambda': 4.330894111260099, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 8, 'max_leaves': 884}. Best is trial 1 with value: 0.20323951045132238.
+Trial 2 finished with value: 0.20186840785361426 and parameters: {'learning_rate': 0.060534484680010825, 'max_depth': 4, 'min_child_weight': 0.004705059281907645, 'subsample': 0.6733618039413735, 'colsample_bylevel': 0.7216968971838151, 'colsample_bynode': 0.8099025726528951, 'reg_alpha': 2.1597818987087147, 'reg_lambda': 1.4562165780761898, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 16, 'max_leaves': 45}. Best is trial 2 with value: 0.20186840785361426.
+Trial 3 finished with value: 0.20370328032059692 and parameters: {'learning_rate': 0.019603369861210685, 'max_depth': 8, 'min_child_weight': 0.005477562363971304, 'subsample': 0.8056937753654446, 'colsample_bylevel': 0.836965827544817, 'colsample_bynode': 0.6185801650879991, 'reg_alpha': 3.037763505022002, 'reg_lambda': 0.8527035660240889, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 92, 'max_leaves': 399}. Best is trial 2 with value: 0.20186840785361426.
+Trial 4 finished with value: 0.20167878608394663 and parameters: {'learning_rate': 0.012453219846912198, 'max_depth': 4, 'min_child_weight': 0.33959199243313637, 'subsample': 0.7760609974958406, 'colsample_bylevel': 0.6488152939379115, 'colsample_bynode': 0.798070764044508, 'reg_alpha': 0.17203916672398045, 'reg_lambda': 4.546611078353703, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 17, 'max_leaves': 97}. Best is trial 4 with value: 0.20167878608394663.
+Trial 5 finished with value: 0.20251937233256045 and parameters: {'learning_rate': 0.025719142025384646, 'max_depth': 4, 'min_child_weight': 3.8589082671053854, 'subsample': 0.9100531293444458, 'colsample_bylevel': 0.9757995766256756, 'colsample_bynode': 0.9579309401710595, 'reg_alpha': 2.989540104057545, 'reg_lambda': 4.609378987692081, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 8, 'max_leaves': 37}. Best is trial 4 with value: 0.20167878608394663.
+Trial 6 finished with value: 0.20193207270558178 and parameters: {'learning_rate': 0.016019568611465234, 'max_depth': 5, 'min_child_weight': 1.1627201204016835, 'subsample': 0.7427013306774357, 'colsample_bylevel': 0.7123738038749523, 'colsample_bynode': 0.8170784332632994, 'reg_alpha': 0.7047070324513158, 'reg_lambda': 4.011004684072123, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 56, 'max_leaves': 20}. Best is trial 4 with value: 0.20167878608394663.
+Trial 7 finished with value: 0.2034062132439427 and parameters: {'learning_rate': 0.0050834018700114374, 'max_depth': 9, 'min_child_weight': 0.4117599592262879, 'subsample': 0.8916028672163949, 'colsample_bylevel': 0.9085081386743783, 'colsample_bynode': 0.6296178606936361, 'reg_alpha': 1.7923927961485087, 'reg_lambda': 0.5794337107196961, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 18, 'max_leaves': 10}. Best is trial 4 with value: 0.20167878608394663.
+Trial 8 finished with value: 0.2018937943173036 and parameters: {'learning_rate': 0.012693089228250284, 'max_depth': 5, 'min_child_weight': 0.49979438035802604, 'subsample': 0.8550229885420852, 'colsample_bylevel': 0.9548850970305306, 'colsample_bynode': 0.7888859700647797, 'reg_alpha': 0.5980592702669147, 'reg_lambda': 3.566252611636253, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 55, 'max_leaves': 85}. Best is trial 4 with value: 0.20167878608394663.
+Trial 9 finished with value: 0.20138321109318813 and parameters: {'learning_rate': 0.02393652463662192, 'max_depth': 6, 'min_child_weight': 0.0012417226051008223, 'subsample': 0.6431565707973218, 'colsample_bylevel': 0.6125716742746937, 'colsample_bynode': 0.8545641645055122, 'reg_alpha': 1.5718484697835258, 'reg_lambda': 2.542902598754398, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 22, 'max_leaves': 308}. Best is trial 9 with value: 0.20138321109318813.
+Trial 10 finished with value: 0.20350136396478136 and parameters: {'learning_rate': 0.08778240234405048, 'max_depth': 7, 'min_child_weight': 0.0010663930543587375, 'subsample': 0.6071847502459279, 'colsample_bylevel': 0.8062687886189569, 'colsample_bynode': 0.9630659181130071, 'reg_alpha': 4.7988577526525065, 'reg_lambda': 2.336797458371832, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 31, 'max_leaves': 257}. Best is trial 9 with value: 0.20138321109318813.
+Trial 11 finished with value: 0.20210198818765335 and parameters: {'learning_rate': 0.007631609688708743, 'max_depth': 6, 'min_child_weight': 0.045189704254345556, 'subsample': 0.9888921520475321, 'colsample_bylevel': 0.6046474205309514, 'colsample_bynode': 0.8759561693398767, 'reg_alpha': 1.6094980895413644, 'reg_lambda': 2.882087004382994, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 18, 'max_leaves': 158}. Best is trial 9 with value: 0.20138321109318813.
+Trial 12 finished with value: 0.20136002747252757 and parameters: {'learning_rate': 0.03175878639036045, 'max_depth': 5, 'min_child_weight': 0.04935433755306246, 'subsample': 0.7171659860910148, 'colsample_bylevel': 0.6013565469900577, 'colsample_bynode': 0.7336320081207262, 'reg_alpha': 1.2194504168217553, 'reg_lambda': 2.2827711289191495, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 27, 'max_leaves': 125}. Best is trial 12 with value: 0.20136002747252757.
+Trial 13 finished with value: 0.2010328548744833 and parameters: {'learning_rate': 0.0364822543842359, 'max_depth': 6, 'min_child_weight': 0.042901095998146836, 'subsample': 0.6818056999043941, 'colsample_bylevel': 0.6026533754095972, 'colsample_bynode': 0.6868345001149593, 'reg_alpha': 1.2426539852373626, 'reg_lambda': 2.07698064082406, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 29, 'max_leaves': 517}. Best is trial 13 with value: 0.2010328548744833.
+Trial 14 finished with value: 0.20169747580401243 and parameters: {'learning_rate': 0.041314384168676443, 'max_depth': 5, 'min_child_weight': 0.05127264804185516, 'subsample': 0.7105219241414749, 'colsample_bylevel': 0.7020800322523808, 'colsample_bynode': 0.7151759149282771, 'reg_alpha': 1.0578680080090646, 'reg_lambda': 1.8003628255109947, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 34, 'max_leaves': 772}. Best is trial 13 with value: 0.2010328548744833.
+Trial 15 finished with value: 0.201478350892227 and parameters: {'learning_rate': 0.03639831929990731, 'max_depth': 6, 'min_child_weight': 0.05827854362383389, 'subsample': 0.7020228276855585, 'colsample_bylevel': 0.6046099660304933, 'colsample_bynode': 0.71512248964858, 'reg_alpha': 2.682500072293254, 'reg_lambda': 3.298335683433292, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 34, 'max_leaves': 501}. Best is trial 13 with value: 0.2010328548744833.
+Trial 16 finished with value: 0.20332556919380318 and parameters: {'learning_rate': 0.04067170160297198, 'max_depth': 7, 'min_child_weight': 0.016269636891711393, 'subsample': 0.7498952405806693, 'colsample_bylevel': 0.765758838248427, 'colsample_bynode': 0.7193298856299045, 'reg_alpha': 3.64954121256888, 'reg_lambda': 1.7036840879376507, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 52, 'max_leaves': 151}. Best is trial 13 with value: 0.2010328548744833.
+Trial 17 finished with value: 0.20177879028463885 and parameters: {'learning_rate': 0.05953182251955797, 'max_depth': 5, 'min_child_weight': 0.12140915711462345, 'subsample': 0.6111383118225819, 'colsample_bylevel': 0.6525680112529533, 'colsample_bynode': 0.6794070528494518, 'reg_alpha': 1.1106765175601925, 'reg_lambda': 1.091408364883187, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 12, 'max_leaves': 168}. Best is trial 13 with value: 0.2010328548744833.
+Trial 18 finished with value: 0.20204488565715628 and parameters: {'learning_rate': 0.030444590001534735, 'max_depth': 7, 'min_child_weight': 0.010469128730104419, 'subsample': 0.6749004800855557, 'colsample_bylevel': 0.6758462178575884, 'colsample_bynode': 0.743681384803538, 'reg_alpha': 2.4345116784354355, 'reg_lambda': 2.3259088620556727, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 26, 'max_leaves': 67}. Best is trial 13 with value: 0.2010328548744833.
+Trial 19 finished with value: 0.20419473233188834 and parameters: {'learning_rate': 0.06754454782606205, 'max_depth': 6, 'min_child_weight': 0.1302442131889271, 'subsample': 0.724316151463346, 'colsample_bylevel': 0.7719898235665422, 'colsample_bynode': 0.7583259619594986, 'reg_alpha': 1.3052578271971478, 'reg_lambda': 0.08689028168849333, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 41, 'max_leaves': 585}. Best is trial 13 with value: 0.2010328548744833.
+Trial 20 finished with value: 0.20283089063077597 and parameters: {'learning_rate': 0.09932580323868352, 'max_depth': 5, 'min_child_weight': 0.021257913870000342, 'subsample': 0.6611365354591838, 'colsample_bylevel': 0.6231981919080909, 'colsample_bynode': 0.6660639149877637, 'reg_alpha': 2.0178880871795237, 'reg_lambda': 2.908237555710736, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 84, 'max_leaves': 1021}. Best is trial 13 with value: 0.2010328548744833.
+Trial 21 finished with value: 0.2025097720704372 and parameters: {'learning_rate': 0.02213240371793617, 'max_depth': 6, 'min_child_weight': 0.001087257493467009, 'subsample': 0.6352223259717029, 'colsample_bylevel': 0.6298122202412529, 'colsample_bynode': 0.8957119740263764, 'reg_alpha': 1.5345741222664129, 'reg_lambda': 2.330717704156493, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 24, 'max_leaves': 274}. Best is trial 13 with value: 0.2010328548744833.
+Trial 22 finished with value: 0.2022411898880936 and parameters: {'learning_rate': 0.02978192987907338, 'max_depth': 6, 'min_child_weight': 0.007037068629377928, 'subsample': 0.6707756251823026, 'colsample_bylevel': 0.6006038480063665, 'colsample_bynode': 0.8727984770917034, 'reg_alpha': 0.8063406454643368, 'reg_lambda': 1.9986218684925898, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 23, 'max_leaves': 334}. Best is trial 13 with value: 0.2010328548744833.
+Trial 23 finished with value: 0.2034048051718923 and parameters: {'learning_rate': 0.04976628959700142, 'max_depth': 7, 'min_child_weight': 0.023594967645637017, 'subsample': 0.6447490983489494, 'colsample_bylevel': 0.6874131313661052, 'colsample_bynode': 0.9131009060162019, 'reg_alpha': 1.3704661251487589, 'reg_lambda': 2.7106892890624428, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 12, 'max_leaves': 190}. Best is trial 13 with value: 0.2010328548744833.
+Trial 24 finished with value: 0.20197830468461198 and parameters: {'learning_rate': 0.021042477552074886, 'max_depth': 5, 'min_child_weight': 0.0027649917878421063, 'subsample': 0.768744826829737, 'colsample_bylevel': 0.6457776752624262, 'colsample_bynode': 0.8445010115334382, 'reg_alpha': 0.0247835630086799, 'reg_lambda': 1.2750491800836448, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 44, 'max_leaves': 537}. Best is trial 13 with value: 0.2010328548744833.
+Trial 25 finished with value: 0.20268096036226768 and parameters: {'learning_rate': 0.034176833048815344, 'max_depth': 8, 'min_child_weight': 0.0024852771939780625, 'subsample': 0.7035610389868114, 'colsample_bylevel': 0.7422374426550845, 'colsample_bynode': 0.7572903983881988, 'reg_alpha': 2.063110979267889, 'reg_lambda': 3.5227311560275556, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 28, 'max_leaves': 109}. Best is trial 13 with value: 0.2010328548744833.
+Optuna Search Completed in: 136.66 seconds
+
+Training final model on optimized parameter setup...
+
+[XGBOOST FINALIZED METRICS]
+Optimal Trees:         117
+1-AUROC:             0.1993 (Delta to TabPFN: +0.0085)
+Accuracy:             0.7318 (Delta to TabPFN: -0.0038)
+Final Train Time:      0.26 seconds (0.0309s per 1K)
+Final Infer Time:      0.00 seconds (0.0006s per 1K)
+
+--- XGBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+ExternalRiskEstimate | 9953.79 | 26.35%
+NetFractionRevolvingBurden | 4976.28 | 13.17%
+AverageMInFile | 3477.19 | 9.20%
+MSinceMostRecentInqexcl7days | 2633.05 | 6.97%
+PercentTradesNeverDelq | 2339.29 | 6.19%
+MSinceOldestTradeOpen | 1713.97 | 4.54%
+PercentTradesWBalance | 1462.82 | 3.87%
+NumSatisfactoryTrades | 1449.97 | 3.84%
+MaxDelq2PublicRecLast12M | 1362.44 | 3.61%
+PercentInstallTrades | 1330.38 | 3.52%
+NumTotalTrades | 898.08 | 2.38%
+MSinceMostRecentDelq | 800.28 | 2.12%
+MSinceMostRecentTradeOpen | 782.52 | 2.07%
+NumRevolvingTradesWBalance | 734.08 | 1.94%
+NumBank2NatlTradesWHighUtilization | 717.09 | 1.90%
+NetFractionInstallBurden | 672.26 | 1.78%
+NumInqLast6M | 596.46 | 1.58%
+MaxDelqEver | 579.94 | 1.54%
+NumInstallTradesWBalance | 394.25 | 1.04%
+NumInqLast6Mexcl7days | 259.01 | 0.69%
+NumTradesOpeninLast12M | 247.37 | 0.65%
+NumTrades60Ever2DerogPubRec | 200.64 | 0.53%
+NumTrades90Ever2DerogPubRec | 194.20 | 0.51%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 0.00%
+Raw Feature Share                            | 100.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 0.00% (0/0)
+Active Raw Tabular Feature Density           | 100.00% (23/23)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 61.89% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 81.27% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 138.80 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/training-3/'
+[W&B] Artifacts and localized metrics logged successfully for heloc_raw-only_xgboost

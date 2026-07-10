@@ -1,0 +1,64 @@
+[W&B] Child process started for job: churn_raw-only_catboost in group session-bar
+Loading archive 'archives/churn.npz' and initializing pipeline for target: CATBOOST...
+Execution Mode: RAW-ONLY
+Session Output Target: outputs/bar/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.0860 | Secondary: 0.9730
+PCA reduced text embeddings to 20 components.
+Final training matrix shape assembled for RAW-ONLY: (4000, 19)
+
+Running 3-Trial Optuna Study for CATBOOST (RAW-ONLY)...
+A new study created in RDB with name: 20260624_093356_churn_raw-only_catboost
+Trial 0 finished with value: 0.07336962224368049 and parameters: {}. Best is trial 0 with value: 0.07336962224368049.
+Trial 1 finished with value: 0.07503365179421528 and parameters: {'learning_rate': 0.015355286838886862, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9852142919229748, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8733991780504303, 'l2_leaf_reg': 0.00018747059221802545, 'leaf_estimation_iterations': 12, 'one_hot_max_size': 36, 'model_size_reg': 0.6803900745073703, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 0 with value: 0.07336962224368049.
+Trial 2 finished with value: 0.07522132578634388 and parameters: {'learning_rate': 0.09138013915892866, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9497327922401265, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8956363364439306, 'l2_leaf_reg': 0.02922905212920092, 'leaf_estimation_iterations': 2, 'one_hot_max_size': 16, 'model_size_reg': 0.5243180891902851, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 0 with value: 0.07336962224368049.
+Optuna Search Completed in: 26.81 seconds
+
+Training final model on optimized parameter setup...
+
+[CATBOOST FINALIZED METRICS]
+Optimal Trees:         100
+1-AUROC:             0.0787 (Delta to TabPFN: -0.0072)
+Accuracy:             0.9600 (Delta to TabPFN: -0.0130)
+Final Train Time:      0.58 seconds (0.1458s per 1K)
+Final Infer Time:      0.01 seconds (0.0078s per 1K)
+
+--- CATBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+total_day_minutes | 15.43 | 15.43%
+number_customer_service_calls | 15.30 | 15.30%
+total_day_charge | 13.70 | 13.70%
+international_plan | 13.32 | 13.32%
+total_eve_charge | 7.71 | 7.71%
+total_intl_calls | 6.88 | 6.88%
+total_eve_minutes | 5.48 | 5.48%
+voice_mail_plan | 4.87 | 4.87%
+total_intl_charge | 3.84 | 3.84%
+total_night_minutes | 3.12 | 3.12%
+number_vmail_messages | 3.05 | 3.05%
+total_intl_minutes | 2.45 | 2.45%
+total_night_charge | 2.27 | 2.27%
+total_night_calls | 0.74 | 0.74%
+total_day_calls | 0.67 | 0.67%
+account_length | 0.45 | 0.45%
+total_eve_calls | 0.41 | 0.41%
+area_code | 0.31 | 0.31%
+state | 0.00 | 0.00%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 0.00%
+Raw Feature Share                            | 100.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 0.00% (0/0)
+Active Raw Tabular Feature Density           | 94.74% (18/19)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 65.47% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 89.66% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 31.35 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/bar/'
+[W&B] Artifacts and localized metrics logged successfully for churn_raw-only_catboost

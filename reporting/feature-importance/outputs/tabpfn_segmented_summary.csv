@@ -1,0 +1,4 @@
+Behavioral Segment,Number_of_Runs,Mean_Improvement_vs_TabPFN,Median_Improvement_vs_TabPFN
+Negative Gap (< 0%) [Ignored Embeddings],75,-9.19%,-2.89%
+Moderate Gap (0% to 30%) [Balanced Synergy],61,-13.72%,-0.93%
+Extreme Gap (> 30%) [Embeddings as Shield],17,+3.60%,+2.60%

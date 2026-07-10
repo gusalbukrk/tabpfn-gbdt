@@ -1,0 +1,4 @@
+Behavioral Segment,Number_of_Runs,Mean_Relative_Improvement_Pct,Median_Relative_Improvement_Pct
+Negative Gap (< 0%) [Ignore Embeddings],75,+1.89%,+1.28%
+Moderate Positive Gap (0% to 30%) [Sweet Spot],61,+10.69%,+3.19%
+Extreme Positive Gap (> 30%) [Regularization Shield],17,-846.66%,+4.01%

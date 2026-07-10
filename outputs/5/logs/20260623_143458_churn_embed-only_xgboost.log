@@ -1,0 +1,65 @@
+[W&B] Child process started for job: churn_embed-only_xgboost in group session-5
+Loading archive 'archives/churn.npz' and initializing pipeline for target: XGBOOST...
+Execution Mode: EMBED-ONLY
+Session Output Target: outputs/5/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.0860 | Secondary: 0.9730
+PCA reduced text embeddings to 20 components.
+Final training matrix shape assembled for EMBED-ONLY: (4000, 20)
+
+Running 3-Trial Optuna Study for XGBOOST (EMBED-ONLY)...
+A new study created in RDB with name: 20260623_143458_churn_embed-only_xgboost
+Trial 0 finished with value: 0.04662722295173982 and parameters: {}. Best is trial 0 with value: 0.04662722295173982.
+Trial 1 finished with value: 0.04936360206013002 and parameters: {'learning_rate': 0.015355286838886862, 'max_depth': 10, 'min_child_weight': 0.5100627805979911, 'subsample': 0.8394633936788146, 'colsample_bylevel': 0.6624074561769746, 'colsample_bynode': 0.662397808134481, 'reg_alpha': 0.29051225247978046, 'reg_lambda': 4.330894111260099, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 8, 'max_leaves': 884}. Best is trial 0 with value: 0.04662722295173982.
+Trial 2 finished with value: 0.047893721084025676 and parameters: {'learning_rate': 0.060534484680010825, 'max_depth': 4, 'min_child_weight': 0.004705059281907645, 'subsample': 0.6733618039413735, 'colsample_bylevel': 0.7216968971838151, 'colsample_bynode': 0.8099025726528951, 'reg_alpha': 2.1597818987087147, 'reg_lambda': 1.4562165780761898, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 16, 'max_leaves': 45}. Best is trial 0 with value: 0.04662722295173982.
+Optuna Search Completed in: 42.84 seconds
+
+Training final model on optimized parameter setup...
+
+[XGBOOST FINALIZED METRICS]
+Optimal Trees:         77
+1-AUROC:             0.0853 (Delta to TabPFN: -0.0007)
+Accuracy:             0.9710 (Delta to TabPFN: -0.0020)
+Final Train Time:      0.23 seconds (0.0582s per 1K)
+Final Infer Time:      0.00 seconds (0.0015s per 1K)
+
+--- XGBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+pca_embed_0 | 2392.97 | 38.91%
+pca_embed_3 | 1038.32 | 16.88%
+pca_embed_1 | 877.46 | 14.27%
+pca_embed_5 | 396.78 | 6.45%
+pca_embed_2 | 206.82 | 3.36%
+pca_embed_18 | 123.43 | 2.01%
+pca_embed_10 | 114.86 | 1.87%
+pca_embed_12 | 114.21 | 1.86%
+pca_embed_7 | 105.37 | 1.71%
+pca_embed_17 | 101.04 | 1.64%
+pca_embed_16 | 86.48 | 1.41%
+pca_embed_6 | 82.04 | 1.33%
+pca_embed_19 | 78.83 | 1.28%
+pca_embed_8 | 73.71 | 1.20%
+pca_embed_13 | 71.48 | 1.16%
+pca_embed_9 | 69.05 | 1.12%
+pca_embed_14 | 64.44 | 1.05%
+pca_embed_4 | 59.16 | 0.96%
+pca_embed_11 | 57.03 | 0.93%
+pca_embed_15 | 36.42 | 0.59%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 100.00%
+Raw Feature Share                            | 0.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (20/20)
+Active Raw Tabular Feature Density           | 0.00% (0/0)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 79.88% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 88.97% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 48.00 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/5/'
+[W&B] Artifacts and localized metrics logged successfully for churn_embed-only_xgboost

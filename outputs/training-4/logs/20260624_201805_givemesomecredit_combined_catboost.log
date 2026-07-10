@@ -1,0 +1,98 @@
+[W&B] Child process started for job: givemesomecredit_combined_catboost in group session-training-4
+Loading archive 'archives/givemesomecredit.npz' and initializing pipeline for target: CATBOOST...
+Execution Mode: COMBINED
+Session Output Target: outputs/training-4/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.1253 | Secondary: 0.9378
+PCA reduced text embeddings to 20 components.
+Final training matrix shape assembled for COMBINED: (120000, 30)
+
+Running 26-Trial Optuna Study for CATBOOST (COMBINED)...
+A new study created in RDB with name: 20260624_201805_givemesomecredit_combined_catboost
+Trial 0 finished with value: 0.13744256835104374 and parameters: {}. Best is trial 0 with value: 0.13744256835104374.
+Trial 1 finished with value: 0.13570878367617767 and parameters: {'learning_rate': 0.015355286838886862, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9852142919229748, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8733991780504303, 'l2_leaf_reg': 0.00018747059221802545, 'leaf_estimation_iterations': 12, 'one_hot_max_size': 36, 'model_size_reg': 0.6803900745073703, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 1 with value: 0.13570878367617767.
+Trial 2 finished with value: 0.13555457571595997 and parameters: {'learning_rate': 0.09138013915892866, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9497327922401265, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8956363364439306, 'l2_leaf_reg': 0.02922905212920092, 'leaf_estimation_iterations': 2, 'one_hot_max_size': 16, 'model_size_reg': 0.5243180891902851, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 2 with value: 0.13555457571595997.
+Trial 3 finished with value: 0.13482376240209293 and parameters: {'learning_rate': 0.011996621453406362, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8099085529881075, 'grow_policy': 'Depthwise', 'depth': 4, 'colsample_bylevel': 0.9271351657620417, 'l2_leaf_reg': 0.06077686426194464, 'leaf_estimation_iterations': 1, 'one_hot_max_size': 36, 'model_size_reg': 0.15869086642715013, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 3 with value: 0.13482376240209293.
+Trial 4 finished with value: 0.13533150722439513 and parameters: {'learning_rate': 0.08580222514877409, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9896896099223678, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.9526349539768235, 'l2_leaf_reg': 0.011702088154220882, 'leaf_estimation_iterations': 1, 'one_hot_max_size': 27, 'model_size_reg': 0.10975998502129433, 'max_ctr_complexity': 5, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 3 with value: 0.13482376240209293.
+Trial 5 finished with value: 0.13448250075095836 and parameters: {'learning_rate': 0.010855517271883068, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8987566853061946, 'grow_policy': 'Depthwise', 'depth': 6, 'colsample_bylevel': 0.877728168328829, 'l2_leaf_reg': 3.597899951374983, 'leaf_estimation_iterations': 9, 'one_hot_max_size': 86, 'model_size_reg': 1.128232550122133, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 6 finished with value: 0.13602382167131688 and parameters: {'learning_rate': 0.07913270952323785, 'bootstrap_type': 'Bernoulli', 'subsample': 0.7265477506155759, 'grow_policy': 'SymmetricTree', 'depth': 5, 'colsample_bylevel': 0.9083015934534223, 'l2_leaf_reg': 0.001883913511943895, 'leaf_estimation_iterations': 11, 'one_hot_max_size': 19, 'model_size_reg': 0.21399549030176218, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 7 finished with value: 0.135532918453922 and parameters: {'learning_rate': 0.007626348515257587, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9406590942262119, 'grow_policy': 'Depthwise', 'depth': 7, 'colsample_bylevel': 0.8798073522301258, 'l2_leaf_reg': 0.00010615690854925657, 'leaf_estimation_iterations': 10, 'one_hot_max_size': 47, 'model_size_reg': 0.7200770311577639, 'max_ctr_complexity': 5, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 8 finished with value: 0.13453818916086124 and parameters: {'learning_rate': 0.006241720498669827, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8075397185632818, 'grow_policy': 'Depthwise', 'depth': 7, 'colsample_bylevel': 0.8996347037278973, 'l2_leaf_reg': 0.00019891099118865958, 'leaf_estimation_iterations': 2, 'one_hot_max_size': 17, 'model_size_reg': 0.7212460519889856, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 9 finished with value: 0.1364180249993997 and parameters: {'learning_rate': 0.07132805718188966, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8416644775485848, 'grow_policy': 'Depthwise', 'depth': 7, 'colsample_bylevel': 0.9341915796354244, 'l2_leaf_reg': 0.4195190175255899, 'leaf_estimation_iterations': 3, 'one_hot_max_size': 29, 'model_size_reg': 0.318293122389662, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 10 finished with value: 0.1356518912161171 and parameters: {'learning_rate': 0.03273941684536397, 'bootstrap_type': 'Bernoulli', 'subsample': 0.701799154886745, 'grow_policy': 'Depthwise', 'depth': 8, 'colsample_bylevel': 0.9942561717820161, 'l2_leaf_reg': 1.841152012664479, 'leaf_estimation_iterations': 5, 'one_hot_max_size': 92, 'model_size_reg': 1.3327052390755632, 'max_ctr_complexity': 3, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 11 finished with value: 0.13484272168941058 and parameters: {'learning_rate': 0.005160968868344048, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8633100588308208, 'grow_policy': 'Depthwise', 'depth': 6, 'colsample_bylevel': 0.8590619822699883, 'l2_leaf_reg': 2.4898729835966105, 'leaf_estimation_iterations': 5, 'one_hot_max_size': 8, 'model_size_reg': 1.2655561354454108, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 12 finished with value: 0.13516216120437008 and parameters: {'learning_rate': 0.012940395513776229, 'bootstrap_type': 'Bernoulli', 'subsample': 0.772242381250273, 'grow_policy': 'Depthwise', 'depth': 6, 'colsample_bylevel': 0.898227943447388, 'l2_leaf_reg': 0.0013785419874151365, 'leaf_estimation_iterations': 20, 'one_hot_max_size': 99, 'model_size_reg': 0.9638906978134099, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 13 finished with value: 0.1346193764364647 and parameters: {'learning_rate': 0.007332155651385135, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8884653446882487, 'grow_policy': 'Depthwise', 'depth': 7, 'colsample_bylevel': 0.857206299528177, 'l2_leaf_reg': 0.24942303118287568, 'leaf_estimation_iterations': 2, 'one_hot_max_size': 8, 'model_size_reg': 0.4259534965648961, 'max_ctr_complexity': 3, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 14 finished with value: 0.13484811279774667 and parameters: {'learning_rate': 0.02289647896082038, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8953683793126899, 'grow_policy': 'Depthwise', 'depth': 6, 'colsample_bylevel': 0.9178489469316413, 'l2_leaf_reg': 0.00429918955530283, 'leaf_estimation_iterations': 1, 'one_hot_max_size': 59, 'model_size_reg': 0.8431457882848591, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 15 finished with value: 0.1355450877671801 and parameters: {'learning_rate': 0.008115758867184377, 'bootstrap_type': 'Bernoulli', 'subsample': 0.7967528254645134, 'grow_policy': 'Depthwise', 'depth': 8, 'colsample_bylevel': 0.9558908203545738, 'l2_leaf_reg': 0.00047392792958192057, 'leaf_estimation_iterations': 5, 'one_hot_max_size': 11, 'model_size_reg': 0.45873983522616135, 'max_ctr_complexity': 3, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 16 finished with value: 0.13545928700907506 and parameters: {'learning_rate': 0.0050089136603965086, 'bootstrap_type': 'Bernoulli', 'subsample': 0.7609524784084656, 'grow_policy': 'Depthwise', 'depth': 5, 'colsample_bylevel': 0.8833519535351692, 'l2_leaf_reg': 0.19154321197381433, 'leaf_estimation_iterations': 2, 'one_hot_max_size': 17, 'model_size_reg': 1.4890526206331551, 'max_ctr_complexity': 5, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 17 finished with value: 0.13480438207030476 and parameters: {'learning_rate': 0.02362254703263174, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8389012843051735, 'grow_policy': 'Depthwise', 'depth': 7, 'colsample_bylevel': 0.8689568749704395, 'l2_leaf_reg': 0.7492619520252408, 'leaf_estimation_iterations': 3, 'one_hot_max_size': 64, 'model_size_reg': 1.0110777531206498, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 18 finished with value: 0.1345872566480164 and parameters: {'learning_rate': 0.009910174326785265, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9163439401186273, 'grow_policy': 'Depthwise', 'depth': 5, 'colsample_bylevel': 0.8951545739987901, 'l2_leaf_reg': 0.06387682284350765, 'leaf_estimation_iterations': 20, 'one_hot_max_size': 12, 'model_size_reg': 0.5878043062262267, 'max_ctr_complexity': 3, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 19 finished with value: 0.1351534173693717 and parameters: {'learning_rate': 0.018915137025867522, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8171487165359391, 'grow_policy': 'SymmetricTree', 'depth': 6, 'colsample_bylevel': 0.852253181743853, 'l2_leaf_reg': 0.008353794059715439, 'leaf_estimation_iterations': 7, 'one_hot_max_size': 72, 'model_size_reg': 0.3333264932500701, 'max_ctr_complexity': 5, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 20 finished with value: 0.13499619963868803 and parameters: {'learning_rate': 0.03887497205274868, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8607523619111284, 'grow_policy': 'Depthwise', 'depth': 8, 'colsample_bylevel': 0.9924443382121896, 'l2_leaf_reg': 3.8893686524007403, 'leaf_estimation_iterations': 1, 'one_hot_max_size': 25, 'model_size_reg': 1.0336089152854948, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 21 finished with value: 0.13467398914350737 and parameters: {'learning_rate': 0.01095901960623605, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9234407348944725, 'grow_policy': 'Depthwise', 'depth': 5, 'colsample_bylevel': 0.8975252816886434, 'l2_leaf_reg': 0.08306632001758102, 'leaf_estimation_iterations': 18, 'one_hot_max_size': 11, 'model_size_reg': 0.6024139764716514, 'max_ctr_complexity': 3, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 22 finished with value: 0.13470151464901903 and parameters: {'learning_rate': 0.00929064970286141, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9054903615189637, 'grow_policy': 'Depthwise', 'depth': 5, 'colsample_bylevel': 0.8871588002421514, 'l2_leaf_reg': 1.0930211710229083, 'leaf_estimation_iterations': 15, 'one_hot_max_size': 13, 'model_size_reg': 0.7943040499094044, 'max_ctr_complexity': 3, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 23 finished with value: 0.1348830831075627 and parameters: {'learning_rate': 0.006435579127562658, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9493939040541554, 'grow_policy': 'Depthwise', 'depth': 6, 'colsample_bylevel': 0.9184852250559196, 'l2_leaf_reg': 0.0005574742820670177, 'leaf_estimation_iterations': 8, 'one_hot_max_size': 20, 'model_size_reg': 0.3515697693790295, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 24 finished with value: 0.13525049304353565 and parameters: {'learning_rate': 0.010266046735814235, 'bootstrap_type': 'Bernoulli', 'subsample': 0.8780496031859621, 'grow_policy': 'Depthwise', 'depth': 7, 'colsample_bylevel': 0.9043960911249972, 'l2_leaf_reg': 0.024627674007716555, 'leaf_estimation_iterations': 15, 'one_hot_max_size': 13, 'model_size_reg': 0.5615362020504354, 'max_ctr_complexity': 3, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Trial 25 finished with value: 0.13449236953557586 and parameters: {'learning_rate': 0.015276085183963787, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9164161536120395, 'grow_policy': 'Depthwise', 'depth': 5, 'colsample_bylevel': 0.8682708478233261, 'l2_leaf_reg': 0.13250448804466258, 'leaf_estimation_iterations': 7, 'one_hot_max_size': 10, 'model_size_reg': 1.0662575924033706, 'max_ctr_complexity': 4, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 5 with value: 0.13448250075095836.
+Optuna Search Completed in: 2077.45 seconds
+
+Training final model on optimized parameter setup...
+
+[CATBOOST FINALIZED METRICS]
+Optimal Trees:         1000
+1-AUROC:             0.1265 (Delta to TabPFN: +0.0013)
+Accuracy:             0.9374 (Delta to TabPFN: -0.0004)
+Final Train Time:      14.34 seconds (0.1195s per 1K)
+Final Infer Time:      0.06 seconds (0.0019s per 1K)
+
+--- CATBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+RevolvingUtilizationOfUnsecuredLines | 20.51 | 20.51%
+NumberOfTimes90DaysLate | 14.14 | 14.14%
+pca_embed_0 | 11.67 | 11.67%
+NumberOfTime30-59DaysPastDueNotWorse | 9.40 | 9.40%
+pca_embed_1 | 7.02 | 7.02%
+NumberOfTime60-89DaysPastDueNotWorse | 4.76 | 4.76%
+pca_embed_3 | 4.21 | 4.21%
+age | 3.31 | 3.31%
+pca_embed_12 | 3.26 | 3.26%
+pca_embed_8 | 1.97 | 1.97%
+pca_embed_5 | 1.67 | 1.67%
+pca_embed_6 | 1.63 | 1.63%
+pca_embed_2 | 1.60 | 1.60%
+pca_embed_7 | 1.30 | 1.30%
+DebtRatio | 1.24 | 1.24%
+MonthlyIncome | 1.21 | 1.21%
+pca_embed_14 | 1.12 | 1.12%
+pca_embed_4 | 1.10 | 1.10%
+pca_embed_17 | 1.08 | 1.08%
+pca_embed_15 | 1.00 | 1.00%
+pca_embed_18 | 0.91 | 0.91%
+pca_embed_10 | 0.90 | 0.90%
+pca_embed_13 | 0.86 | 0.86%
+pca_embed_9 | 0.78 | 0.78%
+pca_embed_19 | 0.71 | 0.71%
+pca_embed_11 | 0.69 | 0.69%
+NumberOfOpenCreditLinesAndLoans | 0.65 | 0.65%
+pca_embed_16 | 0.62 | 0.62%
+NumberRealEstateLoansOrLines | 0.36 | 0.36%
+NumberOfDependents | 0.33 | 0.33%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 44.09%
+Raw Feature Share                            | 55.91%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (20/20)
+Active Raw Tabular Feature Density           | 100.00% (10/10)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 62.74% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 80.24% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 2095.07 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/training-4/'
+[W&B] Artifacts and localized metrics logged successfully for givemesomecredit_combined_catboost

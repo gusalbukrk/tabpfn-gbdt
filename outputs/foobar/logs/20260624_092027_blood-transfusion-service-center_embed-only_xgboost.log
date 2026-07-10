@@ -1,0 +1,67 @@
+[W&B] Child process started for job: blood-transfusion-service-center_embed-only_xgboost in group session-foo
+Loading archive 'archives/blood-transfusion-service-center.npz' and initializing pipeline for target: XGBOOST...
+Execution Mode: EMBED-ONLY
+Session Output Target: outputs/foo/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.2148 | Secondary: 0.7933
+PCA reduced text embeddings to 22 components.
+Final training matrix shape assembled for EMBED-ONLY: (598, 22)
+
+Running 3-Trial Optuna Study for XGBOOST (EMBED-ONLY)...
+A new study created in RDB with name: 20260624_092027_blood-transfusion-service-center_embed-only_xgboost
+Trial 0 finished with value: 0.2859871287696365 and parameters: {}. Best is trial 0 with value: 0.2859871287696365.
+Trial 1 finished with value: 0.2904734262125903 and parameters: {'learning_rate': 0.015355286838886862, 'max_depth': 10, 'min_child_weight': 0.5100627805979911, 'subsample': 0.8394633936788146, 'colsample_bylevel': 0.6624074561769746, 'colsample_bynode': 0.662397808134481, 'reg_alpha': 0.29051225247978046, 'reg_lambda': 4.330894111260099, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 8, 'max_leaves': 884}. Best is trial 0 with value: 0.2859871287696365.
+Trial 2 finished with value: 0.2773441979130834 and parameters: {'learning_rate': 0.060534484680010825, 'max_depth': 4, 'min_child_weight': 0.004705059281907645, 'subsample': 0.6733618039413735, 'colsample_bylevel': 0.7216968971838151, 'colsample_bynode': 0.8099025726528951, 'reg_alpha': 2.1597818987087147, 'reg_lambda': 1.4562165780761898, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 16, 'max_leaves': 45}. Best is trial 2 with value: 0.2773441979130834.
+Optuna Search Completed in: 14.46 seconds
+
+Training final model on optimized parameter setup...
+
+[XGBOOST FINALIZED METRICS]
+Optimal Trees:         37
+1-AUROC:             0.2540 (Delta to TabPFN: +0.0392)
+Accuracy:             0.7733 (Delta to TabPFN: -0.0200)
+Final Train Time:      0.03 seconds (0.0427s per 1K)
+Final Infer Time:      0.00 seconds (0.0049s per 1K)
+
+--- XGBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+pca_embed_4 | 308.96 | 24.47%
+pca_embed_6 | 93.36 | 7.40%
+pca_embed_0 | 84.53 | 6.70%
+pca_embed_8 | 76.33 | 6.05%
+pca_embed_18 | 75.96 | 6.02%
+pca_embed_19 | 64.26 | 5.09%
+pca_embed_3 | 63.53 | 5.03%
+pca_embed_14 | 53.89 | 4.27%
+pca_embed_21 | 47.73 | 3.78%
+pca_embed_15 | 45.08 | 3.57%
+pca_embed_13 | 40.92 | 3.24%
+pca_embed_7 | 38.10 | 3.02%
+pca_embed_1 | 36.04 | 2.85%
+pca_embed_12 | 33.38 | 2.64%
+pca_embed_5 | 32.19 | 2.55%
+pca_embed_11 | 31.56 | 2.50%
+pca_embed_2 | 29.69 | 2.35%
+pca_embed_9 | 29.40 | 2.33%
+pca_embed_17 | 23.10 | 1.83%
+pca_embed_20 | 19.26 | 1.53%
+pca_embed_16 | 17.88 | 1.42%
+pca_embed_10 | 17.27 | 1.37%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 100.00%
+Raw Feature Share                            | 0.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (22/22)
+Active Raw Tabular Feature Density           | 0.00% (0/0)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 50.63% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 72.37% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 21.52 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/foo/'
+[W&B] Artifacts and localized metrics logged successfully for blood-transfusion-service-center_embed-only_xgboost

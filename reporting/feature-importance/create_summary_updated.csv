@@ -1,0 +1,40 @@
+# Description: Reads a CSV, calculates total features and the percentage of PCA components for each row, saves the specified columns to a new CSV, and prints the overall average PCA percentage.
+
+import os
+import pandas as pd
+
+INPUT_FILE = "summary.csv"
+OUTPUT_FILE = "summary_updated.csv"
+
+
+def main():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    input_path = os.path.join(script_dir, INPUT_FILE)
+    output_path = os.path.join(script_dir, OUTPUT_FILE)
+
+    df = pd.read_csv(input_path)
+
+    df["feat_total_count"] = df["pca_n_components"] + df["dataset_raw_features_count"]
+
+    total_safe = df["feat_total_count"].replace(0, 1)
+    df["pca_percentage"] = (df["pca_n_components"] / total_safe) * 100
+
+    output_columns = [
+        "dataset",
+        "dataset_raw_features_count",
+        "pca_n_components",
+        "feat_total_count",
+        "pca_percentage",
+    ]
+
+    df_filtered = df[output_columns]
+
+    df_filtered.to_csv(output_path, index=False)
+    print(f"file saved successfully to {output_path}")
+
+    avg_pca_percentage = df["pca_percentage"].mean()
+    print(f"average pca_percentage: {avg_pca_percentage:.2f}%")
+
+
+if __name__ == "__main__":
+    main()

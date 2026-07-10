@@ -1,0 +1,77 @@
+[W&B] Child process started for job: diabetes_embed-only_lightgbm in group session-foo
+Loading archive 'archives/diabetes.npz' and initializing pipeline for target: LIGHTGBM...
+Execution Mode: EMBED-ONLY
+Session Output Target: outputs/foo/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.1320 | Secondary: 0.7597
+PCA reduced text embeddings to 32 components.
+Final training matrix shape assembled for EMBED-ONLY: (614, 32)
+
+Running 3-Trial Optuna Study for LIGHTGBM (EMBED-ONLY)...
+A new study created in RDB with name: 20260624_092310_diabetes_embed-only_lightgbm
+Trial 0 finished with value: 0.22946937321937322 and parameters: {}. Best is trial 0 with value: 0.22946937321937322.
+Trial 1 finished with value: 0.23106837606837605 and parameters: {'learning_rate': 0.015355286838886862, 'feature_fraction': 0.9704285838459497, 'bagging_fraction': 0.9195981825434215, 'bagging_freq': 1, 'num_leaves': 28, 'min_data_in_leaf': 1, 'extra_trees': False, 'min_data_per_group': 57, 'cat_l2': 0.18327672955935934, 'cat_smooth': 3.4702669886504163, 'max_cat_to_onehot': 8, 'lambda_l1': 0.9699128611767781, 'lambda_l2': 1.6649020373367633}. Best is trial 0 with value: 0.22946937321937322.
+Trial 2 finished with value: 0.2235683760683761 and parameters: {'learning_rate': 0.009445600138094694, 'feature_fraction': 0.5090949803242604, 'bagging_fraction': 0.7550213529560301, 'bagging_freq': 1, 'num_leaves': 7, 'min_data_in_leaf': 6, 'extra_trees': False, 'min_data_per_group': 20, 'cat_l2': 0.01153297626310632, 'cat_smooth': 0.028888383623653185, 'max_cat_to_onehot': 19, 'lambda_l1': 0.4561243772186142, 'lambda_l2': 1.5703734051898879}. Best is trial 2 with value: 0.2235683760683761.
+Optuna Search Completed in: 26.80 seconds
+
+Training final model on optimized parameter setup...
+
+[LIGHTGBM FINALIZED METRICS]
+Optimal Trees:         171
+1-AUROC:             0.1781 (Delta to TabPFN: +0.0461)
+Accuracy:             0.7338 (Delta to TabPFN: -0.0260)
+Final Train Time:      0.13 seconds (0.2155s per 1K)
+Final Infer Time:      0.00 seconds (0.0057s per 1K)
+
+--- LIGHTGBM Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+pca_embed_8 | 2073.81 | 21.02%
+pca_embed_1 | 1851.66 | 18.77%
+pca_embed_3 | 1088.34 | 11.03%
+pca_embed_0 | 606.87 | 6.15%
+pca_embed_6 | 500.96 | 5.08%
+pca_embed_5 | 377.50 | 3.83%
+pca_embed_2 | 362.30 | 3.67%
+pca_embed_10 | 347.30 | 3.52%
+pca_embed_9 | 247.52 | 2.51%
+pca_embed_20 | 192.54 | 1.95%
+pca_embed_7 | 151.69 | 1.54%
+pca_embed_16 | 150.60 | 1.53%
+pca_embed_22 | 150.13 | 1.52%
+pca_embed_21 | 149.64 | 1.52%
+pca_embed_19 | 145.59 | 1.48%
+pca_embed_27 | 139.91 | 1.42%
+pca_embed_30 | 137.91 | 1.40%
+pca_embed_12 | 130.24 | 1.32%
+pca_embed_29 | 108.34 | 1.10%
+pca_embed_11 | 104.16 | 1.06%
+pca_embed_4 | 103.76 | 1.05%
+pca_embed_15 | 102.61 | 1.04%
+pca_embed_23 | 93.37 | 0.95%
+pca_embed_13 | 86.86 | 0.88%
+pca_embed_18 | 83.34 | 0.84%
+pca_embed_14 | 68.18 | 0.69%
+pca_embed_28 | 66.94 | 0.68%
+pca_embed_25 | 66.41 | 0.67%
+pca_embed_26 | 61.85 | 0.63%
+pca_embed_24 | 53.42 | 0.54%
+pca_embed_17 | 33.65 | 0.34%
+pca_embed_31 | 26.49 | 0.27%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 100.00%
+Raw Feature Share                            | 0.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (32/32)
+Active Raw Tabular Feature Density           | 0.00% (0/0)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 62.06% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 77.54% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 33.90 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/foo/'
+[W&B] Artifacts and localized metrics logged successfully for diabetes_embed-only_lightgbm

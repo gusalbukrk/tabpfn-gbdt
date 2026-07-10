@@ -1,0 +1,53 @@
+[W&B] Child process started for job: diabetes_raw-only_xgboost in group session-foo
+Loading archive 'archives/diabetes.npz' and initializing pipeline for target: XGBOOST...
+Execution Mode: RAW-ONLY
+Session Output Target: outputs/foo/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.1320 | Secondary: 0.7597
+PCA reduced text embeddings to 32 components.
+Final training matrix shape assembled for RAW-ONLY: (614, 8)
+
+Running 3-Trial Optuna Study for XGBOOST (RAW-ONLY)...
+A new study created in RDB with name: 20260624_092429_diabetes_raw-only_xgboost
+Trial 0 finished with value: 0.19819800569800572 and parameters: {}. Best is trial 0 with value: 0.19819800569800572.
+Trial 1 finished with value: 0.18344373219373222 and parameters: {'learning_rate': 0.015355286838886862, 'max_depth': 10, 'min_child_weight': 0.5100627805979911, 'subsample': 0.8394633936788146, 'colsample_bylevel': 0.6624074561769746, 'colsample_bynode': 0.662397808134481, 'reg_alpha': 0.29051225247978046, 'reg_lambda': 4.330894111260099, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 8, 'max_leaves': 884}. Best is trial 1 with value: 0.18344373219373222.
+Trial 2 finished with value: 0.18586894586894576 and parameters: {'learning_rate': 0.060534484680010825, 'max_depth': 4, 'min_child_weight': 0.004705059281907645, 'subsample': 0.6733618039413735, 'colsample_bylevel': 0.7216968971838151, 'colsample_bynode': 0.8099025726528951, 'reg_alpha': 2.1597818987087147, 'reg_lambda': 1.4562165780761898, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 16, 'max_leaves': 45}. Best is trial 1 with value: 0.18344373219373222.
+Optuna Search Completed in: 11.79 seconds
+
+Training final model on optimized parameter setup...
+
+[XGBOOST FINALIZED METRICS]
+Optimal Trees:         206
+1-AUROC:             0.1393 (Delta to TabPFN: +0.0072)
+Accuracy:             0.7597 (Delta to TabPFN: +0.0000)
+Final Train Time:      0.42 seconds (0.6801s per 1K)
+Final Infer Time:      0.00 seconds (0.0081s per 1K)
+
+--- XGBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+Glucose | 4327.34 | 34.90%
+BMI | 2340.70 | 18.88%
+Age | 1893.64 | 15.27%
+DiabetesPedigreeFunction | 1279.48 | 10.32%
+Insulin | 746.38 | 6.02%
+BloodPressure | 723.67 | 5.84%
+Pregnancies | 591.44 | 4.77%
+SkinThickness | 495.17 | 3.99%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 0.00%
+Raw Feature Share                            | 100.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 0.00% (0/0)
+Active Raw Tabular Feature Density           | 100.00% (8/8)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 85.40% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 100.00% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 19.14 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/foo/'
+[W&B] Artifacts and localized metrics logged successfully for diabetes_raw-only_xgboost

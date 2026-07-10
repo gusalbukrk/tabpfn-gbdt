@@ -1,0 +1,82 @@
+[W&B] Child process started for job: wine_quality_combined_xgboost in group session-bar
+Loading archive 'archives/wine_quality.npz' and initializing pipeline for target: XGBOOST...
+Execution Mode: COMBINED
+Session Output Target: outputs/bar/
+Task Type: REGRESSION
+TabPFN Baselines Loaded - Primary: 0.5665 | Secondary: 0.5710
+PCA reduced text embeddings to 25 components.
+Final training matrix shape assembled for COMBINED: (5197, 37)
+
+Running 3-Trial Optuna Study for XGBOOST (COMBINED)...
+A new study created in RDB with name: 20260624_093652_wine_quality_combined_xgboost
+Trial 0 finished with value: 0.6061802600865427 and parameters: {}. Best is trial 0 with value: 0.6061802600865427.
+Trial 1 finished with value: 0.5960389937216327 and parameters: {'learning_rate': 0.015355286838886862, 'max_depth': 10, 'min_child_weight': 0.5100627805979911, 'subsample': 0.8394633936788146, 'colsample_bylevel': 0.6624074561769746, 'colsample_bynode': 0.662397808134481, 'reg_alpha': 0.29051225247978046, 'reg_lambda': 4.330894111260099, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 8, 'max_leaves': 884}. Best is trial 1 with value: 0.5960389937216327.
+Trial 2 finished with value: 0.591506288592496 and parameters: {'learning_rate': 0.060534484680010825, 'max_depth': 4, 'min_child_weight': 0.004705059281907645, 'subsample': 0.6733618039413735, 'colsample_bylevel': 0.7216968971838151, 'colsample_bynode': 0.8099025726528951, 'reg_alpha': 2.1597818987087147, 'reg_lambda': 1.4562165780761898, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 16, 'max_leaves': 45}. Best is trial 2 with value: 0.591506288592496.
+Optuna Search Completed in: 80.77 seconds
+
+Training final model on optimized parameter setup...
+
+[XGBOOST FINALIZED METRICS]
+Optimal Trees:         79
+RMSE:             0.5672 (Delta to TabPFN: +0.0006)
+R2_Score:             0.5700 (Delta to TabPFN: -0.0010)
+Final Train Time:      0.17 seconds (0.0335s per 1K)
+Final Infer Time:      0.00 seconds (0.0029s per 1K)
+
+--- XGBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+pca_embed_1 | 6683.57 | 46.12%
+pca_embed_2 | 2751.62 | 18.99%
+pca_embed_0 | 2108.64 | 14.55%
+pca_embed_3 | 517.21 | 3.57%
+pca_embed_4 | 490.46 | 3.38%
+pca_embed_5 | 280.15 | 1.93%
+alcohol | 185.86 | 1.28%
+pca_embed_7 | 121.43 | 0.84%
+pca_embed_6 | 95.77 | 0.66%
+pca_embed_8 | 90.06 | 0.62%
+pca_embed_23 | 73.53 | 0.51%
+pca_embed_11 | 62.55 | 0.43%
+free_sulfur_dioxide | 60.68 | 0.42%
+pca_embed_9 | 56.10 | 0.39%
+pca_embed_17 | 54.90 | 0.38%
+pca_embed_15 | 52.75 | 0.36%
+pca_embed_19 | 52.42 | 0.36%
+pca_embed_24 | 50.57 | 0.35%
+chlorides | 47.82 | 0.33%
+pca_embed_10 | 46.49 | 0.32%
+pca_embed_12 | 45.82 | 0.32%
+fixed_acidity | 44.66 | 0.31%
+pca_embed_20 | 43.77 | 0.30%
+density | 42.65 | 0.29%
+pca_embed_16 | 41.73 | 0.29%
+citric_acid | 40.57 | 0.28%
+pca_embed_22 | 39.54 | 0.27%
+volatile_acidity | 38.82 | 0.27%
+pca_embed_21 | 37.91 | 0.26%
+pca_embed_13 | 37.44 | 0.26%
+residual_sugar | 36.91 | 0.25%
+pca_embed_14 | 35.12 | 0.24%
+pH | 33.70 | 0.23%
+pca_embed_18 | 33.48 | 0.23%
+total_sulfur_dioxide | 28.75 | 0.20%
+sulphates | 28.43 | 0.20%
+wine_color | 0.00 | 0.00%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 95.94%
+Raw Feature Share                            | 4.06%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (25/25)
+Active Raw Tabular Feature Density           | 91.67% (11/12)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 86.61% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 91.95% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 84.40 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/bar/'
+[W&B] Artifacts and localized metrics logged successfully for wine_quality_combined_xgboost

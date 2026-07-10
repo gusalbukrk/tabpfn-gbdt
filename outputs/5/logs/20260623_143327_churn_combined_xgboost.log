@@ -1,0 +1,84 @@
+[W&B] Child process started for job: churn_combined_xgboost in group session-5
+Loading archive 'archives/churn.npz' and initializing pipeline for target: XGBOOST...
+Execution Mode: COMBINED
+Session Output Target: outputs/5/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.0860 | Secondary: 0.9730
+PCA reduced text embeddings to 20 components.
+Final training matrix shape assembled for COMBINED: (4000, 39)
+
+Running 3-Trial Optuna Study for XGBOOST (COMBINED)...
+A new study created in RDB with name: 20260623_143327_churn_combined_xgboost
+Trial 0 finished with value: 0.055927791364656754 and parameters: {}. Best is trial 0 with value: 0.055927791364656754.
+Trial 1 finished with value: 0.05559282130687304 and parameters: {'learning_rate': 0.015355286838886862, 'max_depth': 10, 'min_child_weight': 0.5100627805979911, 'subsample': 0.8394633936788146, 'colsample_bylevel': 0.6624074561769746, 'colsample_bynode': 0.662397808134481, 'reg_alpha': 0.29051225247978046, 'reg_lambda': 4.330894111260099, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 8, 'max_leaves': 884}. Best is trial 1 with value: 0.05559282130687304.
+Trial 2 finished with value: 0.05320638227369312 and parameters: {'learning_rate': 0.060534484680010825, 'max_depth': 4, 'min_child_weight': 0.004705059281907645, 'subsample': 0.6733618039413735, 'colsample_bylevel': 0.7216968971838151, 'colsample_bynode': 0.8099025726528951, 'reg_alpha': 2.1597818987087147, 'reg_lambda': 1.4562165780761898, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 16, 'max_leaves': 45}. Best is trial 2 with value: 0.05320638227369312.
+Optuna Search Completed in: 43.86 seconds
+
+Training final model on optimized parameter setup...
+
+[XGBOOST FINALIZED METRICS]
+Optimal Trees:         411
+1-AUROC:             0.0793 (Delta to TabPFN: -0.0067)
+Accuracy:             0.9730 (Delta to TabPFN: +0.0000)
+Final Train Time:      0.37 seconds (0.0937s per 1K)
+Final Infer Time:      0.00 seconds (0.0040s per 1K)
+
+--- XGBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+pca_embed_0 | 6252.50 | 34.60%
+pca_embed_1 | 2695.14 | 14.91%
+pca_embed_5 | 2170.34 | 12.01%
+pca_embed_3 | 1709.94 | 9.46%
+pca_embed_2 | 634.70 | 3.51%
+pca_embed_18 | 267.61 | 1.48%
+state | 257.08 | 1.42%
+pca_embed_12 | 236.80 | 1.31%
+pca_embed_14 | 229.18 | 1.27%
+pca_embed_17 | 222.70 | 1.23%
+pca_embed_4 | 217.77 | 1.20%
+pca_embed_10 | 215.84 | 1.19%
+pca_embed_8 | 214.20 | 1.19%
+total_day_minutes | 204.15 | 1.13%
+pca_embed_19 | 203.69 | 1.13%
+pca_embed_7 | 190.73 | 1.06%
+pca_embed_9 | 167.00 | 0.92%
+pca_embed_13 | 159.01 | 0.88%
+pca_embed_16 | 158.76 | 0.88%
+pca_embed_6 | 153.06 | 0.85%
+pca_embed_15 | 146.94 | 0.81%
+total_intl_minutes | 127.54 | 0.71%
+pca_embed_11 | 121.33 | 0.67%
+total_day_calls | 117.65 | 0.65%
+account_length | 113.56 | 0.63%
+total_night_calls | 111.04 | 0.61%
+total_night_minutes | 110.13 | 0.61%
+number_customer_service_calls | 109.26 | 0.60%
+total_eve_minutes | 88.07 | 0.49%
+total_eve_calls | 86.44 | 0.48%
+total_eve_charge | 65.73 | 0.36%
+total_day_charge | 55.89 | 0.31%
+number_vmail_messages | 54.46 | 0.30%
+total_night_charge | 46.32 | 0.26%
+total_intl_charge | 45.58 | 0.25%
+voice_mail_plan | 45.02 | 0.25%
+total_intl_calls | 39.35 | 0.22%
+area_code | 19.02 | 0.11%
+international_plan | 9.57 | 0.05%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 90.56%
+Raw Feature Share                            | 9.44%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (20/20)
+Active Raw Tabular Feature Density           | 100.00% (19/19)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 74.49% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 81.20% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 48.85 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/5/'
+[W&B] Artifacts and localized metrics logged successfully for churn_combined_xgboost

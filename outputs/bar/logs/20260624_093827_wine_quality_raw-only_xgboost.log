@@ -1,0 +1,57 @@
+[W&B] Child process started for job: wine_quality_raw-only_xgboost in group session-bar
+Loading archive 'archives/wine_quality.npz' and initializing pipeline for target: XGBOOST...
+Execution Mode: RAW-ONLY
+Session Output Target: outputs/bar/
+Task Type: REGRESSION
+TabPFN Baselines Loaded - Primary: 0.5665 | Secondary: 0.5710
+PCA reduced text embeddings to 25 components.
+Final training matrix shape assembled for RAW-ONLY: (5197, 12)
+
+Running 3-Trial Optuna Study for XGBOOST (RAW-ONLY)...
+A new study created in RDB with name: 20260624_093827_wine_quality_raw-only_xgboost
+Trial 0 finished with value: 0.6437233137197229 and parameters: {}. Best is trial 0 with value: 0.6437233137197229.
+Trial 1 finished with value: 0.6027111948710145 and parameters: {'learning_rate': 0.015355286838886862, 'max_depth': 10, 'min_child_weight': 0.5100627805979911, 'subsample': 0.8394633936788146, 'colsample_bylevel': 0.6624074561769746, 'colsample_bynode': 0.662397808134481, 'reg_alpha': 0.29051225247978046, 'reg_lambda': 4.330894111260099, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 8, 'max_leaves': 884}. Best is trial 1 with value: 0.6027111948710145.
+Trial 2 finished with value: 0.6469895095163138 and parameters: {'learning_rate': 0.060534484680010825, 'max_depth': 4, 'min_child_weight': 0.004705059281907645, 'subsample': 0.6733618039413735, 'colsample_bylevel': 0.7216968971838151, 'colsample_bynode': 0.8099025726528951, 'reg_alpha': 2.1597818987087147, 'reg_lambda': 1.4562165780761898, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 16, 'max_leaves': 45}. Best is trial 1 with value: 0.6027111948710145.
+Optuna Search Completed in: 108.46 seconds
+
+Training final model on optimized parameter setup...
+
+[XGBOOST FINALIZED METRICS]
+Optimal Trees:         1000
+RMSE:             0.5881 (Delta to TabPFN: +0.0216)
+R2_Score:             0.5376 (Delta to TabPFN: -0.0334)
+Final Train Time:      13.47 seconds (2.5911s per 1K)
+Final Infer Time:      0.02 seconds (0.0181s per 1K)
+
+--- XGBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+alcohol | 22197.18 | 19.76%
+volatile_acidity | 13042.91 | 11.61%
+density | 10944.88 | 9.74%
+free_sulfur_dioxide | 9946.04 | 8.85%
+residual_sugar | 8593.41 | 7.65%
+chlorides | 8368.50 | 7.45%
+citric_acid | 8358.73 | 7.44%
+total_sulfur_dioxide | 8318.09 | 7.40%
+sulphates | 8105.30 | 7.21%
+pH | 7331.47 | 6.53%
+fixed_acidity | 6709.41 | 5.97%
+wine_color | 442.71 | 0.39%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 0.00%
+Raw Feature Share                            | 100.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 0.00% (0/0)
+Active Raw Tabular Feature Density           | 100.00% (12/12)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 57.61% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 93.63% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 125.32 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/bar/'
+[W&B] Artifacts and localized metrics logged successfully for wine_quality_raw-only_xgboost

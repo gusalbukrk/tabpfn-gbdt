@@ -1,0 +1,75 @@
+[W&B] Child process started for job: mic_embed-only_xgboost in group session-5
+Loading archive 'archives/mic.npz' and initializing pipeline for target: XGBOOST...
+Execution Mode: EMBED-ONLY
+Session Output Target: outputs/5/
+Task Type: MULTICLASS
+TabPFN Baselines Loaded - Primary: 0.4552 | Secondary: 0.8882
+PCA reduced text embeddings to 30 components.
+Final training matrix shape assembled for EMBED-ONLY: (1359, 30)
+
+Running 3-Trial Optuna Study for XGBOOST (EMBED-ONLY)...
+A new study created in RDB with name: 20260623_144501_mic_embed-only_xgboost
+Trial 0 finished with value: 0.501191163440611 and parameters: {}. Best is trial 0 with value: 0.501191163440611.
+Trial 1 finished with value: 0.4773617059904177 and parameters: {'learning_rate': 0.015355286838886862, 'max_depth': 10, 'min_child_weight': 0.5100627805979911, 'subsample': 0.8394633936788146, 'colsample_bylevel': 0.6624074561769746, 'colsample_bynode': 0.662397808134481, 'reg_alpha': 0.29051225247978046, 'reg_lambda': 4.330894111260099, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 8, 'max_leaves': 884}. Best is trial 1 with value: 0.4773617059904177.
+Trial 2 finished with value: 0.4719766355074101 and parameters: {'learning_rate': 0.060534484680010825, 'max_depth': 4, 'min_child_weight': 0.004705059281907645, 'subsample': 0.6733618039413735, 'colsample_bylevel': 0.7216968971838151, 'colsample_bynode': 0.8099025726528951, 'reg_alpha': 2.1597818987087147, 'reg_lambda': 1.4562165780761898, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 16, 'max_leaves': 45}. Best is trial 2 with value: 0.4719766355074101.
+Optuna Search Completed in: 83.29 seconds
+
+Training final model on optimized parameter setup...
+
+[XGBOOST FINALIZED METRICS]
+Optimal Trees:         100
+Log_Loss:             0.4656 (Delta to TabPFN: +0.0103)
+Accuracy:             0.8853 (Delta to TabPFN: -0.0029)
+Final Train Time:      0.81 seconds (0.5960s per 1K)
+Final Infer Time:      0.00 seconds (0.0049s per 1K)
+
+--- XGBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+pca_embed_0 | 2982.55 | 39.19%
+pca_embed_2 | 429.26 | 5.64%
+pca_embed_1 | 368.45 | 4.84%
+pca_embed_4 | 256.40 | 3.37%
+pca_embed_20 | 247.23 | 3.25%
+pca_embed_6 | 210.61 | 2.77%
+pca_embed_5 | 209.74 | 2.76%
+pca_embed_12 | 187.47 | 2.46%
+pca_embed_18 | 180.85 | 2.38%
+pca_embed_29 | 180.67 | 2.37%
+pca_embed_9 | 179.08 | 2.35%
+pca_embed_27 | 148.77 | 1.95%
+pca_embed_3 | 144.65 | 1.90%
+pca_embed_7 | 138.74 | 1.82%
+pca_embed_14 | 138.69 | 1.82%
+pca_embed_13 | 133.43 | 1.75%
+pca_embed_21 | 123.66 | 1.62%
+pca_embed_8 | 121.81 | 1.60%
+pca_embed_23 | 119.24 | 1.57%
+pca_embed_28 | 117.13 | 1.54%
+pca_embed_17 | 114.61 | 1.51%
+pca_embed_16 | 110.34 | 1.45%
+pca_embed_24 | 108.68 | 1.43%
+pca_embed_19 | 104.26 | 1.37%
+pca_embed_22 | 95.69 | 1.26%
+pca_embed_25 | 95.10 | 1.25%
+pca_embed_15 | 94.89 | 1.25%
+pca_embed_11 | 94.01 | 1.24%
+pca_embed_10 | 87.55 | 1.15%
+pca_embed_26 | 87.17 | 1.15%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 100.00%
+Raw Feature Share                            | 0.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (30/30)
+Active Raw Tabular Feature Density           | 0.00% (0/0)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 56.29% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 69.02% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 88.60 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/5/'
+[W&B] Artifacts and localized metrics logged successfully for mic_embed-only_xgboost

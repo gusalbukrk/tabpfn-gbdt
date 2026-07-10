@@ -1,0 +1,84 @@
+[W&B] Child process started for job: churn_combined_lightgbm in group session-bar
+Loading archive 'archives/churn.npz' and initializing pipeline for target: LIGHTGBM...
+Execution Mode: COMBINED
+Session Output Target: outputs/bar/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.0860 | Secondary: 0.9730
+PCA reduced text embeddings to 20 components.
+Final training matrix shape assembled for COMBINED: (4000, 39)
+
+Running 3-Trial Optuna Study for LIGHTGBM (COMBINED)...
+A new study created in RDB with name: 20260624_092748_churn_combined_lightgbm
+Trial 0 finished with value: 0.05771567770585129 and parameters: {}. Best is trial 0 with value: 0.05771567770585129.
+Trial 1 finished with value: 0.06211069774204403 and parameters: {'learning_rate': 0.015355286838886862, 'feature_fraction': 0.9704285838459497, 'bagging_fraction': 0.9195981825434215, 'bagging_freq': 1, 'num_leaves': 28, 'min_data_in_leaf': 1, 'extra_trees': False, 'min_data_per_group': 57, 'cat_l2': 0.18327672955935934, 'cat_smooth': 3.4702669886504163, 'max_cat_to_onehot': 8, 'lambda_l1': 0.9699128611767781, 'lambda_l2': 1.6649020373367633}. Best is trial 0 with value: 0.05771567770585129.
+Trial 2 finished with value: 0.0584816725473456 and parameters: {'learning_rate': 0.009445600138094694, 'feature_fraction': 0.5090949803242604, 'bagging_fraction': 0.7550213529560301, 'bagging_freq': 1, 'num_leaves': 7, 'min_data_in_leaf': 6, 'extra_trees': False, 'min_data_per_group': 20, 'cat_l2': 0.01153297626310632, 'cat_smooth': 0.028888383623653185, 'max_cat_to_onehot': 19, 'lambda_l1': 0.4561243772186142, 'lambda_l2': 1.5703734051898879}. Best is trial 0 with value: 0.05771567770585129.
+Optuna Search Completed in: 32.82 seconds
+
+Training final model on optimized parameter setup...
+
+[LIGHTGBM FINALIZED METRICS]
+Optimal Trees:         114
+1-AUROC:             0.0856 (Delta to TabPFN: -0.0004)
+Accuracy:             0.9720 (Delta to TabPFN: -0.0010)
+Final Train Time:      0.30 seconds (0.0750s per 1K)
+Final Infer Time:      0.01 seconds (0.0078s per 1K)
+
+--- LIGHTGBM Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+pca_embed_0 | 6947.62 | 40.86%
+pca_embed_1 | 2399.20 | 14.11%
+pca_embed_3 | 2155.15 | 12.68%
+pca_embed_5 | 1119.10 | 6.58%
+pca_embed_2 | 626.17 | 3.68%
+pca_embed_18 | 255.69 | 1.50%
+pca_embed_7 | 242.88 | 1.43%
+pca_embed_10 | 239.44 | 1.41%
+state | 218.04 | 1.28%
+pca_embed_12 | 215.31 | 1.27%
+pca_embed_17 | 205.34 | 1.21%
+pca_embed_9 | 186.99 | 1.10%
+total_night_minutes | 161.09 | 0.95%
+pca_embed_8 | 144.54 | 0.85%
+total_day_calls | 137.69 | 0.81%
+pca_embed_4 | 134.26 | 0.79%
+pca_embed_16 | 131.85 | 0.78%
+pca_embed_11 | 129.75 | 0.76%
+pca_embed_6 | 129.19 | 0.76%
+account_length | 122.90 | 0.72%
+pca_embed_14 | 121.06 | 0.71%
+total_intl_minutes | 116.07 | 0.68%
+total_eve_calls | 115.55 | 0.68%
+pca_embed_19 | 114.68 | 0.67%
+pca_embed_13 | 108.16 | 0.64%
+total_eve_minutes | 99.91 | 0.59%
+total_day_minutes | 90.09 | 0.53%
+pca_embed_15 | 88.65 | 0.52%
+total_night_calls | 80.42 | 0.47%
+number_customer_service_calls | 44.68 | 0.26%
+total_intl_calls | 32.95 | 0.19%
+number_vmail_messages | 27.51 | 0.16%
+area_code | 20.82 | 0.12%
+total_night_charge | 15.41 | 0.09%
+voice_mail_plan | 14.49 | 0.09%
+total_eve_charge | 8.90 | 0.05%
+international_plan | 0.79 | 0.00%
+total_day_charge | 0.00 | 0.00%
+total_intl_charge | 0.00 | 0.00%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 92.31%
+Raw Feature Share                            | 7.69%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (20/20)
+Active Raw Tabular Feature Density           | 89.47% (17/19)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 77.91% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 84.80% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 38.43 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/bar/'
+[W&B] Artifacts and localized metrics logged successfully for churn_combined_lightgbm

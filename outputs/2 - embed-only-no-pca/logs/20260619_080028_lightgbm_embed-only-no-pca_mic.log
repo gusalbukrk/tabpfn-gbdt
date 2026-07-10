@@ -1,0 +1,576 @@
+Loading archive 'archives/mic.npz' and initializing pipeline for target: LIGHTGBM...
+Execution Mode: EMBED-ONLY-NO-PCA
+Session Output Target: outputs/2/
+Task Type: MULTICLASS
+TabPFN Baselines Loaded - Primary: 0.4541 | Secondary: 0.8912
+Bypassing PCA compression: Loading full 512-dimensional embedding space...
+Final training matrix shape assembled for EMBED-ONLY-NO-PCA: (1359, 512)
+
+Running 25-Trial Optuna Study for LIGHTGBM (EMBED-ONLY-NO-PCA)...
+A new study created in RDB with name: 20260619_080028_lightgbm_embed-only-no-pca_mic
+Trial 0 finished with value: 0.4858224927697788 and parameters: {'learning_rate': 0.015355286838886862, 'feature_fraction': 0.9704285838459497, 'bagging_fraction': 0.9195981825434215, 'bagging_freq': 1, 'num_leaves': 28, 'min_data_in_leaf': 1, 'extra_trees': False, 'min_data_per_group': 57, 'cat_l2': 0.18327672955935934, 'cat_smooth': 3.4702669886504163, 'max_cat_to_onehot': 8, 'lambda_l1': 0.9699128611767781, 'lambda_l2': 1.6649020373367633}. Best is trial 0 with value: 0.4858224927697788.
+Trial 1 finished with value: 0.4685760866911 and parameters: {'learning_rate': 0.009445600138094694, 'feature_fraction': 0.5090949803242604, 'bagging_fraction': 0.7550213529560301, 'bagging_freq': 1, 'num_leaves': 7, 'min_data_in_leaf': 6, 'extra_trees': False, 'min_data_per_group': 20, 'cat_l2': 0.01153297626310632, 'cat_smooth': 0.028888383623653185, 'max_cat_to_onehot': 19, 'lambda_l1': 0.4561243772186142, 'lambda_l2': 1.5703734051898879}. Best is trial 1 with value: 0.4685760866911.
+Trial 2 finished with value: 0.47042251746102026 and parameters: {'learning_rate': 0.009093929525644107, 'feature_fraction': 0.708540663048167, 'bagging_fraction': 0.8777243706586128, 'bagging_freq': 1, 'num_leaves': 2, 'min_data_in_leaf': 10, 'extra_trees': False, 'min_data_per_group': 81, 'cat_l2': 1.6278053965878447, 'cat_smooth': 11.015056790269638, 'max_cat_to_onehot': 17, 'lambda_l1': 0.09776234679498323, 'lambda_l2': 1.3684976297216627}. Best is trial 1 with value: 0.4685760866911.
+Trial 3 finished with value: 0.4583600329327555 and parameters: {'learning_rate': 0.01869052934095898, 'feature_fraction': 0.47322294090686734, 'bagging_fraction': 0.848553073033381, 'bagging_freq': 1, 'num_leaves': 2, 'min_data_in_leaf': 42, 'extra_trees': True, 'min_data_per_group': 6, 'cat_l2': 0.11277639166461569, 'cat_smooth': 0.5414413211338525, 'max_cat_to_onehot': 12, 'lambda_l1': 0.9695876693017821, 'lambda_l2': 1.550288133439893}. Best is trial 3 with value: 0.4583600329327555.
+Trial 4 finished with value: 0.5080001404404062 and parameters: {'learning_rate': 0.08342309693146736, 'feature_fraction': 0.9368964102565893, 'bagging_fraction': 0.8793699936433255, 'bagging_freq': 1, 'num_leaves': 137, 'min_data_in_leaf': 1, 'extra_trees': False, 'min_data_per_group': 6, 'cat_l2': 0.0513253156994884, 'cat_smooth': 0.022737628102536857, 'max_cat_to_onehot': 64, 'lambda_l1': 0.3568176513609199, 'lambda_l2': 0.5619409259237927}. Best is trial 3 with value: 0.4583600329327555.
+Trial 5 finished with value: 0.4706418715926131 and parameters: {'learning_rate': 0.025411709798607296, 'feature_fraction': 0.4845545349848576, 'bagging_fraction': 0.9406590942262119, 'bagging_freq': 1, 'num_leaves': 2, 'min_data_in_leaf': 61, 'extra_trees': False, 'min_data_per_group': 2, 'cat_l2': 0.6619871537619337, 'cat_smooth': 3.4220529032706923, 'max_cat_to_onehot': 50, 'lambda_l1': 0.7712932196512772, 'lambda_l2': 0.1481818990030073}. Best is trial 3 with value: 0.4583600329327555.
+Trial 6 finished with value: 0.4676842267483359 and parameters: {'learning_rate': 0.014633380642745364, 'feature_fraction': 0.4695214357150779, 'bagging_fraction': 0.958931027762678, 'bagging_freq': 1, 'num_leaves': 32, 'min_data_in_leaf': 2, 'extra_trees': True, 'min_data_per_group': 6, 'cat_l2': 0.3957756313952873, 'cat_smooth': 1.5409457762881555, 'max_cat_to_onehot': 75, 'lambda_l1': 0.4722677036694331, 'lambda_l2': 0.23927653245200955}. Best is trial 3 with value: 0.4583600329327555.
+Trial 7 finished with value: 0.49138868414804315 and parameters: {'learning_rate': 0.042356773126632795, 'feature_fraction': 0.8564710291701385, 'bagging_fraction': 0.8683831592708489, 'bagging_freq': 1, 'num_leaves': 65, 'min_data_in_leaf': 6, 'extra_trees': False, 'min_data_per_group': 2, 'cat_l2': 0.009543550367992308, 'cat_smooth': 0.0014359718569878096, 'max_cat_to_onehot': 39, 'lambda_l1': 0.314424545478219, 'lambda_l2': 1.017190525260289}. Best is trial 3 with value: 0.4583600329327555.
+Trial 8 finished with value: 0.4639513108580197 and parameters: {'learning_rate': 0.07581256838789621, 'feature_fraction': 0.549575337489325, 'bagging_fraction': 0.8231148769106889, 'bagging_freq': 1, 'num_leaves': 61, 'min_data_in_leaf': 2, 'extra_trees': True, 'min_data_per_group': 3, 'cat_l2': 1.3124992669799407, 'cat_smooth': 10.979988817809668, 'max_cat_to_onehot': 39, 'lambda_l1': 0.871473444128699, 'lambda_l2': 1.607363786590539}. Best is trial 3 with value: 0.4583600329327555.
+Trial 9 finished with value: 0.4744577466247848 and parameters: {'learning_rate': 0.008743861043586432, 'feature_fraction': 0.9355353990939866, 'bagging_fraction': 0.8618026725746952, 'bagging_freq': 1, 'num_leaves': 78, 'min_data_in_leaf': 39, 'extra_trees': False, 'min_data_per_group': 4, 'cat_l2': 0.06461451563516586, 'cat_smooth': 12.304779330083704, 'max_cat_to_onehot': 70, 'lambda_l1': 0.007051435318137585, 'lambda_l2': 1.0215435304248737}. Best is trial 3 with value: 0.4583600329327555.
+Trial 10 finished with value: 0.4546734835495315 and parameters: {'learning_rate': 0.005636613642342692, 'feature_fraction': 0.6628589284433496, 'bagging_fraction': 0.7022641957948879, 'bagging_freq': 1, 'num_leaves': 8, 'min_data_in_leaf': 18, 'extra_trees': True, 'min_data_per_group': 19, 'cat_l2': 0.03512175732792625, 'cat_smooth': 0.22558869559786265, 'max_cat_to_onehot': 8, 'lambda_l1': 0.6782859743712771, 'lambda_l2': 1.891624858975429}. Best is trial 10 with value: 0.4546734835495315.
+Trial 11 finished with value: 0.4536035793526841 and parameters: {'learning_rate': 0.005855557101506736, 'feature_fraction': 0.6559891255802032, 'bagging_fraction': 0.7092242794399031, 'bagging_freq': 1, 'num_leaves': 6, 'min_data_in_leaf': 21, 'extra_trees': True, 'min_data_per_group': 18, 'cat_l2': 0.047135866630583466, 'cat_smooth': 0.22900345912334708, 'max_cat_to_onehot': 8, 'lambda_l1': 0.7000459865815472, 'lambda_l2': 1.9017437929613048}. Best is trial 11 with value: 0.4536035793526841.
+Trial 12 finished with value: 0.4557082597737791 and parameters: {'learning_rate': 0.0052610928774391936, 'feature_fraction': 0.6537243008275448, 'bagging_fraction': 0.7010150911055764, 'bagging_freq': 1, 'num_leaves': 8, 'min_data_in_leaf': 14, 'extra_trees': True, 'min_data_per_group': 20, 'cat_l2': 0.026666394700156703, 'cat_smooth': 0.13951400537141104, 'max_cat_to_onehot': 8, 'lambda_l1': 0.6882606889990044, 'lambda_l2': 1.9975624998335386}. Best is trial 11 with value: 0.4536035793526841.
+Trial 13 finished with value: 0.45471177668955703 and parameters: {'learning_rate': 0.0052007496586138, 'feature_fraction': 0.7097817607680685, 'bagging_fraction': 0.7044751155459311, 'bagging_freq': 1, 'num_leaves': 8, 'min_data_in_leaf': 20, 'extra_trees': True, 'min_data_per_group': 19, 'cat_l2': 0.023758986853709325, 'cat_smooth': 0.18265499970366575, 'max_cat_to_onehot': 13, 'lambda_l1': 0.6618040375958354, 'lambda_l2': 1.938542777112231}. Best is trial 11 with value: 0.4536035793526841.
+Trial 14 finished with value: 0.45546761839298827 and parameters: {'learning_rate': 0.006576784850164384, 'feature_fraction': 0.6109129948799271, 'bagging_fraction': 0.7609936060483456, 'bagging_freq': 1, 'num_leaves': 5, 'min_data_in_leaf': 24, 'extra_trees': True, 'min_data_per_group': 36, 'cat_l2': 0.005583813227277204, 'cat_smooth': 0.018691400204225744, 'max_cat_to_onehot': 11, 'lambda_l1': 0.5814416220634232, 'lambda_l2': 1.8401645183175235}. Best is trial 11 with value: 0.4536035793526841.
+Trial 15 finished with value: 0.4570654545482856 and parameters: {'learning_rate': 0.007453648715330128, 'feature_fraction': 0.7917102959297082, 'bagging_fraction': 0.7574253385842216, 'bagging_freq': 1, 'num_leaves': 14, 'min_data_in_leaf': 7, 'extra_trees': True, 'min_data_per_group': 12, 'cat_l2': 0.031059761519002655, 'cat_smooth': 84.41582509727486, 'max_cat_to_onehot': 22, 'lambda_l1': 0.8050131535866113, 'lambda_l2': 1.1791159460424074}. Best is trial 11 with value: 0.4536035793526841.
+Trial 16 finished with value: 0.4556523320075222 and parameters: {'learning_rate': 0.011718138639627795, 'feature_fraction': 0.7814020184037223, 'bagging_fraction': 0.7935466309474267, 'bagging_freq': 1, 'num_leaves': 4, 'min_data_in_leaf': 25, 'extra_trees': True, 'min_data_per_group': 11, 'cat_l2': 0.16950593862702887, 'cat_smooth': 0.00323726770158868, 'max_cat_to_onehot': 8, 'lambda_l1': 0.5860042658805605, 'lambda_l2': 1.7788415108714726}. Best is trial 11 with value: 0.4536035793526841.
+Trial 17 finished with value: 0.45685749399254005 and parameters: {'learning_rate': 0.006358754550345591, 'feature_fraction': 0.5918250221525648, 'bagging_fraction': 0.7302637689507951, 'bagging_freq': 1, 'num_leaves': 16, 'min_data_in_leaf': 3, 'extra_trees': True, 'min_data_per_group': 38, 'cat_l2': 0.07004286765687802, 'cat_smooth': 0.1219823323592686, 'max_cat_to_onehot': 11, 'lambda_l1': 0.7286681550944113, 'lambda_l2': 1.3700531395345643}. Best is trial 11 with value: 0.4536035793526841.
+Trial 18 finished with value: 0.4570777352178008 and parameters: {'learning_rate': 0.023894687755500996, 'feature_fraction': 0.40697257697653194, 'bagging_fraction': 0.9981528355149126, 'bagging_freq': 1, 'num_leaves': 4, 'min_data_in_leaf': 13, 'extra_trees': True, 'min_data_per_group': 12, 'cat_l2': 0.018014818027319714, 'cat_smooth': 0.5425735001497144, 'max_cat_to_onehot': 24, 'lambda_l1': 0.5553716602713384, 'lambda_l2': 1.9884954004141697}. Best is trial 11 with value: 0.4536035793526841.
+Trial 19 finished with value: 0.46257155872915057 and parameters: {'learning_rate': 0.012533783349130108, 'feature_fraction': 0.6823785534509406, 'bagging_fraction': 0.7294209453372831, 'bagging_freq': 1, 'num_leaves': 16, 'min_data_in_leaf': 4, 'extra_trees': True, 'min_data_per_group': 36, 'cat_l2': 0.3120350111406061, 'cat_smooth': 0.006001103642855849, 'max_cat_to_onehot': 15, 'lambda_l1': 0.24080412649906546, 'lambda_l2': 1.3576704057532885}. Best is trial 11 with value: 0.4536035793526841.
+Trial 20 finished with value: 0.4577896349740884 and parameters: {'learning_rate': 0.005281955321750829, 'feature_fraction': 0.7641102451014006, 'bagging_fraction': 0.8024056473923528, 'bagging_freq': 1, 'num_leaves': 11, 'min_data_in_leaf': 16, 'extra_trees': True, 'min_data_per_group': 9, 'cat_l2': 0.043253488271401304, 'cat_smooth': 0.05622895142988599, 'max_cat_to_onehot': 10, 'lambda_l1': 0.8662892070602257, 'lambda_l2': 0.824564298749583}. Best is trial 11 with value: 0.4536035793526841.
+Trial 21 finished with value: 0.45500764801182064 and parameters: {'learning_rate': 0.0051583455158992295, 'feature_fraction': 0.7275535616486262, 'bagging_fraction': 0.7042892289535194, 'bagging_freq': 1, 'num_leaves': 9, 'min_data_in_leaf': 22, 'extra_trees': True, 'min_data_per_group': 26, 'cat_l2': 0.019765042055441436, 'cat_smooth': 0.31885219960077915, 'max_cat_to_onehot': 14, 'lambda_l1': 0.7119806674261125, 'lambda_l2': 1.7838658208454703}. Best is trial 11 with value: 0.4536035793526841.
+Trial 22 finished with value: 0.4561428168250788 and parameters: {'learning_rate': 0.0072313801843783875, 'feature_fraction': 0.6257255068759722, 'bagging_fraction': 0.7317255328226061, 'bagging_freq': 1, 'num_leaves': 5, 'min_data_in_leaf': 32, 'extra_trees': True, 'min_data_per_group': 18, 'cat_l2': 0.012456192074854188, 'cat_smooth': 0.2101156964417286, 'max_cat_to_onehot': 10, 'lambda_l1': 0.6501737394343137, 'lambda_l2': 1.8972539704445548}. Best is trial 11 with value: 0.4536035793526841.
+Trial 23 finished with value: 0.4534080286323324 and parameters: {'learning_rate': 0.00986095696177095, 'feature_fraction': 0.8368152325399638, 'bagging_fraction': 0.7142960475975452, 'bagging_freq': 1, 'num_leaves': 25, 'min_data_in_leaf': 61, 'extra_trees': True, 'min_data_per_group': 16, 'cat_l2': 0.09040687917059634, 'cat_smooth': 1.5886494337986288, 'max_cat_to_onehot': 13, 'lambda_l1': 0.508914841400555, 'lambda_l2': 1.72100107001405}. Best is trial 23 with value: 0.4534080286323324.
+Trial 24 finished with value: 0.45750241592656027 and parameters: {'learning_rate': 0.011835698410092571, 'feature_fraction': 0.8531122131450395, 'bagging_fraction': 0.7887641622367836, 'bagging_freq': 1, 'num_leaves': 27, 'min_data_in_leaf': 62, 'extra_trees': True, 'min_data_per_group': 27, 'cat_l2': 0.08775676070443264, 'cat_smooth': 1.7095601183907774, 'max_cat_to_onehot': 9, 'lambda_l1': 0.4715645202693839, 'lambda_l2': 1.7315955427181284}. Best is trial 23 with value: 0.4534080286323324.
+Optuna Search Completed in: 335.37 seconds
+
+Training final model on optimized parameter setup...
+
+[LIGHTGBM FINALIZED METRICS]
+Optimal Trees:         278
+Log_Loss:             0.4472 (Delta to TabPFN: -0.0069)
+Accuracy:            0.8912 (Delta to TabPFN: +0.0000)
+Final Train Time:      1.47 seconds
+
+--- LIGHTGBM Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+pca_embed_358 | 1238.74 | 2.66%
+pca_embed_115 | 1200.92 | 2.58%
+pca_embed_98 | 916.09 | 1.96%
+pca_embed_371 | 849.26 | 1.82%
+pca_embed_297 | 810.38 | 1.74%
+pca_embed_202 | 751.01 | 1.61%
+pca_embed_485 | 649.71 | 1.39%
+pca_embed_13 | 622.68 | 1.34%
+pca_embed_506 | 584.91 | 1.25%
+pca_embed_48 | 564.49 | 1.21%
+pca_embed_232 | 558.65 | 1.20%
+pca_embed_293 | 547.47 | 1.17%
+pca_embed_306 | 514.19 | 1.10%
+pca_embed_405 | 513.73 | 1.10%
+pca_embed_62 | 474.29 | 1.02%
+pca_embed_456 | 469.17 | 1.01%
+pca_embed_291 | 468.08 | 1.00%
+pca_embed_215 | 365.10 | 0.78%
+pca_embed_18 | 359.66 | 0.77%
+pca_embed_465 | 353.72 | 0.76%
+pca_embed_345 | 347.28 | 0.74%
+pca_embed_239 | 337.52 | 0.72%
+pca_embed_478 | 334.16 | 0.72%
+pca_embed_156 | 329.16 | 0.71%
+pca_embed_157 | 328.71 | 0.71%
+pca_embed_114 | 321.99 | 0.69%
+pca_embed_20 | 321.03 | 0.69%
+pca_embed_416 | 309.91 | 0.66%
+pca_embed_391 | 305.91 | 0.66%
+pca_embed_92 | 305.83 | 0.66%
+pca_embed_245 | 292.60 | 0.63%
+pca_embed_166 | 279.64 | 0.60%
+pca_embed_159 | 267.51 | 0.57%
+pca_embed_37 | 263.63 | 0.57%
+pca_embed_402 | 254.73 | 0.55%
+pca_embed_424 | 253.02 | 0.54%
+pca_embed_174 | 242.11 | 0.52%
+pca_embed_308 | 239.76 | 0.51%
+pca_embed_378 | 223.87 | 0.48%
+pca_embed_204 | 218.92 | 0.47%
+pca_embed_63 | 215.93 | 0.46%
+pca_embed_40 | 215.81 | 0.46%
+pca_embed_84 | 207.83 | 0.45%
+pca_embed_107 | 206.93 | 0.44%
+pca_embed_196 | 204.02 | 0.44%
+pca_embed_284 | 198.81 | 0.43%
+pca_embed_321 | 197.92 | 0.42%
+pca_embed_459 | 195.61 | 0.42%
+pca_embed_55 | 191.49 | 0.41%
+pca_embed_483 | 191.46 | 0.41%
+pca_embed_400 | 190.42 | 0.41%
+pca_embed_135 | 183.64 | 0.39%
+pca_embed_144 | 181.68 | 0.39%
+pca_embed_139 | 178.02 | 0.38%
+pca_embed_212 | 177.94 | 0.38%
+pca_embed_181 | 177.07 | 0.38%
+pca_embed_73 | 175.56 | 0.38%
+pca_embed_124 | 175.47 | 0.38%
+pca_embed_234 | 174.76 | 0.37%
+pca_embed_365 | 169.82 | 0.36%
+pca_embed_421 | 168.73 | 0.36%
+pca_embed_192 | 168.02 | 0.36%
+pca_embed_271 | 160.19 | 0.34%
+pca_embed_21 | 155.76 | 0.33%
+pca_embed_188 | 149.80 | 0.32%
+pca_embed_344 | 149.19 | 0.32%
+pca_embed_443 | 146.39 | 0.31%
+pca_embed_36 | 142.89 | 0.31%
+pca_embed_410 | 139.22 | 0.30%
+pca_embed_7 | 138.99 | 0.30%
+pca_embed_480 | 138.43 | 0.30%
+pca_embed_29 | 136.44 | 0.29%
+pca_embed_221 | 135.68 | 0.29%
+pca_embed_351 | 134.76 | 0.29%
+pca_embed_61 | 134.27 | 0.29%
+pca_embed_444 | 130.28 | 0.28%
+pca_embed_53 | 129.75 | 0.28%
+pca_embed_275 | 127.17 | 0.27%
+pca_embed_183 | 126.16 | 0.27%
+pca_embed_170 | 125.24 | 0.27%
+pca_embed_253 | 124.00 | 0.27%
+pca_embed_294 | 122.83 | 0.26%
+pca_embed_10 | 122.72 | 0.26%
+pca_embed_260 | 122.13 | 0.26%
+pca_embed_68 | 118.70 | 0.25%
+pca_embed_445 | 118.52 | 0.25%
+pca_embed_448 | 115.45 | 0.25%
+pca_embed_175 | 115.19 | 0.25%
+pca_embed_74 | 114.77 | 0.25%
+pca_embed_504 | 114.56 | 0.25%
+pca_embed_298 | 113.50 | 0.24%
+pca_embed_172 | 112.85 | 0.24%
+pca_embed_316 | 111.98 | 0.24%
+pca_embed_283 | 111.88 | 0.24%
+pca_embed_375 | 111.20 | 0.24%
+pca_embed_446 | 111.17 | 0.24%
+pca_embed_39 | 110.27 | 0.24%
+pca_embed_503 | 109.78 | 0.24%
+pca_embed_161 | 109.56 | 0.23%
+pca_embed_305 | 109.35 | 0.23%
+pca_embed_502 | 108.84 | 0.23%
+pca_embed_50 | 107.70 | 0.23%
+pca_embed_250 | 107.64 | 0.23%
+pca_embed_286 | 107.54 | 0.23%
+pca_embed_75 | 107.53 | 0.23%
+pca_embed_247 | 107.21 | 0.23%
+pca_embed_27 | 107.09 | 0.23%
+pca_embed_476 | 106.48 | 0.23%
+pca_embed_178 | 106.18 | 0.23%
+pca_embed_25 | 105.83 | 0.23%
+pca_embed_317 | 105.44 | 0.23%
+pca_embed_339 | 103.54 | 0.22%
+pca_embed_436 | 102.82 | 0.22%
+pca_embed_136 | 101.78 | 0.22%
+pca_embed_268 | 101.47 | 0.22%
+pca_embed_130 | 99.03 | 0.21%
+pca_embed_164 | 97.32 | 0.21%
+pca_embed_64 | 94.42 | 0.20%
+pca_embed_254 | 94.21 | 0.20%
+pca_embed_397 | 94.19 | 0.20%
+pca_embed_46 | 94.16 | 0.20%
+pca_embed_169 | 93.70 | 0.20%
+pca_embed_376 | 93.67 | 0.20%
+pca_embed_507 | 93.37 | 0.20%
+pca_embed_131 | 93.04 | 0.20%
+pca_embed_235 | 92.76 | 0.20%
+pca_embed_296 | 92.73 | 0.20%
+pca_embed_257 | 91.80 | 0.20%
+pca_embed_488 | 91.00 | 0.20%
+pca_embed_110 | 90.34 | 0.19%
+pca_embed_225 | 90.20 | 0.19%
+pca_embed_302 | 90.20 | 0.19%
+pca_embed_146 | 90.08 | 0.19%
+pca_embed_155 | 89.96 | 0.19%
+pca_embed_69 | 89.66 | 0.19%
+pca_embed_438 | 89.62 | 0.19%
+pca_embed_498 | 88.89 | 0.19%
+pca_embed_487 | 88.73 | 0.19%
+pca_embed_82 | 88.42 | 0.19%
+pca_embed_95 | 88.24 | 0.19%
+pca_embed_111 | 88.09 | 0.19%
+pca_embed_5 | 88.04 | 0.19%
+pca_embed_81 | 87.95 | 0.19%
+pca_embed_9 | 87.58 | 0.19%
+pca_embed_60 | 87.15 | 0.19%
+pca_embed_76 | 86.92 | 0.19%
+pca_embed_173 | 86.27 | 0.19%
+pca_embed_292 | 86.14 | 0.18%
+pca_embed_295 | 85.77 | 0.18%
+pca_embed_238 | 84.83 | 0.18%
+pca_embed_11 | 84.21 | 0.18%
+pca_embed_278 | 83.48 | 0.18%
+pca_embed_193 | 82.88 | 0.18%
+pca_embed_307 | 82.81 | 0.18%
+pca_embed_97 | 82.24 | 0.18%
+pca_embed_466 | 82.12 | 0.18%
+pca_embed_4 | 82.12 | 0.18%
+pca_embed_346 | 82.11 | 0.18%
+pca_embed_179 | 81.97 | 0.18%
+pca_embed_270 | 81.56 | 0.17%
+pca_embed_59 | 81.24 | 0.17%
+pca_embed_108 | 81.16 | 0.17%
+pca_embed_191 | 80.95 | 0.17%
+pca_embed_500 | 80.35 | 0.17%
+pca_embed_505 | 79.77 | 0.17%
+pca_embed_86 | 79.40 | 0.17%
+pca_embed_300 | 78.19 | 0.17%
+pca_embed_385 | 77.71 | 0.17%
+pca_embed_246 | 76.98 | 0.17%
+pca_embed_372 | 76.87 | 0.16%
+pca_embed_203 | 76.36 | 0.16%
+pca_embed_353 | 76.17 | 0.16%
+pca_embed_145 | 75.88 | 0.16%
+pca_embed_359 | 75.52 | 0.16%
+pca_embed_384 | 75.19 | 0.16%
+pca_embed_312 | 74.66 | 0.16%
+pca_embed_330 | 73.54 | 0.16%
+pca_embed_285 | 73.23 | 0.16%
+pca_embed_117 | 72.74 | 0.16%
+pca_embed_213 | 71.20 | 0.15%
+pca_embed_242 | 70.92 | 0.15%
+pca_embed_381 | 70.10 | 0.15%
+pca_embed_89 | 69.96 | 0.15%
+pca_embed_256 | 69.81 | 0.15%
+pca_embed_190 | 69.62 | 0.15%
+pca_embed_280 | 69.24 | 0.15%
+pca_embed_88 | 68.62 | 0.15%
+pca_embed_380 | 68.30 | 0.15%
+pca_embed_411 | 67.99 | 0.15%
+pca_embed_274 | 67.63 | 0.15%
+pca_embed_200 | 67.36 | 0.14%
+pca_embed_412 | 66.98 | 0.14%
+pca_embed_30 | 66.93 | 0.14%
+pca_embed_422 | 66.79 | 0.14%
+pca_embed_360 | 66.67 | 0.14%
+pca_embed_490 | 66.51 | 0.14%
+pca_embed_393 | 65.92 | 0.14%
+pca_embed_85 | 65.02 | 0.14%
+pca_embed_189 | 64.94 | 0.14%
+pca_embed_395 | 64.92 | 0.14%
+pca_embed_14 | 64.68 | 0.14%
+pca_embed_451 | 64.52 | 0.14%
+pca_embed_401 | 64.32 | 0.14%
+pca_embed_57 | 63.65 | 0.14%
+pca_embed_434 | 63.47 | 0.14%
+pca_embed_289 | 63.17 | 0.14%
+pca_embed_176 | 62.61 | 0.13%
+pca_embed_390 | 62.60 | 0.13%
+pca_embed_342 | 62.49 | 0.13%
+pca_embed_184 | 62.08 | 0.13%
+pca_embed_264 | 61.79 | 0.13%
+pca_embed_508 | 61.64 | 0.13%
+pca_embed_467 | 61.25 | 0.13%
+pca_embed_499 | 60.78 | 0.13%
+pca_embed_154 | 60.64 | 0.13%
+pca_embed_120 | 60.11 | 0.13%
+pca_embed_112 | 58.74 | 0.13%
+pca_embed_0 | 58.67 | 0.13%
+pca_embed_364 | 58.34 | 0.13%
+pca_embed_368 | 58.15 | 0.12%
+pca_embed_440 | 58.09 | 0.12%
+pca_embed_510 | 57.76 | 0.12%
+pca_embed_303 | 57.68 | 0.12%
+pca_embed_432 | 57.21 | 0.12%
+pca_embed_493 | 57.17 | 0.12%
+pca_embed_132 | 57.05 | 0.12%
+pca_embed_379 | 56.89 | 0.12%
+pca_embed_162 | 56.86 | 0.12%
+pca_embed_327 | 56.54 | 0.12%
+pca_embed_194 | 56.51 | 0.12%
+pca_embed_182 | 54.97 | 0.12%
+pca_embed_324 | 54.94 | 0.12%
+pca_embed_262 | 54.61 | 0.12%
+pca_embed_16 | 54.57 | 0.12%
+pca_embed_320 | 54.55 | 0.12%
+pca_embed_187 | 54.29 | 0.12%
+pca_embed_406 | 53.98 | 0.12%
+pca_embed_455 | 53.59 | 0.11%
+pca_embed_326 | 53.57 | 0.11%
+pca_embed_224 | 53.10 | 0.11%
+pca_embed_258 | 52.70 | 0.11%
+pca_embed_32 | 52.47 | 0.11%
+pca_embed_233 | 52.42 | 0.11%
+pca_embed_319 | 51.80 | 0.11%
+pca_embed_343 | 51.60 | 0.11%
+pca_embed_447 | 51.48 | 0.11%
+pca_embed_469 | 51.28 | 0.11%
+pca_embed_228 | 51.00 | 0.11%
+pca_embed_8 | 50.81 | 0.11%
+pca_embed_399 | 50.75 | 0.11%
+pca_embed_309 | 50.69 | 0.11%
+pca_embed_35 | 50.48 | 0.11%
+pca_embed_240 | 49.79 | 0.11%
+pca_embed_6 | 49.78 | 0.11%
+pca_embed_106 | 49.45 | 0.11%
+pca_embed_259 | 49.40 | 0.11%
+pca_embed_116 | 49.27 | 0.11%
+pca_embed_231 | 49.03 | 0.11%
+pca_embed_301 | 48.89 | 0.10%
+pca_embed_369 | 48.56 | 0.10%
+pca_embed_315 | 48.49 | 0.10%
+pca_embed_186 | 48.44 | 0.10%
+pca_embed_72 | 48.33 | 0.10%
+pca_embed_269 | 48.29 | 0.10%
+pca_embed_474 | 48.26 | 0.10%
+pca_embed_471 | 48.00 | 0.10%
+pca_embed_128 | 47.98 | 0.10%
+pca_embed_180 | 47.70 | 0.10%
+pca_embed_366 | 47.55 | 0.10%
+pca_embed_497 | 47.46 | 0.10%
+pca_embed_127 | 47.40 | 0.10%
+pca_embed_304 | 47.30 | 0.10%
+pca_embed_49 | 47.14 | 0.10%
+pca_embed_396 | 47.13 | 0.10%
+pca_embed_414 | 46.92 | 0.10%
+pca_embed_217 | 46.41 | 0.10%
+pca_embed_44 | 46.19 | 0.10%
+pca_embed_83 | 46.06 | 0.10%
+pca_embed_226 | 45.01 | 0.10%
+pca_embed_458 | 45.01 | 0.10%
+pca_embed_33 | 44.89 | 0.10%
+pca_embed_15 | 44.87 | 0.10%
+pca_embed_341 | 44.69 | 0.10%
+pca_embed_377 | 44.34 | 0.10%
+pca_embed_236 | 44.33 | 0.10%
+pca_embed_328 | 44.02 | 0.09%
+pca_embed_407 | 43.86 | 0.09%
+pca_embed_479 | 43.37 | 0.09%
+pca_embed_87 | 43.32 | 0.09%
+pca_embed_426 | 43.10 | 0.09%
+pca_embed_348 | 43.09 | 0.09%
+pca_embed_220 | 42.92 | 0.09%
+pca_embed_104 | 42.80 | 0.09%
+pca_embed_142 | 42.72 | 0.09%
+pca_embed_148 | 42.61 | 0.09%
+pca_embed_491 | 42.55 | 0.09%
+pca_embed_477 | 42.30 | 0.09%
+pca_embed_277 | 42.30 | 0.09%
+pca_embed_349 | 42.14 | 0.09%
+pca_embed_473 | 42.01 | 0.09%
+pca_embed_150 | 42.00 | 0.09%
+pca_embed_404 | 41.88 | 0.09%
+pca_embed_47 | 41.67 | 0.09%
+pca_embed_22 | 41.52 | 0.09%
+pca_embed_388 | 41.20 | 0.09%
+pca_embed_100 | 41.04 | 0.09%
+pca_embed_417 | 41.00 | 0.09%
+pca_embed_472 | 40.57 | 0.09%
+pca_embed_454 | 40.31 | 0.09%
+pca_embed_340 | 40.26 | 0.09%
+pca_embed_453 | 40.20 | 0.09%
+pca_embed_484 | 40.20 | 0.09%
+pca_embed_408 | 39.95 | 0.09%
+pca_embed_195 | 39.86 | 0.09%
+pca_embed_363 | 39.75 | 0.09%
+pca_embed_99 | 39.66 | 0.09%
+pca_embed_318 | 39.59 | 0.08%
+pca_embed_121 | 39.55 | 0.08%
+pca_embed_105 | 39.47 | 0.08%
+pca_embed_165 | 38.99 | 0.08%
+pca_embed_452 | 38.98 | 0.08%
+pca_embed_66 | 38.95 | 0.08%
+pca_embed_435 | 38.74 | 0.08%
+pca_embed_352 | 38.73 | 0.08%
+pca_embed_208 | 38.65 | 0.08%
+pca_embed_439 | 38.59 | 0.08%
+pca_embed_219 | 38.53 | 0.08%
+pca_embed_94 | 38.07 | 0.08%
+pca_embed_91 | 37.50 | 0.08%
+pca_embed_141 | 37.47 | 0.08%
+pca_embed_158 | 37.14 | 0.08%
+pca_embed_314 | 36.96 | 0.08%
+pca_embed_403 | 36.91 | 0.08%
+pca_embed_313 | 36.80 | 0.08%
+pca_embed_34 | 36.72 | 0.08%
+pca_embed_367 | 36.31 | 0.08%
+pca_embed_496 | 36.30 | 0.08%
+pca_embed_267 | 36.25 | 0.08%
+pca_embed_299 | 36.18 | 0.08%
+pca_embed_51 | 36.12 | 0.08%
+pca_embed_199 | 36.06 | 0.08%
+pca_embed_152 | 35.83 | 0.08%
+pca_embed_153 | 35.63 | 0.08%
+pca_embed_288 | 35.53 | 0.08%
+pca_embed_113 | 35.06 | 0.08%
+pca_embed_263 | 34.99 | 0.08%
+pca_embed_163 | 34.62 | 0.07%
+pca_embed_103 | 34.35 | 0.07%
+pca_embed_3 | 34.31 | 0.07%
+pca_embed_90 | 33.99 | 0.07%
+pca_embed_336 | 33.90 | 0.07%
+pca_embed_419 | 33.77 | 0.07%
+pca_embed_248 | 33.59 | 0.07%
+pca_embed_462 | 33.41 | 0.07%
+pca_embed_362 | 33.37 | 0.07%
+pca_embed_227 | 33.37 | 0.07%
+pca_embed_43 | 33.24 | 0.07%
+pca_embed_118 | 33.22 | 0.07%
+pca_embed_28 | 33.13 | 0.07%
+pca_embed_160 | 33.08 | 0.07%
+pca_embed_78 | 32.92 | 0.07%
+pca_embed_38 | 32.80 | 0.07%
+pca_embed_427 | 32.30 | 0.07%
+pca_embed_398 | 32.16 | 0.07%
+pca_embed_413 | 32.11 | 0.07%
+pca_embed_392 | 32.02 | 0.07%
+pca_embed_433 | 31.79 | 0.07%
+pca_embed_243 | 31.64 | 0.07%
+pca_embed_125 | 31.64 | 0.07%
+pca_embed_337 | 31.05 | 0.07%
+pca_embed_374 | 30.88 | 0.07%
+pca_embed_177 | 30.59 | 0.07%
+pca_embed_93 | 30.26 | 0.06%
+pca_embed_332 | 30.24 | 0.06%
+pca_embed_464 | 30.11 | 0.06%
+pca_embed_481 | 29.93 | 0.06%
+pca_embed_70 | 29.91 | 0.06%
+pca_embed_290 | 29.90 | 0.06%
+pca_embed_126 | 29.86 | 0.06%
+pca_embed_475 | 29.68 | 0.06%
+pca_embed_26 | 29.42 | 0.06%
+pca_embed_123 | 29.30 | 0.06%
+pca_embed_334 | 29.09 | 0.06%
+pca_embed_230 | 28.26 | 0.06%
+pca_embed_67 | 28.24 | 0.06%
+pca_embed_361 | 28.12 | 0.06%
+pca_embed_80 | 28.02 | 0.06%
+pca_embed_418 | 27.98 | 0.06%
+pca_embed_19 | 27.58 | 0.06%
+pca_embed_325 | 27.57 | 0.06%
+pca_embed_428 | 27.40 | 0.06%
+pca_embed_266 | 27.33 | 0.06%
+pca_embed_322 | 27.32 | 0.06%
+pca_embed_54 | 27.14 | 0.06%
+pca_embed_355 | 26.79 | 0.06%
+pca_embed_101 | 26.12 | 0.06%
+pca_embed_279 | 26.09 | 0.06%
+pca_embed_143 | 25.96 | 0.06%
+pca_embed_272 | 25.67 | 0.06%
+pca_embed_511 | 25.64 | 0.05%
+pca_embed_211 | 25.49 | 0.05%
+pca_embed_249 | 25.46 | 0.05%
+pca_embed_102 | 25.44 | 0.05%
+pca_embed_261 | 25.25 | 0.05%
+pca_embed_147 | 25.24 | 0.05%
+pca_embed_335 | 24.86 | 0.05%
+pca_embed_209 | 24.73 | 0.05%
+pca_embed_356 | 24.63 | 0.05%
+pca_embed_197 | 24.55 | 0.05%
+pca_embed_323 | 24.51 | 0.05%
+pca_embed_276 | 24.49 | 0.05%
+pca_embed_431 | 24.42 | 0.05%
+pca_embed_109 | 24.38 | 0.05%
+pca_embed_425 | 24.33 | 0.05%
+pca_embed_223 | 24.14 | 0.05%
+pca_embed_149 | 24.11 | 0.05%
+pca_embed_56 | 24.09 | 0.05%
+pca_embed_437 | 24.08 | 0.05%
+pca_embed_42 | 24.04 | 0.05%
+pca_embed_134 | 24.00 | 0.05%
+pca_embed_329 | 23.65 | 0.05%
+pca_embed_494 | 23.52 | 0.05%
+pca_embed_415 | 23.45 | 0.05%
+pca_embed_45 | 23.43 | 0.05%
+pca_embed_168 | 23.20 | 0.05%
+pca_embed_311 | 23.20 | 0.05%
+pca_embed_449 | 23.03 | 0.05%
+pca_embed_382 | 22.85 | 0.05%
+pca_embed_423 | 22.56 | 0.05%
+pca_embed_52 | 22.50 | 0.05%
+pca_embed_486 | 21.94 | 0.05%
+pca_embed_501 | 21.76 | 0.05%
+pca_embed_463 | 21.76 | 0.05%
+pca_embed_354 | 21.69 | 0.05%
+pca_embed_244 | 21.69 | 0.05%
+pca_embed_198 | 21.67 | 0.05%
+pca_embed_207 | 21.58 | 0.05%
+pca_embed_41 | 21.38 | 0.05%
+pca_embed_370 | 21.36 | 0.05%
+pca_embed_216 | 21.29 | 0.05%
+pca_embed_218 | 21.24 | 0.05%
+pca_embed_129 | 20.60 | 0.04%
+pca_embed_430 | 20.53 | 0.04%
+pca_embed_237 | 20.42 | 0.04%
+pca_embed_409 | 20.33 | 0.04%
+pca_embed_58 | 20.20 | 0.04%
+pca_embed_222 | 20.15 | 0.04%
+pca_embed_338 | 19.92 | 0.04%
+pca_embed_214 | 19.62 | 0.04%
+pca_embed_387 | 19.53 | 0.04%
+pca_embed_333 | 19.42 | 0.04%
+pca_embed_287 | 19.24 | 0.04%
+pca_embed_206 | 19.23 | 0.04%
+pca_embed_1 | 19.21 | 0.04%
+pca_embed_251 | 19.15 | 0.04%
+pca_embed_185 | 18.83 | 0.04%
+pca_embed_282 | 18.45 | 0.04%
+pca_embed_24 | 18.36 | 0.04%
+pca_embed_265 | 18.29 | 0.04%
+pca_embed_492 | 18.07 | 0.04%
+pca_embed_65 | 17.72 | 0.04%
+pca_embed_373 | 17.56 | 0.04%
+pca_embed_133 | 17.49 | 0.04%
+pca_embed_241 | 17.36 | 0.04%
+pca_embed_171 | 17.31 | 0.04%
+pca_embed_17 | 17.30 | 0.04%
+pca_embed_2 | 17.01 | 0.04%
+pca_embed_167 | 16.96 | 0.04%
+pca_embed_140 | 16.91 | 0.04%
+pca_embed_331 | 16.81 | 0.04%
+pca_embed_450 | 16.78 | 0.04%
+pca_embed_205 | 16.73 | 0.04%
+pca_embed_201 | 16.59 | 0.04%
+pca_embed_383 | 16.56 | 0.04%
+pca_embed_509 | 16.55 | 0.04%
+pca_embed_489 | 16.14 | 0.03%
+pca_embed_461 | 16.01 | 0.03%
+pca_embed_441 | 16.01 | 0.03%
+pca_embed_122 | 15.74 | 0.03%
+pca_embed_389 | 15.51 | 0.03%
+pca_embed_357 | 15.50 | 0.03%
+pca_embed_23 | 15.33 | 0.03%
+pca_embed_442 | 15.24 | 0.03%
+pca_embed_229 | 14.99 | 0.03%
+pca_embed_310 | 14.96 | 0.03%
+pca_embed_210 | 14.91 | 0.03%
+pca_embed_137 | 14.89 | 0.03%
+pca_embed_482 | 14.79 | 0.03%
+pca_embed_12 | 14.66 | 0.03%
+pca_embed_71 | 14.57 | 0.03%
+pca_embed_77 | 14.41 | 0.03%
+pca_embed_470 | 14.16 | 0.03%
+pca_embed_347 | 13.83 | 0.03%
+pca_embed_420 | 13.74 | 0.03%
+pca_embed_281 | 13.68 | 0.03%
+pca_embed_138 | 11.64 | 0.02%
+pca_embed_460 | 11.54 | 0.02%
+pca_embed_79 | 10.24 | 0.02%
+pca_embed_273 | 9.88 | 0.02%
+pca_embed_394 | 9.77 | 0.02%
+pca_embed_429 | 9.45 | 0.02%
+pca_embed_96 | 9.45 | 0.02%
+pca_embed_255 | 8.36 | 0.02%
+pca_embed_119 | 8.21 | 0.02%
+pca_embed_151 | 8.08 | 0.02%
+pca_embed_457 | 8.04 | 0.02%
+pca_embed_31 | 7.87 | 0.02%
+pca_embed_252 | 7.49 | 0.02%
+pca_embed_468 | 7.22 | 0.02%
+pca_embed_386 | 7.03 | 0.02%
+pca_embed_495 | 6.66 | 0.01%
+pca_embed_350 | 2.86 | 0.01%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Macro Embedding Share                        | 100.00%
+Macro Raw Feature Share                      | 0.00%
+---------------------------------------------------------------------
+Active Text Embedding Density            | 100.00% (512/512)
+Active Raw Tabular Feature Density       | 0.00% (0/0)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)          | 10.76% of total decision weight
+Top-10 Concentration Ratio (CR10)        | 17.56% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 339.35 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/2/results/'

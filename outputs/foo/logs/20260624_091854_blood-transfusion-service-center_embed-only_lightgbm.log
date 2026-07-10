@@ -1,0 +1,67 @@
+[W&B] Child process started for job: blood-transfusion-service-center_embed-only_lightgbm in group session-foo
+Loading archive 'archives/blood-transfusion-service-center.npz' and initializing pipeline for target: LIGHTGBM...
+Execution Mode: EMBED-ONLY
+Session Output Target: outputs/foo/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.2148 | Secondary: 0.7933
+PCA reduced text embeddings to 22 components.
+Final training matrix shape assembled for EMBED-ONLY: (598, 22)
+
+Running 3-Trial Optuna Study for LIGHTGBM (EMBED-ONLY)...
+A new study created in RDB with name: 20260624_091854_blood-transfusion-service-center_embed-only_lightgbm
+Trial 0 finished with value: 0.27085124985666775 and parameters: {}. Best is trial 0 with value: 0.27085124985666775.
+Trial 1 finished with value: 0.26887684898520803 and parameters: {'learning_rate': 0.015355286838886862, 'feature_fraction': 0.9704285838459497, 'bagging_fraction': 0.9195981825434215, 'bagging_freq': 1, 'num_leaves': 28, 'min_data_in_leaf': 1, 'extra_trees': False, 'min_data_per_group': 57, 'cat_l2': 0.18327672955935934, 'cat_smooth': 3.4702669886504163, 'max_cat_to_onehot': 8, 'lambda_l1': 0.9699128611767781, 'lambda_l2': 1.6649020373367633}. Best is trial 1 with value: 0.26887684898520803.
+Trial 2 finished with value: 0.2504156633413599 and parameters: {'learning_rate': 0.009445600138094694, 'feature_fraction': 0.5090949803242604, 'bagging_fraction': 0.7550213529560301, 'bagging_freq': 1, 'num_leaves': 7, 'min_data_in_leaf': 6, 'extra_trees': False, 'min_data_per_group': 20, 'cat_l2': 0.01153297626310632, 'cat_smooth': 0.028888383623653185, 'max_cat_to_onehot': 19, 'lambda_l1': 0.4561243772186142, 'lambda_l2': 1.5703734051898879}. Best is trial 2 with value: 0.2504156633413599.
+Optuna Search Completed in: 16.26 seconds
+
+Training final model on optimized parameter setup...
+
+[LIGHTGBM FINALIZED METRICS]
+Optimal Trees:         7
+1-AUROC:             0.3004 (Delta to TabPFN: +0.0856)
+Accuracy:             0.7600 (Delta to TabPFN: -0.0333)
+Final Train Time:      0.68 seconds (1.1318s per 1K)
+Final Infer Time:      0.00 seconds (0.0044s per 1K)
+
+--- LIGHTGBM Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+pca_embed_4 | 129.81 | 28.06%
+pca_embed_6 | 48.28 | 10.44%
+pca_embed_0 | 31.10 | 6.72%
+pca_embed_18 | 30.54 | 6.60%
+pca_embed_14 | 27.27 | 5.90%
+pca_embed_2 | 27.04 | 5.84%
+pca_embed_3 | 25.51 | 5.51%
+pca_embed_15 | 24.87 | 5.38%
+pca_embed_11 | 20.92 | 4.52%
+pca_embed_8 | 17.96 | 3.88%
+pca_embed_13 | 13.90 | 3.00%
+pca_embed_19 | 13.72 | 2.97%
+pca_embed_5 | 10.85 | 2.35%
+pca_embed_17 | 9.99 | 2.16%
+pca_embed_9 | 8.17 | 1.77%
+pca_embed_20 | 6.17 | 1.33%
+pca_embed_7 | 6.11 | 1.32%
+pca_embed_1 | 5.75 | 1.24%
+pca_embed_12 | 4.69 | 1.01%
+pca_embed_10 | 0.00 | 0.00%
+pca_embed_16 | 0.00 | 0.00%
+pca_embed_21 | 0.00 | 0.00%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 100.00%
+Raw Feature Share                            | 0.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 86.36% (19/22)
+Active Raw Tabular Feature Density           | 0.00% (0/0)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 57.71% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 82.85% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 24.50 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/foo/'
+[W&B] Artifacts and localized metrics logged successfully for blood-transfusion-service-center_embed-only_lightgbm

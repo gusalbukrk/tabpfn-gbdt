@@ -1,0 +1,64 @@
+[W&B] Child process started for job: churn_raw-only_xgboost in group session-5
+Loading archive 'archives/churn.npz' and initializing pipeline for target: XGBOOST...
+Execution Mode: RAW-ONLY
+Session Output Target: outputs/5/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.0860 | Secondary: 0.9730
+PCA reduced text embeddings to 20 components.
+Final training matrix shape assembled for RAW-ONLY: (4000, 19)
+
+Running 3-Trial Optuna Study for XGBOOST (RAW-ONLY)...
+A new study created in RDB with name: 20260623_143425_churn_raw-only_xgboost
+Trial 0 finished with value: 0.0727224924600457 and parameters: {}. Best is trial 0 with value: 0.0727224924600457.
+Trial 1 finished with value: 0.07428640608218062 and parameters: {'learning_rate': 0.015355286838886862, 'max_depth': 10, 'min_child_weight': 0.5100627805979911, 'subsample': 0.8394633936788146, 'colsample_bylevel': 0.6624074561769746, 'colsample_bynode': 0.662397808134481, 'reg_alpha': 0.29051225247978046, 'reg_lambda': 4.330894111260099, 'grow_policy': 'lossguide', 'max_cat_to_onehot': 8, 'max_leaves': 884}. Best is trial 0 with value: 0.0727224924600457.
+Trial 2 finished with value: 0.07430316735344578 and parameters: {'learning_rate': 0.060534484680010825, 'max_depth': 4, 'min_child_weight': 0.004705059281907645, 'subsample': 0.6733618039413735, 'colsample_bylevel': 0.7216968971838151, 'colsample_bynode': 0.8099025726528951, 'reg_alpha': 2.1597818987087147, 'reg_lambda': 1.4562165780761898, 'grow_policy': 'depthwise', 'max_cat_to_onehot': 16, 'max_leaves': 45}. Best is trial 0 with value: 0.0727224924600457.
+Optuna Search Completed in: 18.40 seconds
+
+Training final model on optimized parameter setup...
+
+[XGBOOST FINALIZED METRICS]
+Optimal Trees:         15
+1-AUROC:             0.1068 (Delta to TabPFN: +0.0209)
+Accuracy:             0.9530 (Delta to TabPFN: -0.0200)
+Final Train Time:      0.09 seconds (0.0224s per 1K)
+Final Infer Time:      0.00 seconds (0.0032s per 1K)
+
+--- XGBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+total_day_minutes | 1368.63 | 27.39%
+number_customer_service_calls | 736.60 | 14.74%
+total_eve_minutes | 581.41 | 11.63%
+international_plan | 529.27 | 10.59%
+total_intl_minutes | 495.07 | 9.91%
+total_intl_calls | 325.71 | 6.52%
+voice_mail_plan | 289.94 | 5.80%
+total_night_minutes | 212.71 | 4.26%
+state | 174.75 | 3.50%
+total_day_calls | 53.93 | 1.08%
+total_eve_calls | 47.98 | 0.96%
+account_length | 47.56 | 0.95%
+total_night_calls | 42.74 | 0.86%
+total_eve_charge | 37.08 | 0.74%
+total_night_charge | 26.48 | 0.53%
+area_code | 14.26 | 0.29%
+number_vmail_messages | 13.23 | 0.26%
+total_day_charge | 0.00 | 0.00%
+total_intl_charge | 0.00 | 0.00%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 0.00%
+Raw Feature Share                            | 100.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 0.00% (0/0)
+Active Raw Tabular Feature Density           | 89.47% (17/19)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 74.26% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 95.41% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 23.71 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/5/'
+[W&B] Artifacts and localized metrics logged successfully for churn_raw-only_xgboost

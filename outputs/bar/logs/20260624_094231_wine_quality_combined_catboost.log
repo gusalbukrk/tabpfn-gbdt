@@ -1,0 +1,82 @@
+[W&B] Child process started for job: wine_quality_combined_catboost in group session-bar
+Loading archive 'archives/wine_quality.npz' and initializing pipeline for target: CATBOOST...
+Execution Mode: COMBINED
+Session Output Target: outputs/bar/
+Task Type: REGRESSION
+TabPFN Baselines Loaded - Primary: 0.5665 | Secondary: 0.5710
+PCA reduced text embeddings to 25 components.
+Final training matrix shape assembled for COMBINED: (5197, 37)
+
+Running 3-Trial Optuna Study for CATBOOST (COMBINED)...
+A new study created in RDB with name: 20260624_094231_wine_quality_combined_catboost
+Trial 0 finished with value: 0.6888244192692483 and parameters: {}. Best is trial 0 with value: 0.6888244192692483.
+Trial 1 finished with value: 0.5842789792686643 and parameters: {'learning_rate': 0.015355286838886862, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9852142919229748, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8733991780504303, 'l2_leaf_reg': 0.00018747059221802545, 'leaf_estimation_iterations': 12, 'one_hot_max_size': 36, 'model_size_reg': 0.6803900745073703, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 1 with value: 0.5842789792686643.
+Trial 2 finished with value: 0.589107421172049 and parameters: {'learning_rate': 0.09138013915892866, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9497327922401265, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8956363364439306, 'l2_leaf_reg': 0.02922905212920092, 'leaf_estimation_iterations': 2, 'one_hot_max_size': 16, 'model_size_reg': 0.5243180891902851, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 1 with value: 0.5842789792686643.
+Optuna Search Completed in: 27.79 seconds
+
+Training final model on optimized parameter setup...
+
+[CATBOOST FINALIZED METRICS]
+Optimal Trees:         949
+RMSE:             0.5687 (Delta to TabPFN: +0.0021)
+R2_Score:             0.5677 (Delta to TabPFN: -0.0032)
+Final Train Time:      3.32 seconds (0.6384s per 1K)
+Final Infer Time:      0.01 seconds (0.0055s per 1K)
+
+--- CATBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+pca_embed_1 | 46.08 | 46.08%
+pca_embed_2 | 17.97 | 17.97%
+pca_embed_5 | 4.54 | 4.54%
+pca_embed_4 | 3.90 | 3.90%
+pca_embed_0 | 3.57 | 3.57%
+pca_embed_3 | 2.76 | 2.76%
+pca_embed_6 | 1.65 | 1.65%
+pca_embed_8 | 1.56 | 1.56%
+pca_embed_7 | 1.48 | 1.48%
+free_sulfur_dioxide | 1.37 | 1.37%
+pH | 1.33 | 1.33%
+volatile_acidity | 1.22 | 1.22%
+alcohol | 1.10 | 1.10%
+pca_embed_11 | 1.07 | 1.07%
+density | 0.71 | 0.71%
+fixed_acidity | 0.69 | 0.69%
+pca_embed_17 | 0.69 | 0.69%
+pca_embed_20 | 0.67 | 0.67%
+total_sulfur_dioxide | 0.67 | 0.67%
+pca_embed_12 | 0.61 | 0.61%
+pca_embed_23 | 0.57 | 0.57%
+chlorides | 0.52 | 0.52%
+citric_acid | 0.50 | 0.50%
+sulphates | 0.49 | 0.49%
+pca_embed_24 | 0.49 | 0.49%
+residual_sugar | 0.46 | 0.46%
+pca_embed_9 | 0.45 | 0.45%
+pca_embed_14 | 0.44 | 0.44%
+pca_embed_19 | 0.43 | 0.43%
+pca_embed_13 | 0.42 | 0.42%
+pca_embed_18 | 0.39 | 0.39%
+pca_embed_16 | 0.34 | 0.34%
+pca_embed_21 | 0.21 | 0.21%
+pca_embed_10 | 0.21 | 0.21%
+pca_embed_22 | 0.20 | 0.20%
+pca_embed_15 | 0.20 | 0.20%
+wine_color | 0.04 | 0.04%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 90.89%
+Raw Feature Share                            | 9.11%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (25/25)
+Active Raw Tabular Feature Density           | 100.00% (12/12)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 76.07% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 84.89% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 34.97 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/bar/'
+[W&B] Artifacts and localized metrics logged successfully for wine_quality_combined_catboost

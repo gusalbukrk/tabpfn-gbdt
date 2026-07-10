@@ -1,0 +1,67 @@
+[W&B] Child process started for job: blood-transfusion-service-center_embed-only_catboost in group session-foo
+Loading archive 'archives/blood-transfusion-service-center.npz' and initializing pipeline for target: CATBOOST...
+Execution Mode: EMBED-ONLY
+Session Output Target: outputs/foo/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.2148 | Secondary: 0.7933
+PCA reduced text embeddings to 22 components.
+Final training matrix shape assembled for EMBED-ONLY: (598, 22)
+
+Running 3-Trial Optuna Study for CATBOOST (EMBED-ONLY)...
+A new study created in RDB with name: 20260624_092151_blood-transfusion-service-center_embed-only_catboost
+Trial 0 finished with value: 0.3038714023621144 and parameters: {}. Best is trial 0 with value: 0.3038714023621144.
+Trial 1 finished with value: 0.32299908267400534 and parameters: {'learning_rate': 0.015355286838886862, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9852142919229748, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8733991780504303, 'l2_leaf_reg': 0.00018747059221802545, 'leaf_estimation_iterations': 12, 'one_hot_max_size': 36, 'model_size_reg': 0.6803900745073703, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 0 with value: 0.3038714023621144.
+Trial 2 finished with value: 0.33494582043343657 and parameters: {'learning_rate': 0.09138013915892866, 'bootstrap_type': 'Bernoulli', 'subsample': 0.9497327922401265, 'grow_policy': 'SymmetricTree', 'depth': 4, 'colsample_bylevel': 0.8956363364439306, 'l2_leaf_reg': 0.02922905212920092, 'leaf_estimation_iterations': 2, 'one_hot_max_size': 16, 'model_size_reg': 0.5243180891902851, 'max_ctr_complexity': 2, 'boosting_type': 'Plain', 'max_bin': 254}. Best is trial 0 with value: 0.3038714023621144.
+Optuna Search Completed in: 10.96 seconds
+
+Training final model on optimized parameter setup...
+
+[CATBOOST FINALIZED METRICS]
+Optimal Trees:         100
+1-AUROC:             0.2299 (Delta to TabPFN: +0.0151)
+Accuracy:             0.7800 (Delta to TabPFN: -0.0133)
+Final Train Time:      0.58 seconds (0.9663s per 1K)
+Final Infer Time:      0.01 seconds (0.0467s per 1K)
+
+--- CATBOOST Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+pca_embed_4 | 10.79 | 10.79%
+pca_embed_19 | 6.62 | 6.62%
+pca_embed_18 | 5.89 | 5.89%
+pca_embed_8 | 5.66 | 5.66%
+pca_embed_15 | 5.17 | 5.17%
+pca_embed_9 | 5.13 | 5.13%
+pca_embed_7 | 4.86 | 4.86%
+pca_embed_6 | 4.86 | 4.86%
+pca_embed_21 | 4.69 | 4.69%
+pca_embed_14 | 4.51 | 4.51%
+pca_embed_20 | 4.46 | 4.46%
+pca_embed_3 | 4.42 | 4.42%
+pca_embed_0 | 4.30 | 4.30%
+pca_embed_12 | 3.90 | 3.90%
+pca_embed_17 | 3.82 | 3.82%
+pca_embed_16 | 3.64 | 3.64%
+pca_embed_10 | 3.33 | 3.33%
+pca_embed_2 | 3.27 | 3.27%
+pca_embed_5 | 3.26 | 3.26%
+pca_embed_1 | 2.93 | 2.93%
+pca_embed_11 | 2.68 | 2.68%
+pca_embed_13 | 1.82 | 1.82%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 100.00%
+Raw Feature Share                            | 0.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 100.00% (22/22)
+Active Raw Tabular Feature Density           | 0.00% (0/0)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 34.13% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 58.18% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 18.26 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/foo/'
+[W&B] Artifacts and localized metrics logged successfully for blood-transfusion-service-center_embed-only_catboost

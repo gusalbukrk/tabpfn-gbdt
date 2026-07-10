@@ -1,0 +1,4 @@
+Algorithm,Mean ± SD,Median
+CatBoost,65.43 ± 20.51,67.25
+XGBoost,62.71 ± 20.47,65.84
+LightGBM,57.08 ± 22.41,55.31

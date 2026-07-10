@@ -1,0 +1,5 @@
+Architecture Paradigm,Overall,Classification,Regression,Binary,Multiclass,Small,Medium
+tabpfn_baseline,+2.14%,+1.67%,+4.21%,+1.82%,-3.36%,+2.36%,+1.99%
+combined_*,+1.37%,+0.28%,+4.05%,+0.54%,-3.59%,+0.87%,+2.05%
+raw-only_*,0.00%,0.00%,0.00%,0.00%,0.00%,0.00%,0.00%
+embed-only_*,-1.37%,-4.63%,+4.03%,-4.02%,-6.01%,-1.92%,-0.23%

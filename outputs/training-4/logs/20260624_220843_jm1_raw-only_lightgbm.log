@@ -1,0 +1,89 @@
+[W&B] Child process started for job: jm1_raw-only_lightgbm in group session-training-4
+Loading archive 'archives/jm1.npz' and initializing pipeline for target: LIGHTGBM...
+Execution Mode: RAW-ONLY
+Session Output Target: outputs/training-4/
+Task Type: BINARY
+TabPFN Baselines Loaded - Primary: 0.2203 | Secondary: 0.8232
+PCA reduced text embeddings to 42 components.
+Final training matrix shape assembled for RAW-ONLY: (8708, 21)
+
+Running 26-Trial Optuna Study for LIGHTGBM (RAW-ONLY)...
+A new study created in RDB with name: 20260624_220843_jm1_raw-only_lightgbm
+Trial 0 finished with value: 0.2557169159042765 and parameters: {}. Best is trial 0 with value: 0.2557169159042765.
+Trial 1 finished with value: 0.24839858478091925 and parameters: {'learning_rate': 0.015355286838886862, 'feature_fraction': 0.9704285838459497, 'bagging_fraction': 0.9195981825434215, 'bagging_freq': 1, 'num_leaves': 28, 'min_data_in_leaf': 1, 'extra_trees': False, 'min_data_per_group': 57, 'cat_l2': 0.18327672955935934, 'cat_smooth': 3.4702669886504163, 'max_cat_to_onehot': 8, 'lambda_l1': 0.9699128611767781, 'lambda_l2': 1.6649020373367633}. Best is trial 1 with value: 0.24839858478091925.
+Trial 2 finished with value: 0.25980797259134747 and parameters: {'learning_rate': 0.009445600138094694, 'feature_fraction': 0.5090949803242604, 'bagging_fraction': 0.7550213529560301, 'bagging_freq': 1, 'num_leaves': 7, 'min_data_in_leaf': 6, 'extra_trees': False, 'min_data_per_group': 20, 'cat_l2': 0.01153297626310632, 'cat_smooth': 0.028888383623653185, 'max_cat_to_onehot': 19, 'lambda_l1': 0.4561243772186142, 'lambda_l2': 1.5703734051898879}. Best is trial 1 with value: 0.24839858478091925.
+Trial 3 finished with value: 0.27517642871342296 and parameters: {'learning_rate': 0.009093929525644107, 'feature_fraction': 0.708540663048167, 'bagging_fraction': 0.8777243706586128, 'bagging_freq': 1, 'num_leaves': 2, 'min_data_in_leaf': 10, 'extra_trees': False, 'min_data_per_group': 81, 'cat_l2': 1.6278053965878447, 'cat_smooth': 11.015056790269638, 'max_cat_to_onehot': 17, 'lambda_l1': 0.09776234679498323, 'lambda_l2': 1.3684976297216627}. Best is trial 1 with value: 0.24839858478091925.
+Trial 4 finished with value: 0.2942404074633639 and parameters: {'learning_rate': 0.01869052934095898, 'feature_fraction': 0.47322294090686734, 'bagging_fraction': 0.848553073033381, 'bagging_freq': 1, 'num_leaves': 2, 'min_data_in_leaf': 42, 'extra_trees': True, 'min_data_per_group': 6, 'cat_l2': 0.11277639166461569, 'cat_smooth': 0.5414413211338525, 'max_cat_to_onehot': 12, 'lambda_l1': 0.9695876693017821, 'lambda_l2': 1.550288133439893}. Best is trial 1 with value: 0.24839858478091925.
+Trial 5 finished with value: 0.25407379790818785 and parameters: {'learning_rate': 0.08342309693146736, 'feature_fraction': 0.9368964102565893, 'bagging_fraction': 0.8793699936433255, 'bagging_freq': 1, 'num_leaves': 137, 'min_data_in_leaf': 1, 'extra_trees': False, 'min_data_per_group': 6, 'cat_l2': 0.0513253156994884, 'cat_smooth': 0.022737628102536857, 'max_cat_to_onehot': 64, 'lambda_l1': 0.3568176513609199, 'lambda_l2': 0.5619409259237927}. Best is trial 1 with value: 0.24839858478091925.
+Trial 6 finished with value: 0.27095825192567835 and parameters: {'learning_rate': 0.025411709798607296, 'feature_fraction': 0.4845545349848576, 'bagging_fraction': 0.9406590942262119, 'bagging_freq': 1, 'num_leaves': 2, 'min_data_in_leaf': 61, 'extra_trees': False, 'min_data_per_group': 2, 'cat_l2': 0.6619871537619337, 'cat_smooth': 3.4220529032706923, 'max_cat_to_onehot': 50, 'lambda_l1': 0.7712932196512772, 'lambda_l2': 0.1481818990030073}. Best is trial 1 with value: 0.24839858478091925.
+Trial 7 finished with value: 0.2684469447365454 and parameters: {'learning_rate': 0.014633380642745364, 'feature_fraction': 0.4695214357150779, 'bagging_fraction': 0.958931027762678, 'bagging_freq': 1, 'num_leaves': 32, 'min_data_in_leaf': 2, 'extra_trees': True, 'min_data_per_group': 6, 'cat_l2': 0.3957756313952873, 'cat_smooth': 1.5409457762881555, 'max_cat_to_onehot': 75, 'lambda_l1': 0.4722677036694331, 'lambda_l2': 0.23927653245200955}. Best is trial 1 with value: 0.24839858478091925.
+Trial 8 finished with value: 0.2472855089433974 and parameters: {'learning_rate': 0.042356773126632795, 'feature_fraction': 0.8564710291701385, 'bagging_fraction': 0.8683831592708489, 'bagging_freq': 1, 'num_leaves': 65, 'min_data_in_leaf': 6, 'extra_trees': False, 'min_data_per_group': 2, 'cat_l2': 0.009543550367992308, 'cat_smooth': 0.0014359718569878096, 'max_cat_to_onehot': 39, 'lambda_l1': 0.314424545478219, 'lambda_l2': 1.017190525260289}. Best is trial 8 with value: 0.2472855089433974.
+Trial 9 finished with value: 0.2674383111087353 and parameters: {'learning_rate': 0.07581256838789621, 'feature_fraction': 0.549575337489325, 'bagging_fraction': 0.8231148769106889, 'bagging_freq': 1, 'num_leaves': 61, 'min_data_in_leaf': 2, 'extra_trees': True, 'min_data_per_group': 3, 'cat_l2': 1.3124992669799407, 'cat_smooth': 10.979988817809668, 'max_cat_to_onehot': 39, 'lambda_l1': 0.871473444128699, 'lambda_l2': 1.607363786590539}. Best is trial 8 with value: 0.2472855089433974.
+Trial 10 finished with value: 0.2553080169085611 and parameters: {'learning_rate': 0.03977775115411819, 'feature_fraction': 0.7971859899035706, 'bagging_fraction': 0.7022641957948879, 'bagging_freq': 1, 'num_leaves': 8, 'min_data_in_leaf': 16, 'extra_trees': False, 'min_data_per_group': 23, 'cat_l2': 0.005502059192515464, 'cat_smooth': 0.0017684001062801304, 'max_cat_to_onehot': 31, 'lambda_l1': 0.028575443310857374, 'lambda_l2': 1.0306723536455278}. Best is trial 8 with value: 0.2472855089433974.
+Trial 11 finished with value: 0.2483785978511337 and parameters: {'learning_rate': 0.005765273233019838, 'feature_fraction': 0.997017217496806, 'bagging_fraction': 0.997185108046352, 'bagging_freq': 1, 'num_leaves': 31, 'min_data_in_leaf': 1, 'extra_trees': False, 'min_data_per_group': 62, 'cat_l2': 0.038127979308424445, 'cat_smooth': 57.93237101717496, 'max_cat_to_onehot': 8, 'lambda_l1': 0.6254146766515248, 'lambda_l2': 0.9843201610931961}. Best is trial 8 with value: 0.2472855089433974.
+Trial 12 finished with value: 0.24785211078090108 and parameters: {'learning_rate': 0.005545350781684959, 'feature_fraction': 0.8519346364158834, 'bagging_fraction': 0.9946620462331821, 'bagging_freq': 1, 'num_leaves': 197, 'min_data_in_leaf': 3, 'extra_trees': False, 'min_data_per_group': 30, 'cat_l2': 0.023220901182213465, 'cat_smooth': 0.19205767584198355, 'max_cat_to_onehot': 99, 'lambda_l1': 0.6573259479182485, 'lambda_l2': 0.9228635384898267}. Best is trial 8 with value: 0.2472855089433974.
+Trial 13 finished with value: 0.2458840056414301 and parameters: {'learning_rate': 0.04451506475158212, 'feature_fraction': 0.7854734755930853, 'bagging_fraction': 0.784594846992321, 'bagging_freq': 1, 'num_leaves': 197, 'min_data_in_leaf': 4, 'extra_trees': False, 'min_data_per_group': 18, 'cat_l2': 0.01938931160836007, 'cat_smooth': 0.0016573557934838157, 'max_cat_to_onehot': 94, 'lambda_l1': 0.2563749199687651, 'lambda_l2': 0.9120080172392142}. Best is trial 13 with value: 0.2458840056414301.
+Trial 14 finished with value: 0.24918478900813912 and parameters: {'learning_rate': 0.04470899732921436, 'feature_fraction': 0.6691288341340457, 'bagging_fraction': 0.7961428631062434, 'bagging_freq': 1, 'num_leaves': 84, 'min_data_in_leaf': 8, 'extra_trees': False, 'min_data_per_group': 12, 'cat_l2': 0.005204820604032765, 'cat_smooth': 0.0010056640931116426, 'max_cat_to_onehot': 29, 'lambda_l1': 0.22789428775293866, 'lambda_l2': 0.6506403549481437}. Best is trial 13 with value: 0.2458840056414301.
+Trial 15 finished with value: 0.2640116677726 and parameters: {'learning_rate': 0.0451159727146497, 'feature_fraction': 0.8243166871398107, 'bagging_fraction': 0.7628340645174424, 'bagging_freq': 1, 'num_leaves': 84, 'min_data_in_leaf': 4, 'extra_trees': True, 'min_data_per_group': 2, 'cat_l2': 0.015024467137652122, 'cat_smooth': 0.006788261361065667, 'max_cat_to_onehot': 88, 'lambda_l1': 0.24632734877397713, 'lambda_l2': 1.9662406305121451}. Best is trial 13 with value: 0.2458840056414301.
+Trial 16 finished with value: 0.24751386923337426 and parameters: {'learning_rate': 0.030471545911540342, 'feature_fraction': 0.7167406990859433, 'bagging_fraction': 0.7713090962983292, 'bagging_freq': 1, 'num_leaves': 177, 'min_data_in_leaf': 16, 'extra_trees': False, 'min_data_per_group': 11, 'cat_l2': 0.061756641012086166, 'cat_smooth': 0.00554079000455753, 'max_cat_to_onehot': 49, 'lambda_l1': 0.18771044789599448, 'lambda_l2': 1.1873470118253104}. Best is trial 13 with value: 0.2458840056414301.
+Trial 17 finished with value: 0.24906757101188126 and parameters: {'learning_rate': 0.06046370621957906, 'feature_fraction': 0.8867666209639778, 'bagging_fraction': 0.7155760641644238, 'bagging_freq': 1, 'num_leaves': 55, 'min_data_in_leaf': 4, 'extra_trees': False, 'min_data_per_group': 37, 'cat_l2': 0.010715055693758033, 'cat_smooth': 0.06437747508822607, 'max_cat_to_onehot': 59, 'lambda_l1': 0.36856815099178575, 'lambda_l2': 0.637553317732714}. Best is trial 13 with value: 0.2458840056414301.
+Trial 18 finished with value: 0.2513624013877864 and parameters: {'learning_rate': 0.029025195678339406, 'feature_fraction': 0.6174963397468256, 'bagging_fraction': 0.8339196288460513, 'bagging_freq': 1, 'num_leaves': 17, 'min_data_in_leaf': 18, 'extra_trees': False, 'min_data_per_group': 4, 'cat_l2': 0.025307561445262593, 'cat_smooth': 0.0038097948724703087, 'max_cat_to_onehot': 22, 'lambda_l1': 0.3381469314095965, 'lambda_l2': 0.4173592688866125}. Best is trial 13 with value: 0.2458840056414301.
+Trial 19 finished with value: 0.2640234616932202 and parameters: {'learning_rate': 0.057885489390302546, 'feature_fraction': 0.7677820538964242, 'bagging_fraction': 0.8869934448785649, 'bagging_freq': 1, 'num_leaves': 106, 'min_data_in_leaf': 2, 'extra_trees': True, 'min_data_per_group': 11, 'cat_l2': 0.10071107643011455, 'cat_smooth': 0.014000981343885362, 'max_cat_to_onehot': 40, 'lambda_l1': 0.5620842292995404, 'lambda_l2': 0.8405940370704688}. Best is trial 13 with value: 0.2458840056414301.
+Trial 20 finished with value: 0.2546629637447194 and parameters: {'learning_rate': 0.09978856848177636, 'feature_fraction': 0.9050534995153161, 'bagging_fraction': 0.8024056473923528, 'bagging_freq': 1, 'num_leaves': 52, 'min_data_in_leaf': 26, 'extra_trees': False, 'min_data_per_group': 16, 'cat_l2': 0.008203648860405295, 'cat_smooth': 0.002196561045262354, 'max_cat_to_onehot': 27, 'lambda_l1': 0.13773676292431292, 'lambda_l2': 1.2374461710663232}. Best is trial 13 with value: 0.2458840056414301.
+Trial 21 finished with value: 0.24668686539251117 and parameters: {'learning_rate': 0.02797676178829947, 'feature_fraction': 0.7448521641649783, 'bagging_fraction': 0.7545379416920972, 'bagging_freq': 1, 'num_leaves': 199, 'min_data_in_leaf': 12, 'extra_trees': False, 'min_data_per_group': 10, 'cat_l2': 0.05684743126853256, 'cat_smooth': 0.006852419451392964, 'max_cat_to_onehot': 51, 'lambda_l1': 0.1928033052462204, 'lambda_l2': 1.1694226566262325}. Best is trial 13 with value: 0.2458840056414301.
+Trial 22 finished with value: 0.2500220820951342 and parameters: {'learning_rate': 0.021342480509630977, 'feature_fraction': 0.40015726738282775, 'bagging_fraction': 0.7313518972174119, 'bagging_freq': 1, 'num_leaves': 122, 'min_data_in_leaf': 8, 'extra_trees': False, 'min_data_per_group': 8, 'cat_l2': 0.0211936787741602, 'cat_smooth': 0.0076026444343088835, 'max_cat_to_onehot': 74, 'lambda_l1': 0.28905934017067175, 'lambda_l2': 0.8200402748906913}. Best is trial 13 with value: 0.2458840056414301.
+Trial 23 finished with value: 0.24542174262356142 and parameters: {'learning_rate': 0.03415708338334463, 'feature_fraction': 0.7666049091782796, 'bagging_fraction': 0.7818132639797489, 'bagging_freq': 1, 'num_leaves': 170, 'min_data_in_leaf': 5, 'extra_trees': False, 'min_data_per_group': 3, 'cat_l2': 0.033604213583793605, 'cat_smooth': 0.0010077428912827798, 'max_cat_to_onehot': 40, 'lambda_l1': 0.04284090556163361, 'lambda_l2': 1.250074321330008}. Best is trial 23 with value: 0.24542174262356142.
+Trial 24 finished with value: 0.2463675753224457 and parameters: {'learning_rate': 0.031424027095044056, 'feature_fraction': 0.7541537113331556, 'bagging_fraction': 0.7887641622367836, 'bagging_freq': 1, 'num_leaves': 195, 'min_data_in_leaf': 11, 'extra_trees': False, 'min_data_per_group': 4, 'cat_l2': 0.03477287407611541, 'cat_smooth': 0.07345565295263692, 'max_cat_to_onehot': 48, 'lambda_l1': 0.010447404125199511, 'lambda_l2': 1.3374516501172407}. Best is trial 23 with value: 0.24542174262356142.
+Trial 25 finished with value: 0.24698832634841184 and parameters: {'learning_rate': 0.0349123464092807, 'feature_fraction': 0.6414562712654158, 'bagging_fraction': 0.7937864183449292, 'bagging_freq': 1, 'num_leaves': 122, 'min_data_in_leaf': 4, 'extra_trees': False, 'min_data_per_group': 4, 'cat_l2': 0.03247555640446551, 'cat_smooth': 0.038465149900187165, 'max_cat_to_onehot': 78, 'lambda_l1': 0.033071747761220655, 'lambda_l2': 1.3924983415912167}. Best is trial 23 with value: 0.24542174262356142.
+Optuna Search Completed in: 168.54 seconds
+
+Training final model on optimized parameter setup...
+
+[LIGHTGBM FINALIZED METRICS]
+Optimal Trees:         93
+1-AUROC:             0.2584 (Delta to TabPFN: +0.0380)
+Accuracy:             0.8195 (Delta to TabPFN: -0.0037)
+Final Train Time:      0.51 seconds (0.0580s per 1K)
+Final Infer Time:      0.00 seconds (0.0015s per 1K)
+
+--- LIGHTGBM Feature Importance (Raw vs. Scaled Share) ---
+Feature | Raw gain | Share
+loc | 10635.55 | 17.97%
+lOBlank | 4416.12 | 7.46%
+i | 4170.09 | 7.05%
+d | 3912.03 | 6.61%
+lOCode | 3332.38 | 5.63%
+total_Opnd | 3145.07 | 5.31%
+uniq_Op | 2824.83 | 4.77%
+uniq_Opnd | 2725.92 | 4.61%
+total_Op | 2702.60 | 4.57%
+n | 2490.39 | 4.21%
+iv(g) | 2406.09 | 4.07%
+e | 2315.86 | 3.91%
+branchCount | 2237.71 | 3.78%
+lOComment | 2162.30 | 3.65%
+v | 1939.50 | 3.28%
+v(g) | 1937.10 | 3.27%
+t | 1762.49 | 2.98%
+ev(g) | 1571.82 | 2.66%
+l | 1130.84 | 1.91%
+locCodeAndComment | 916.35 | 1.55%
+b | 453.60 | 0.77%
+
+=====================================================================
+METRIC TYPE                                  | VALUE / PROFILE
+=====================================================================
+Embedding Share                              | 0.00%
+Raw Feature Share                            | 100.00%
+---------------------------------------------------------------------
+Active Text Embedding Density                | 0.00% (0/0)
+Active Raw Tabular Feature Density           | 100.00% (21/21)
+---------------------------------------------------------------------
+Top-5 Concentration Ratio (CR5)              | 44.71% of total decision weight
+Top-10 Concentration Ratio (CR10)            | 68.18% of total decision weight
+=====================================================================
+
+Total Pipeline Execution Time: 170.62 seconds
+
+[SUCCESS] Permanent artifacts safely written to 'outputs/training-4/'
+[W&B] Artifacts and localized metrics logged successfully for jm1_raw-only_lightgbm
