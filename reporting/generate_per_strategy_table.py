@@ -1,15 +1,15 @@
-r"""
-==============================================================================
-Script: generate_strategy_latex_table.py
-
-Description:
-Reads the Strategy-level Rank and Normalized Score CSVs, extracts the main
-numeric results alongside their confidence intervals, and exports a
-ready-to-compile LaTeX table directly to the tex folder.
-Uses typographic styling (\textbf, \underline, \textit) to indicate the 1st,
-2nd, and 3rd best performing paradigms respectively, conserving horizontal space.
-==============================================================================
-"""
+# """
+# ==============================================================================
+# Script: generate_paradigm_latex_table.py
+#
+# Description:
+# Reads the Paradigm-level Rank and Normalized Score CSVs, extracts the main
+# numeric results alongside their confidence intervals, and exports a
+# ready-to-compile LaTeX table directly to the tex folder.
+# Uses typographic styling (\textbf, \underline, \textit) to indicate the 1st,
+# 2nd, and 3rd best performing paradigms respectively, conserving horizontal space.
+# ==============================================================================
+# """
 
 import pandas as pd
 import re
@@ -20,6 +20,7 @@ from pathlib import Path
 # ==============================================================================
 RANKS_CSV = Path("paradigm_aggregations/matrix_split_average_ranks.csv")
 NORM_SCORES_CSV = Path("paradigm_aggregations/matrix_split_norm_scores.csv")
+SUMMARY_CSV = Path("leaderboards/matrix.csv")
 OUTPUT_TEX = Path("tex/paradigm_results.tex")
 
 # Map raw paradigm strings to their LaTeX representations
@@ -55,6 +56,9 @@ def clean_cell(val):
         main_val = match.group(1)
         ci_val = match.group(2)
         if ci_val:
+            # ci_val = ci_val.replace("-", "--")
+            # return f"{main_val} {ci_val}"
+            ci_val = re.sub(r"\s*-\s*", "--", ci_val)
             return f"{main_val} {ci_val}"
         return main_val
     return "-"
@@ -177,10 +181,28 @@ def main():
     if not NORM_SCORES_CSV.exists():
         print(f"[ERROR] Missing Norm Score file: {NORM_SCORES_CSV}")
         return
+    if not SUMMARY_CSV.exists():
+        print(f"[ERROR] Missing Summary matrix file: {SUMMARY_CSV}")
+        return
 
     # Load data
     df_rank = pd.read_csv(RANKS_CSV)
     df_norm = pd.read_csv(NORM_SCORES_CSV)
+
+    # Calculate dataset counts from matrix.csv
+    df_summary = pd.read_csv(SUMMARY_CSV)
+    df_unique = df_summary.drop_duplicates(subset=["dataset"])
+
+    total = len(df_unique)
+    task_types = df_unique["task_type"].str.lower()
+
+    reg_count = (task_types == "regression").sum()
+    bin_count = (task_types == "binary").sum()
+    mc_count = (task_types == "multiclass").sum()
+    cls_count = (task_types.isin(["binary", "multiclass", "classification"])).sum()
+
+    small_count = (df_unique["dataset_samples_count"] <= 10000).sum()
+    medium_count = (df_unique["dataset_samples_count"] > 10000).sum()
 
     # Generate the respective sections
     # Rank is sorted Ascending (lower is better)
@@ -191,11 +213,11 @@ def main():
     # Construct the full LaTeX document string
     latex_output = f"""\\begin{{table}}[ht]
 \\centering
-\\caption{{Strategy-level results stratified by task type and dataset scale. Best results are \\textbf{{bolded}}, second best are \\underline{{underlined}}, and third best are \\textit{{italicized}}.}}
+\\caption{{Paradigm-level results stratified by task type and dataset scale. The values represent benchmark-wide aggregate metrics derived from the top-performing variant of each paradigm on a per-dataset basis.}}
 \\label{{tab:results-2}}
 \\resizebox{{\\textwidth}}{{!}}{{%\n\\begin{{tabular}}{{lccccccc}}
 \\toprule
-Strategy & Overall & Classification & Regression & Binary & Multiclass & Small & Medium \\\\
+Paradigm & Overall & Classification $\\scriptstyle ({cls_count}/{total})$ & Regression $\\scriptstyle ({reg_count}/{total})$ & Binary $\\scriptstyle ({bin_count}/{total})$ & Multiclass $\\scriptstyle ({mc_count}/{total})$ & Small $\\scriptstyle ({small_count}/{total})$ & Medium $\\scriptstyle ({medium_count}/{total})$ \\\\
 \\midrule
 \\multicolumn{{8}}{{l}}{{\\textbf{{Average Rank ($\\downarrow$)}}}} \\\\
 \\midrule
