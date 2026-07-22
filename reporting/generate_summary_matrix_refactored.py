@@ -35,7 +35,7 @@ df_gbdt["mode_algorithm"] = df_gbdt["mode_algorithm"].str.replace(
 # Extract one instance of TabPFN per dataset using the dataset-level columns
 df_tabpfn = df_full.drop_duplicates(subset=["dataset"]).copy()
 
-# Keep only the overarching dataset metadata and the TabPFN specific scores
+# for the TabPFN lines, keep only the overarching dataset metadata and the TabPFN specific scores
 cols_to_keep = [
     "dataset",
     "task_type",

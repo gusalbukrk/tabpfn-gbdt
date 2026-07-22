@@ -24,7 +24,7 @@ import seaborn as sns
 # CONFIGURATION
 # ==============================================================================
 INPUT_CSV = "summary_matrix_refactored.csv"
-OUTPUT_PLOT = "outputs/norm_scores_boxplot.png"
+OUTPUT_PLOT = "outputs/norm_scores_boxplot_oracle.png"
 
 # Metrics where a lower value indicates better performance (Error metrics)
 LOWER_IS_BETTER = ["1-auroc", "log_loss", "rmse", "mae", "mse", "error"]
@@ -79,12 +79,6 @@ def main():
 
     df = pd.read_csv(input_path)
 
-    # Ensure tuning_val_score_best exists (avoids silent failures)
-    if "tuning_val_score_best" not in df.columns:
-        raise ValueError(
-            "Critical column 'tuning_val_score_best' missing from input CSV."
-        )
-
     # 1. Map Paradigms & Clean Task Types
     df["Paradigm"] = df.apply(determine_paradigm, axis=1)
     df = df[df["Paradigm"].notna()].copy()
@@ -136,13 +130,7 @@ def main():
             if p_df.empty:
                 continue
 
-            # REALISTIC SELECTION: Pick the model with the lowest validation error, then get its Norm_Score
-            best_row = p_df.sort_values(
-                by="tuning_val_score_best", ascending=True, na_position="last"
-            ).iloc[0]
-
-            best_score = best_row["Norm_Score"]
-
+            best_score = p_df["Norm_Score"].max()
             dataset_ceilings.append(
                 {
                     "dataset": dataset,

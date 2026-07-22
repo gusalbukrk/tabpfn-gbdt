@@ -6,7 +6,7 @@ Description: Centralized pipeline that:
                2. Computes "True" paradigm ceilings (split strategies).
                3. Computes "Merged" paradigm ceilings (hybrid pooled strategies).
              Uses vectorized bootstrapping to calculate 95% Confidence Intervals
-             for the Ceilings to measure cross-dataset stability.
+             for the Oracle Ceilings to measure cross-dataset stability.
 Outputs: All files are saved to a dedicated 'paradigm_aggregations' folder.
 ==============================================================================
 """
@@ -26,11 +26,8 @@ DATASETS_DIR = os.path.abspath(
 SUMMARY_MATRIX_PATH = os.path.abspath(
     os.path.join(SCRIPT_DIR, "../outputs/training-consolidated/summary_matrix.csv")
 )
-REFACTORED_MATRIX_PATH = os.path.abspath(
-    os.path.join(SCRIPT_DIR, "summary_matrix_refactored.csv")
-)
 
-OUTPUT_DIR = os.path.join(SCRIPT_DIR, "paradigm_aggregations")
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, "paradigm_aggregations_oracle")
 COMPILED_METRICS_PATH = os.path.join(OUTPUT_DIR, "compiled_dataset_metrics.csv")
 
 # =====================================================================
@@ -119,10 +116,6 @@ def compile_metrics():
 def build_paradigm_ceilings(df_metrics, paradigms_map, prefix_name):
     if not os.path.exists(SUMMARY_MATRIX_PATH):
         raise FileNotFoundError(f"Summary matrix missing at: {SUMMARY_MATRIX_PATH}")
-    if not os.path.exists(REFACTORED_MATRIX_PATH):
-        raise FileNotFoundError(
-            f"Refactored matrix missing at: {REFACTORED_MATRIX_PATH}"
-        )
 
     # Load and clean summary matrix metadata
     df_meta = pd.read_csv(SUMMARY_MATRIX_PATH)[
@@ -134,36 +127,10 @@ def build_paradigm_ceilings(df_metrics, paradigms_map, prefix_name):
         df_meta["dataset_samples_count"] <= 10000, "Small", "Medium"
     )
 
-    # Load validation scores from the refactored matrix
-    df_val = pd.read_csv(REFACTORED_MATRIX_PATH)[
-        ["dataset", "mode_algorithm", "tuning_val_score_best"]
-    ]
-    df_val = df_val.rename(columns={"mode_algorithm": "strategy"})
-    df_val["strategy"] = df_val["strategy"].astype(str).str.strip()
-
-    # Merge base metrics with metadata, then merge with validation scores
     df_merged = pd.merge(df_metrics, df_meta, on="dataset", how="left")
-    df_merged = pd.merge(df_merged, df_val, on=["dataset", "strategy"], how="left")
-
-    match_rate = df_merged["tuning_val_score_best"].notna().mean()
-    print(f"Validation score match rate: {match_rate:.1%}")
-    match_by_strategy = df_merged.groupby("strategy")["tuning_val_score_best"].apply(
-        lambda x: x.notna().mean()
-    )
-    print(match_by_strategy.sort_values())
-
-    paradigm_strats = ["combined_lightgbm", "combined_catboost", "combined_xgboost"]
-    sub = df_merged[df_merged["strategy"].isin(paradigm_strats)]
-    all_nan_datasets = sub.groupby("dataset")["tuning_val_score_best"].apply(
-        lambda x: x.isna().all()
-    )
-    print(
-        f"Datasets where all 3 combined_* candidates are NaN: {all_nan_datasets.sum()}"
-    )
-
     dataset_records = []
 
-    # Dataset-by-Dataset Triage (Validation-Set Selection Logic)
+    # Dataset-by-Dataset Triage (The Oracle Ceiling Logic)
     for dataset, df_ds in df_merged.groupby("dataset"):
         task_type = df_ds["task_type"].iloc[0]
         size_scale = df_ds["size_scale"].iloc[0]
@@ -173,14 +140,9 @@ def build_paradigm_ceilings(df_metrics, paradigms_map, prefix_name):
             # Preserving the failure penalty to avoid survivorship bias
             if sub.empty:
                 return 0.0, 10.0
-
-            # Since 1-AUROC, Log Loss, and RMSE all require minimization:
-            # Sort ascending by validation score. na_position="last" handles baselines like TabPFN that lack tuning.
-            best_row = sub.sort_values(
-                by="tuning_val_score_best", ascending=True, na_position="last"
-            ).iloc[0]
-
-            return best_row["norm_score"], best_row["rank"]
+            best_idx = sub["norm_score"].idxmax()
+            row = sub.loc[best_idx]
+            return row["norm_score"], row["rank"]
 
         ds_data = {"dataset": dataset, "task_type": task_type, "size_scale": size_scale}
 
