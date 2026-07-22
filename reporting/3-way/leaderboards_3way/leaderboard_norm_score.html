@@ -1,0 +1,75 @@
+<html><head><meta charset='utf-8'><style>
+body { background-color: #1a1b26; color: #c0caf5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; }
+table { border-collapse: collapse; width: 100%; border: 1px solid #414868; font-size: 14px; }
+th, td { border: 1px solid #414868; padding: 12px 16px; text-align: left; }
+th { background-color: #1a1b26; font-weight: bold; border-bottom: 2px solid #414868; }
+.header-group { border-bottom: 1px dotted #565f89; padding-bottom: 4px; margin-bottom: 4px; font-size: 0.85em; color: #a9b1d6; }
+.val-text { font-weight: bold; color: #ffffff; }
+</style></head><body>
+<table>
+<thead>
+<tr>
+<th colspan='2' rowspan='2'>Model</th>
+<th rowspan='2'>Overall</th>
+<th colspan='4' style='text-align: center;'><div class='header-group'>By Task</div></th>
+<th colspan='2' style='text-align: center;'><div class='header-group'>By Dataset Size</div></th>
+</tr><tr>
+<th>Class.</th><th>Regr.</th><th>Binary</th><th>Multi.</th>
+<th>Small</th><th>Medium</th>
+</tr>
+</thead><tbody>
+<tr>
+
+        <td style="background-color: #1a1b26; text-align: center; border-right: none; width: 40px;">
+            <div style="background: #24283b; border-radius: 12px; padding: 2px 6px; display: inline-block; font-size: 0.9em; border: 1px solid #414868;">🧠⚡</div>
+        </td>
+        <td style="background-color: #1a1b26; border-left: none; font-weight: bold;">
+            <span style="color: #7aa2f7; font-size: 1.0em;">TabPFN</span> 
+            <span style="color: #a9b1d6; font-weight: 500; font-size: 0.95em;">(baseline) ✔↗</span>
+        </td>
+    
+<td style='background-color: #257639; text-align: center;'><span class='val-text'>🥇 0.588</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.451 - 0.706]</span></td>
+<td style='background-color: #257639; text-align: center;'><span class='val-text'>🥇 0.605</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.447 - 0.737]</span></td>
+<td style='background-color: #257639; text-align: center;'><span class='val-text'>🥇 0.538</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.231 - 0.846]</span></td>
+<td style='background-color: #257639; text-align: center;'><span class='val-text'>🥇 0.700</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.533 - 0.833]</span></td>
+<td style='background-color: #6b7a30; text-align: center;'><span class='val-text'>🥈 0.250</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.000 - 0.500]</span></td>
+<td style='background-color: #257639; text-align: center;'><span class='val-text'>🥇 0.667</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.500 - 0.833]</span></td>
+<td style='background-color: #257639; text-align: center;'><span class='val-text'>🥇 0.476</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.238 - 0.667]</span></td>
+</tr>
+<tr>
+
+        <td style="background-color: #1a1b26; text-align: center; border-right: none; width: 40px;">
+            <div style="background: #24283b; border-radius: 12px; padding: 2px 6px; display: inline-block; font-size: 0.9em; border: 1px solid #414868;">🌳</div>
+        </td>
+        <td style="background-color: #1a1b26; border-left: none; font-weight: bold;">
+            <span style="color: #7aa2f7; font-size: 1.0em;">CatBoost</span> 
+            <span style="color: #a9b1d6; font-weight: 500; font-size: 0.95em;">(combined) ✔↗</span>
+        </td>
+    
+<td style='background-color: #7e7c2e; text-align: center;'><span class='val-text'>🥈 0.216</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.118 - 0.333]</span></td>
+<td style='background-color: #837c2d; text-align: center;'><span class='val-text'>🥉 0.158</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.053 - 0.289]</span></td>
+<td style='background-color: #447835; text-align: center;'><span class='val-text'>🥈 0.385</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.154 - 0.692]</span></td>
+<td style='background-color: #7d7c2e; text-align: center;'><span class='val-text'>🥈 0.167</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.067 - 0.300]</span></td>
+<td style='background-color: #837c2d; text-align: center;'><span class='val-text'>🥉 0.125</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.000 - 0.375]</span></td>
+<td style='background-color: #837c2d; text-align: center;'><span class='val-text'>🥉 0.100</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.000 - 0.233]</span></td>
+<td style='background-color: #407836; text-align: center;'><span class='val-text'>🥈 0.381</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.190 - 0.619]</span></td>
+</tr>
+<tr>
+
+        <td style="background-color: #1a1b26; text-align: center; border-right: none; width: 40px;">
+            <div style="background: #24283b; border-radius: 12px; padding: 2px 6px; display: inline-block; font-size: 0.9em; border: 1px solid #414868;">🌳</div>
+        </td>
+        <td style="background-color: #1a1b26; border-left: none; font-weight: bold;">
+            <span style="color: #7aa2f7; font-size: 1.0em;">LightGBM</span> 
+            <span style="color: #a9b1d6; font-weight: 500; font-size: 0.95em;">(combined) ✔↗</span>
+        </td>
+    
+<td style='background-color: #837c2d; text-align: center;'><span class='val-text'>🥉 0.196</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.098 - 0.295]</span></td>
+<td style='background-color: #727b2f; text-align: center;'><span class='val-text'>🥈 0.237</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.105 - 0.395]</span></td>
+<td style='background-color: #837c2d; text-align: center;'><span class='val-text'>🥉 0.077</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.000 - 0.231]</span></td>
+<td style='background-color: #837c2d; text-align: center;'><span class='val-text'>🥉 0.133</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.033 - 0.267]</span></td>
+<td style='background-color: #257639; text-align: center;'><span class='val-text'>🥇 0.625</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.250 - 0.875]</span></td>
+<td style='background-color: #6d7b30; text-align: center;'><span class='val-text'>🥈 0.233</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.100 - 0.400]</span></td>
+<td style='background-color: #837c2d; text-align: center;'><span class='val-text'>🥉 0.143</span><br><span style='font-size: 0.85em; color: #a9b1d6; font-weight: normal;'>[0.000 - 0.286]</span></td>
+</tr>
+</tbody></table></body></html>

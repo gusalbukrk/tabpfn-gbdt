@@ -1,0 +1,4 @@
+Strategy,Average Rank (95% Bootstrap CI),Improvability % (95% Bootstrap CI),Norm Score (95% Bootstrap CI)
+combined_lightgbm,1.50  [1.12 - 2.00],3.6%  [0.1% - 9.5%],0.625  [0.250 - 0.875]
+baseline_tabpfn,2.12  [1.62 - 2.62],12.5%  [1.0% - 34.4%],0.250  [0.000 - 0.500]
+combined_catboost,2.38  [1.88 - 2.75],16.4%  [3.1% - 38.2%],0.125  [0.000 - 0.375]

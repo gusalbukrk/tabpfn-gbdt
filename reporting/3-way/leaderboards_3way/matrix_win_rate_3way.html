@@ -1,0 +1,78 @@
+<html><head><meta charset='utf-8'><style>
+body { background-color: #1a1b26; color: #c0caf5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; }
+table { border-collapse: collapse; margin-top: 20px; border: 1px solid #414868; font-size: 13px; }
+th, td { border: 1px solid #414868; padding: 10px; text-align: center; }
+th { background-color: #1a1b26; font-weight: bold; }
+.diag { background: repeating-linear-gradient(45deg, #15161e, #15161e 10px, #1a1b26 10px, #1a1b26 20px); }
+.win-text { font-weight: bold; color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); }
+</style></head><body>
+<h2>Head-to-Head Win Rate Matrix (3-Way)</h2>
+<p style='color: #a9b1d6; font-size: 0.9em;'>Rows represent the challenger. Columns represent the opponent. Values represent the percentage of datasets where the Row model outperformed the Column model.</p>
+<table>
+<thead><tr>
+<th colspan='2' style='text-align: center; font-size: 0.9em; color: #a9b1d6;'>Challenger \<br>Opponent</th>
+<th style='width: 80px;'>
+        <div style="text-align: center; line-height: 1.3;">
+            <span style="font-size: 1.2em;">🧠</span><br>
+            <span style="color: #7aa2f7; font-weight: bold; font-size: 1.0em;">TabPFN</span><br>
+            <span style="color: #a9b1d6; font-size: 0.95em; font-weight: 500;">(base.)</span>
+        </div>
+    </th>
+<th style='width: 80px;'>
+        <div style="text-align: center; line-height: 1.3;">
+            <span style="font-size: 1.2em;">🌳</span><br>
+            <span style="color: #7aa2f7; font-weight: bold; font-size: 1.0em;">LightGBM</span><br>
+            <span style="color: #a9b1d6; font-size: 0.95em; font-weight: 500;">(comb.)</span>
+        </div>
+    </th>
+<th style='width: 80px;'>
+        <div style="text-align: center; line-height: 1.3;">
+            <span style="font-size: 1.2em;">🌳</span><br>
+            <span style="color: #7aa2f7; font-weight: bold; font-size: 1.0em;">CatBoost</span><br>
+            <span style="color: #a9b1d6; font-size: 0.95em; font-weight: 500;">(comb.)</span>
+        </div>
+    </th>
+</tr></thead><tbody>
+<tr>
+
+        <td style="background-color: #1a1b26; text-align: center; border-right: none; width: 40px;">
+            <div style="background: #24283b; border-radius: 12px; padding: 2px 6px; display: inline-block; font-size: 0.9em; border: 1px solid #414868;">🧠⚡</div>
+        </td>
+        <td style="background-color: #1a1b26; border-left: none; font-weight: bold;">
+            <span style="color: #7aa2f7; font-size: 1.0em;">TabPFN</span> 
+            <span style="color: #a9b1d6; font-weight: 500; font-size: 0.95em;">(baseline) ✔↗</span>
+        </td>
+    
+<td class='diag'></td>
+<td style='background-color: #243f3a;'><span class='win-text'>64.7%</span></td>
+<td style='background-color: #244b3a;'><span class='win-text'>72.5%</span></td>
+</tr>
+<tr>
+
+        <td style="background-color: #1a1b26; text-align: center; border-right: none; width: 40px;">
+            <div style="background: #24283b; border-radius: 12px; padding: 2px 6px; display: inline-block; font-size: 0.9em; border: 1px solid #414868;">🌳</div>
+        </td>
+        <td style="background-color: #1a1b26; border-left: none; font-weight: bold;">
+            <span style="color: #7aa2f7; font-size: 1.0em;">LightGBM</span> 
+            <span style="color: #a9b1d6; font-weight: 500; font-size: 0.95em;">(combined) ✔↗</span>
+        </td>
+    
+<td style='background-color: #432e3b;'><span class='win-text'>35.3%</span></td>
+<td class='diag'></td>
+<td style='background-color: #243c3a;'><span class='win-text'>62.7%</span></td>
+</tr>
+<tr>
+
+        <td style="background-color: #1a1b26; text-align: center; border-right: none; width: 40px;">
+            <div style="background: #24283b; border-radius: 12px; padding: 2px 6px; display: inline-block; font-size: 0.9em; border: 1px solid #414868;">🌳</div>
+        </td>
+        <td style="background-color: #1a1b26; border-left: none; font-weight: bold;">
+            <span style="color: #7aa2f7; font-size: 1.0em;">CatBoost</span> 
+            <span style="color: #a9b1d6; font-weight: 500; font-size: 0.95em;">(combined) ✔↗</span>
+        </td>
+    
+<td style='background-color: #54313b;'><span class='win-text'>27.5%</span></td>
+<td style='background-color: #3f2d3b;'><span class='win-text'>37.3%</span></td>
+<td class='diag'></td>
+</tr>
+</tbody></table></body></html>
