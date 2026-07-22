@@ -90,9 +90,9 @@ def main():
             df["dataset_samples_count"], errors="coerce"
         )
         df["Scale"] = np.where(
-            df["dataset_samples_count"] < 10000,
+            df["dataset_samples_count"] <= 10000,
             "Small",
-            np.where(df["dataset_samples_count"] >= 10000, "Medium", "Unknown"),
+            np.where(df["dataset_samples_count"] > 10000, "Medium", "Unknown"),
         )
     else:
         df["Scale"] = "Unknown"
