@@ -64,13 +64,13 @@ def main():
                 break
 
     if row_col:
-        df["Size"] = np.where(df[row_col] < 10000, "Small", "Medium")
+        df["Size"] = np.where(df[row_col] <= 10000, "Small", "Medium")
     else:
         # Fallback to checking pre-existing string columns if row count numbers aren't present
         size_col = next((c for c in df.columns if "size" in c.lower()), None)
         if size_col:
             if df[size_col].dtype in [np.int64, np.float64]:
-                df["Size"] = np.where(df[size_col] < 10000, "Small", "Medium")
+                df["Size"] = np.where(df[size_col] <= 10000, "Small", "Medium")
             else:
                 df["Size"] = df[size_col].str.capitalize()
         else:

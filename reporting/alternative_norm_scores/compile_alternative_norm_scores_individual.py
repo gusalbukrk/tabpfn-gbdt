@@ -80,12 +80,12 @@ def main():
         None,
     )
     if row_col and df[row_col].dtype in [np.int64, np.float64]:
-        df["Size"] = np.where(df[row_col] < 10000, "Small", "Medium")
+        df["Size"] = np.where(df[row_col] <= 10000, "Small", "Medium")
     else:
         size_col = next((c for c in df.columns if "size" in c.lower()), None)
         if size_col:
             df["Size"] = (
-                np.where(df[size_col] < 10000, "Small", "Medium")
+                np.where(df[size_col] <= 10000, "Small", "Medium")
                 if df[size_col].dtype in [np.int64, np.float64]
                 else df[size_col].str.capitalize()
             )
