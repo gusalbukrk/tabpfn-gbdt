@@ -4,10 +4,9 @@ Script: compile_and_aggregate_paradigms.py
 Description: Centralized pipeline that:
                1. Compiles per-dataset leaderboards into a unified matrix.
                2. Computes "True" paradigm ceilings (split strategies).
-               3. Computes "Merged" paradigm ceilings (hybrid pooled strategies).
              Uses vectorized bootstrapping to calculate 95% Confidence Intervals
              for the Oracle Ceilings to measure cross-dataset stability.
-Outputs: All files are saved to a dedicated 'paradigm_aggregations' folder.
+Outputs: All files are saved to a dedicated 'paradigm_aggregations_oracle' folder.
 ==============================================================================
 """
 
@@ -130,10 +129,21 @@ def build_paradigm_ceilings(df_metrics, paradigms_map, prefix_name):
     df_merged = pd.merge(df_metrics, df_meta, on="dataset", how="left")
     dataset_records = []
 
-    # Dataset-by-Dataset Triage (The Oracle Ceiling Logic with Relative Ranking)
+    # Dataset-by-Dataset Triage (The Oracle Ceiling Logic)
     for dataset, df_ds in df_merged.groupby("dataset"):
         task_type = df_ds["task_type"].iloc[0]
         size_scale = df_ds["size_scale"].iloc[0]
+
+        def get_best_metrics(strat_list):
+            sub = df_ds[df_ds["strategy"].isin(strat_list)]
+            # Preserving the failure penalty to avoid survivorship bias
+            if sub.empty:
+                return 0.0, 10.0
+            best_idx = sub["norm_score"].idxmax()
+            row = sub.loc[best_idx]
+            return row["norm_score"], row["rank"]
+
+        ds_data = {"dataset": dataset, "task_type": task_type, "size_scale": size_scale}
 
         scores = {}
         for p_name, p_strats in paradigms_map.items():
@@ -150,7 +160,6 @@ def build_paradigm_ceilings(df_metrics, paradigms_map, prefix_name):
         score_series = pd.Series(scores)
         rank_series = score_series.rank(ascending=False, method="min")
 
-        ds_data = {"dataset": dataset, "task_type": task_type, "size_scale": size_scale}
         for p_name in paradigms_map.keys():
             ds_data[f"{p_name}_score"] = scores[p_name]
             ds_data[f"{p_name}_rank"] = rank_series[p_name]
@@ -296,22 +305,8 @@ if __name__ == "__main__":
         "raw-only_*": ["baseline_lightgbm", "baseline_catboost", "baseline_xgboost"],
     }
 
-    merged_paradigms = {
-        "tabpfn_baseline": ["baseline_tabpfn"],
-        "hybrid_*": [
-            "combined_lightgbm",
-            "combined_catboost",
-            "combined_xgboost",
-            "embed-only_lightgbm",
-            "embed-only_catboost",
-            "embed-only_xgboost",
-        ],
-        "raw-only_*": ["baseline_lightgbm", "baseline_catboost", "baseline_xgboost"],
-    }
-
     # 3. Execute Processing Blocks
     build_paradigm_ceilings(df_compiled_metrics, true_paradigms, "split")
-    build_paradigm_ceilings(df_compiled_metrics, merged_paradigms, "merged")
 
     print("=" * 70)
     print(" PIPELINE COMPLETE ")

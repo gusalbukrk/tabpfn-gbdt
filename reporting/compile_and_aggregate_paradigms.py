@@ -4,7 +4,6 @@ Script: compile_and_aggregate_paradigms.py
 Description: Centralized pipeline that:
                1. Compiles per-dataset leaderboards into a unified matrix.
                2. Computes "True" paradigm ceilings (split strategies).
-               3. Computes "Merged" paradigm ceilings (hybrid pooled strategies).
              Uses vectorized bootstrapping to calculate 95% Confidence Intervals
              for the Ceilings to measure cross-dataset stability.
 Outputs: All files are saved to a dedicated 'paradigm_aggregations' folder.
@@ -333,22 +332,8 @@ if __name__ == "__main__":
         "raw-only_*": ["baseline_lightgbm", "baseline_catboost", "baseline_xgboost"],
     }
 
-    merged_paradigms = {
-        "tabpfn_baseline": ["baseline_tabpfn"],
-        "hybrid_*": [
-            "combined_lightgbm",
-            "combined_catboost",
-            "combined_xgboost",
-            "embed-only_lightgbm",
-            "embed-only_catboost",
-            "embed-only_xgboost",
-        ],
-        "raw-only_*": ["baseline_lightgbm", "baseline_catboost", "baseline_xgboost"],
-    }
-
     # 3. Execute Processing Blocks
     build_paradigm_ceilings(df_compiled_metrics, true_paradigms, "split")
-    build_paradigm_ceilings(df_compiled_metrics, merged_paradigms, "merged")
 
     print("=" * 70)
     print(" PIPELINE COMPLETE ")
