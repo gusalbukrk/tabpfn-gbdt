@@ -163,31 +163,34 @@ def build_paradigm_ceilings(df_metrics, paradigms_map, prefix_name):
 
     dataset_records = []
 
-    # Dataset-by-Dataset Triage (Validation-Set Selection Logic)
+    # Dataset-by-Dataset Triage (Validation-Set Selection + Paradigm Re-ranking)
     for dataset, df_ds in df_merged.groupby("dataset"):
         task_type = df_ds["task_type"].iloc[0]
         size_scale = df_ds["size_scale"].iloc[0]
 
-        def get_best_metrics(strat_list):
-            sub = df_ds[df_ds["strategy"].isin(strat_list)]
-            # Preserving the failure penalty to avoid survivorship bias
+        scores = {}
+        for p_name, p_strats in paradigms_map.items():
+            sub = df_ds[df_ds["strategy"].isin(p_strats)]
+
             if sub.empty:
-                return 0.0, 10.0
+                scores[p_name] = 0.0
+            else:
+                # REALISTIC SELECTION: Sort ascending by validation error
+                # na_position="last" handles baselines like TabPFN that lack tuning
+                best_row = sub.sort_values(
+                    by="tuning_val_score_best", ascending=True, na_position="last"
+                ).iloc[0]
+                scores[p_name] = best_row["norm_score"]
 
-            # Since 1-AUROC, Log Loss, and RMSE all require minimization:
-            # Sort ascending by validation score. na_position="last" handles baselines like TabPFN that lack tuning.
-            best_row = sub.sort_values(
-                by="tuning_val_score_best", ascending=True, na_position="last"
-            ).iloc[0]
-
-            return best_row["norm_score"], best_row["rank"]
+        # PARADIGM RE-RANKING: Rank the chosen test scores against each other per dataset
+        # Higher norm_score = better performance -> Rank 1
+        score_series = pd.Series(scores)
+        rank_series = score_series.rank(ascending=False, method="min")
 
         ds_data = {"dataset": dataset, "task_type": task_type, "size_scale": size_scale}
-
-        for p_name, p_strats in paradigms_map.items():
-            n_score, rank = get_best_metrics(p_strats)
-            ds_data[f"{p_name}_score"] = n_score
-            ds_data[f"{p_name}_rank"] = rank
+        for p_name in paradigms_map.keys():
+            ds_data[f"{p_name}_score"] = scores[p_name]
+            ds_data[f"{p_name}_rank"] = rank_series[p_name]
 
         dataset_records.append(ds_data)
 

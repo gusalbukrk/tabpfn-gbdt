@@ -130,26 +130,30 @@ def build_paradigm_ceilings(df_metrics, paradigms_map, prefix_name):
     df_merged = pd.merge(df_metrics, df_meta, on="dataset", how="left")
     dataset_records = []
 
-    # Dataset-by-Dataset Triage (The Oracle Ceiling Logic)
+    # Dataset-by-Dataset Triage (The Oracle Ceiling Logic with Relative Ranking)
     for dataset, df_ds in df_merged.groupby("dataset"):
         task_type = df_ds["task_type"].iloc[0]
         size_scale = df_ds["size_scale"].iloc[0]
 
-        def get_best_metrics(strat_list):
-            sub = df_ds[df_ds["strategy"].isin(strat_list)]
-            # Preserving the failure penalty to avoid survivorship bias
+        scores = {}
+        for p_name, p_strats in paradigms_map.items():
+            sub = df_ds[df_ds["strategy"].isin(p_strats)]
+
             if sub.empty:
-                return 0.0, 10.0
-            best_idx = sub["norm_score"].idxmax()
-            row = sub.loc[best_idx]
-            return row["norm_score"], row["rank"]
+                # Failure penalty: negative score ensures it ranks last
+                scores[p_name] = -1.0
+            else:
+                # Oracle selection: get maximum normalized score
+                scores[p_name] = sub["norm_score"].max()
+
+        # Rank paradigms relative to each other (higher norm_score = rank 1)
+        score_series = pd.Series(scores)
+        rank_series = score_series.rank(ascending=False, method="min")
 
         ds_data = {"dataset": dataset, "task_type": task_type, "size_scale": size_scale}
-
-        for p_name, p_strats in paradigms_map.items():
-            n_score, rank = get_best_metrics(p_strats)
-            ds_data[f"{p_name}_score"] = n_score
-            ds_data[f"{p_name}_rank"] = rank
+        for p_name in paradigms_map.keys():
+            ds_data[f"{p_name}_score"] = scores[p_name]
+            ds_data[f"{p_name}_rank"] = rank_series[p_name]
 
         dataset_records.append(ds_data)
 
