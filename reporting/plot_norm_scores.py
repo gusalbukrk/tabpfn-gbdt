@@ -228,7 +228,7 @@ def main():
 
     # Apply a single, centered Y-axis label to the entire figure
     fig.supylabel(
-        "Normalized Score\n(Worst 0.0 $\\rightarrow$ 1.0 Best)",
+        "Normalized Score",
         x=0.015,
         fontweight="bold",
         fontsize=13,
