@@ -213,8 +213,8 @@ def main():
     # Construct the full LaTeX document string
     latex_output = f"""\\begin{{table}}[ht]
 \\centering
-\\caption{{Paradigm-level results stratified by task type and dataset scale. The values represent benchmark-wide aggregate results derived from the top-performing variant of each paradigm on a per-dataset basis.}}
-\\label{{tab:results-2}}
+\\caption{{Paradigm-level performance obtained via oracle-based model selection and stratified by task type and dataset scale.}}
+\\label{{tab:results-3}}
 \\resizebox{{\\textwidth}}{{!}}{{%\n\\begin{{tabular}}{{lccccccc}}
 \\toprule
 Paradigm & Overall & Classification $\\scriptstyle ({cls_count}/{total})$ & Regression $\\scriptstyle ({reg_count}/{total})$ & Binary $\\scriptstyle ({bin_count}/{total})$ & Multiclass $\\scriptstyle ({mc_count}/{total})$ & Small $\\scriptstyle ({small_count}/{total})$ & Medium $\\scriptstyle ({medium_count}/{total})$ \\\\

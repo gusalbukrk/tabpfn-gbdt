@@ -213,7 +213,7 @@ def main():
     # Construct the full LaTeX document string
     latex_output = f"""\\begin{{table}}[ht]
 \\centering
-\\caption{{Paradigm-level results stratified by task type and dataset scale. The values represent benchmark-wide aggregate results derived from the top-performing variant of each paradigm on a per-dataset basis.}}
+\\caption{{Paradigm-level performance obtained via validation-based model selection and stratified by task type and dataset scale.}}
 \\label{{tab:results-2}}
 \\resizebox{{\\textwidth}}{{!}}{{%\n\\begin{{tabular}}{{lccccccc}}
 \\toprule
