@@ -7,7 +7,7 @@ Generates a 2x3 faceted box plot overlaid with jittered data points using the
 Alternative Min-Max Normalized Scores.
 
 Facets:
-- Row 1: Overall, Small Scale (<10k), Medium Scale (>=10k)
+- Row 1: Overall, Small-Scale (<10k), Medium-Scale (>=10k)
 - Row 2: Binary Tasks, Multiclass Tasks, Regression Tasks
 Y-Axis: Normalized Score (Centralized for the entire figure).
 X-Axis: Architectural Strategies (Labels on all rows).
@@ -142,9 +142,9 @@ def main():
 
     # 3. Define the 6 Facets for the 2x3 Grid
     facets = [
-        {"title": "Overall Benchmark", "data": plot_df},
-        {"title": "Small Scale", "data": plot_df[plot_df["Scale"] == "Small"]},
-        {"title": "Medium Scale", "data": plot_df[plot_df["Scale"] == "Medium"]},
+        {"title": "Overall", "data": plot_df},
+        {"title": "Small-Scale", "data": plot_df[plot_df["Scale"] == "Small"]},
+        {"title": "Medium-Scale", "data": plot_df[plot_df["Scale"] == "Medium"]},
         {"title": "Binary Tasks", "data": plot_df[plot_df["Task Type"] == "Binary"]},
         {
             "title": "Multiclass Tasks",
