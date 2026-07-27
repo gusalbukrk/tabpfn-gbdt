@@ -1,6 +1,7 @@
 """
 Calculates dataset median-based normalized scores per variant. Computes the failure rate
-(percentage of datasets where a variant achieves a normalized score of 0.0)
+(percentage of datasets where a variant achieves a normalized score of 0.0) and the
+first-place count (percentage of datasets where a variant achieves a score of 1.0)
 across the overall benchmark and stratified by task type and scale.
 """
 
@@ -12,7 +13,7 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).parent.resolve()
 
 INPUT_FILE = SCRIPT_DIR / "summary_matrix_refactored.csv"
-OUTPUT_FILE = SCRIPT_DIR / "outputs" / "failure_rates.csv"
+OUTPUT_FILE = SCRIPT_DIR / "outputs" / "failure_rates_and_first_place.csv"
 
 VALUE_COL = "eval_primary_value"
 
@@ -119,16 +120,34 @@ def main():
         .reset_index(name="zero_count")
     )
 
-    # 6. Merge results and compute percentages
+    # 6. Count first places (score == 1.0)
+    first_places = (
+        df_expanded[df_expanded["normalized_score"] >= 1.0]
+        .groupby(["strata", "Variant"])["dataset"]
+        .nunique()
+        .reset_index(name="first_place_count")
+    )
+
+    # 7. Merge results and compute percentages
     results = pd.merge(totals, failures, on=["strata", "Variant"], how="left").fillna(0)
+    results = pd.merge(
+        results, first_places, on=["strata", "Variant"], how="left"
+    ).fillna(0)
 
     results["zero_count"] = results["zero_count"].astype(int)
+    results["first_place_count"] = results["first_place_count"].astype(int)
+
     results["failure_rate"] = (results["zero_count"] / results["total_datasets"]).round(
         4
     )
     results["failure_pct"] = (results["failure_rate"] * 100).round(2)
 
-    # 7. Apply strict sorting
+    results["first_place_rate"] = (
+        results["first_place_count"] / results["total_datasets"]
+    ).round(4)
+    results["first_place_pct"] = (results["first_place_rate"] * 100).round(2)
+
+    # 8. Apply strict sorting
     results["strata"] = pd.Categorical(
         results["strata"], categories=STRATA_ORDER, ordered=True
     )
@@ -139,9 +158,9 @@ def main():
     results = results.sort_values(["strata", "Variant"]).reset_index(drop=True)
     results = results.rename(columns={"Variant": "mode_algorithm"})
 
-    # 8. Save to output
+    # 9. Save to output
     results.to_csv(OUTPUT_FILE, index=False)
-    print(f"Failure rates successfully saved to: {OUTPUT_FILE}")
+    print(f"Failure and First Place rates successfully saved to: {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":
