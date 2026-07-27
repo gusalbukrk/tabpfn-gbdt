@@ -147,6 +147,11 @@ def main():
     ).round(4)
     results["first_place_pct"] = (results["first_place_rate"] * 100).round(2)
 
+    # New Column: Sum of failure percentage and first place percentage
+    results["extreme_outcome_pct"] = (
+        results["failure_pct"] + results["first_place_pct"]
+    ).round(2)
+
     # 8. Apply strict sorting
     results["strata"] = pd.Categorical(
         results["strata"], categories=STRATA_ORDER, ordered=True
