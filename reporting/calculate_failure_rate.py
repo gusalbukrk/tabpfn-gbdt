@@ -1,7 +1,6 @@
 """
-Calculates dataset median-based normalized scores per variant exactly as
-implemented in the Leaderboard script (unified logic). Computes the distribution
-quantiles (Min, P10, Q1, Median, Q3, P90, Max) and Mean of these scores
+Calculates dataset median-based normalized scores per variant. Computes the failure rate
+(percentage of datasets where a variant achieves a normalized score of 0.0)
 across the overall benchmark and stratified by task type and scale.
 """
 
@@ -13,7 +12,7 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).parent.resolve()
 
 INPUT_FILE = SCRIPT_DIR / "summary_matrix_refactored.csv"
-OUTPUT_FILE = SCRIPT_DIR / "outputs" / "normalized_quantiles.csv"
+OUTPUT_FILE = SCRIPT_DIR / "outputs" / "failure_rates.csv"
 
 VALUE_COL = "eval_primary_value"
 
@@ -35,7 +34,7 @@ STRATA_ORDER = ["overall", "small", "medium", "binary", "multiclass", "regressio
 
 
 def determine_variant(row):
-    """Exact variant mapping from the boxplot script."""
+    """Exact variant mapping from the boxplot/leaderboard standards."""
     mode = str(row.get("mode", "")).lower().strip()
     algo = str(row.get("algorithm", "")).lower().strip()
 
@@ -105,28 +104,31 @@ def main():
     # Drop any rows that don't fit our exact strata definitions
     df_expanded = df_expanded[df_expanded["strata"].isin(STRATA_ORDER)]
 
-    # 4. Calculate Quantiles and Stats
-    results = (
-        df_expanded.groupby(["strata", "Variant"])["normalized_score"]
-        .agg(
-            total_datasets="count",
-            mean="mean",
-            min="min",
-            p10=lambda x: x.quantile(0.10),
-            q1=lambda x: x.quantile(0.25),
-            median="median",
-            q3=lambda x: x.quantile(0.75),
-            p90=lambda x: x.quantile(0.90),
-            max="max",
-        )
-        .reset_index()
+    # 4. Count total datasets per strata and variant
+    totals = (
+        df_expanded.groupby(["strata", "Variant"])["dataset"]
+        .nunique()
+        .reset_index(name="total_datasets")
     )
 
-    # Round all the metric columns for cleaner output
-    metric_cols = ["mean", "min", "p10", "q1", "median", "q3", "p90", "max"]
-    results[metric_cols] = results[metric_cols].round(4)
+    # 5. Count failures (score <= 0.0)
+    failures = (
+        df_expanded[df_expanded["normalized_score"] <= 0.0]
+        .groupby(["strata", "Variant"])["dataset"]
+        .nunique()
+        .reset_index(name="zero_count")
+    )
 
-    # 5. Apply strict sorting
+    # 6. Merge results and compute percentages
+    results = pd.merge(totals, failures, on=["strata", "Variant"], how="left").fillna(0)
+
+    results["zero_count"] = results["zero_count"].astype(int)
+    results["failure_rate"] = (results["zero_count"] / results["total_datasets"]).round(
+        4
+    )
+    results["failure_pct"] = (results["failure_rate"] * 100).round(2)
+
+    # 7. Apply strict sorting
     results["strata"] = pd.Categorical(
         results["strata"], categories=STRATA_ORDER, ordered=True
     )
@@ -135,13 +137,11 @@ def main():
     )
 
     results = results.sort_values(["strata", "Variant"]).reset_index(drop=True)
-
-    # Rename Variant back to mode_algorithm for final CSV output consistency
     results = results.rename(columns={"Variant": "mode_algorithm"})
 
-    # 6. Save to output
+    # 8. Save to output
     results.to_csv(OUTPUT_FILE, index=False)
-    print(f"Quantiles successfully saved to: {OUTPUT_FILE}")
+    print(f"Failure rates successfully saved to: {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":
