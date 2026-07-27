@@ -24,9 +24,6 @@ except NameError:
 INPUT_CSV = SCRIPT_DIR / "summary_matrix_refactored.csv"
 OUTPUT_PLOT = SCRIPT_DIR / "outputs" / "norm_scores_boxplot_variants.png"
 
-# Metrics where a lower value indicates better performance (Error metrics)
-LOWER_IS_BETTER = ["1-auroc", "log_loss", "rmse", "mae", "mse", "error"]
-
 # Map internal variant names to formal LaTeX names for the chart labels
 LABEL_MAP = {
     "baseline_tabpfn": r"$\text{TabPFN}_{\text{baseline}}$",
@@ -136,21 +133,25 @@ def main():
     dataset_scores = []
 
     for (dataset, metric), sub_df in df.groupby(["dataset", "primary_metric"]):
-        is_lower = str(metric).lower() in LOWER_IS_BETTER
         task = sub_df["Task Type"].iloc[0]
         scale = sub_df["Scale"].iloc[0]
 
         raw_vals = sub_df["eval_primary_value"]
 
         # Calculate Topline (Best) and Baseline (Median) across all 10 models
-        topline = raw_vals.min() if is_lower else raw_vals.max()
+        # Topline is always the minimum since all metrics are minimized
+        topline = raw_vals.min()
         baseline = raw_vals.median()
-        denominator = max(abs(baseline - topline), 1e-5)
 
-        if is_lower:
-            sub_df["Norm_Score"] = ((baseline - raw_vals) / denominator).clip(0.0, 1.0)
+        # Leaderboard Tie-Breaker Logic
+        if topline == baseline:
+            scores = pd.Series(0.0, index=raw_vals.index)
+            scores[raw_vals == topline] = 1.0
         else:
-            sub_df["Norm_Score"] = ((raw_vals - baseline) / denominator).clip(0.0, 1.0)
+            scores = (baseline - raw_vals) / (baseline - topline)
+            scores = scores.clip(0.0, 1.0)
+
+        sub_df["Norm_Score"] = scores
 
         # Collect scores for all available variants on this dataset
         for _, row in sub_df.iterrows():
